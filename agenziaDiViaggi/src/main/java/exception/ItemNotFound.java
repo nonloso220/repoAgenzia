@@ -10,25 +10,16 @@ package exception;
  * @author luca gabossi
  */
 public class ItemNotFound extends Exception{
-    private int line;
     private String item;
-    public ItemNotFound(int line,String item) {
-        this.line=line;
+    public ItemNotFound(String item) {
         this.item=item;
-    }
-
-    public ItemNotFound(int i, int idTravel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    public int getLine(){
-        return this.line;
     }
     public String getItem() {
         return this.item;
     }
     @Override
     public String toString() {
-        String s=" >>>>>>in that line:"+this.getLine()+"!!!<<<<<< the "+this.getItem()+" not found may have occurred \ncheck the line: >>>>>>"+this.getLine()+"!!!!!<<<<<<";
+        String s=this.getItem()+" not found may have occurred ";
         return s;
     }
 }
