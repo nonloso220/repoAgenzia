@@ -148,8 +148,7 @@ public class User {
         /*
         parameter checks must be done within the calling method / class
         */
-        if(this.numTravelPresent==0)
-            throw new exception.travelsNotFound();
+        
         try{
             travelUser[numTravelPresent]=new Travel(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
             numTravelPresent++;
@@ -158,13 +157,12 @@ public class User {
             throw new exception.MaximumReached(N_MAX_TRAVELS);
         }
     }
-    public void travelPlanning(Travel t) throws MaximumReached, travelsNotFound
+    public void travelPlanning(Travel t) throws MaximumReached
     {
         /*
         parameter checks must be done within the calling method / class
         */
-        if(this.numTravelPresent==0)
-            throw new exception.travelsNotFound();
+        
         try{
             travelUser[numTravelPresent]=new Travel(t);
             numTravelPresent++;
@@ -185,7 +183,7 @@ public class User {
                 for(int j=i;j<numTravelPresent-1;j++){
                     travelUser[j]=travelUser[j+1];
                 }
-                travelUser[numTravelPresent]=null;
+                travelUser[numTravelPresent-1]=null;
                 numTravelPresent--;
                 return 0;
             }
@@ -198,7 +196,7 @@ public class User {
         String s="";
         try{
             for(int i=0;i<numTravelPresent;i++){
-                s+="TRAVEL: "+i+travelUser[i].toString();
+                s+="\nTRAVEL: "+i+travelUser[i].toString();
             }
             return s;
         }
@@ -212,10 +210,10 @@ public class User {
         String s="";
         try{
             Travel[] array=new Travel[this.numTravelPresent];
-            //ordinare travelUser
+            //travelPlanner();
             array=Ordinatore.selectionSortStartTravelCrescente(travelUser);
             for(int i=0;i<numTravelPresent;i++){
-                s+="travel to location "+i+" is:\n"+array[i].toString();
+                s+="\ntravel to location "+i+" is:\n"+array[i].toString();
             }
             return s;
         }
@@ -238,7 +236,8 @@ public class User {
         }
         throw new exception.ItemNotFound("idTrave");/*id not found*/
     }
-    private void travelPlanner() throws travelsNotFound{
+    
+    /*private void travelPlanner() throws travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
         boolean exchangeTookPlace=false;
@@ -253,6 +252,6 @@ public class User {
                 }
             }
         }
-    }
+    }*/
     
 }
