@@ -5,8 +5,7 @@
  */
 package com.mycompany.agenziadiviaggi;
 
-import exception.MaximumReached;
-import exception.NullPointer;
+import exception.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,6 +16,8 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
         Travel t=new Travel("san torini", 1, 1, 1, 1010, 2, 1, 1010);
+        Travel t1=new Travel("san", 2, 1, 1, 10, 2, 1, 10);
+        Travel t2=new Travel("san", 3, 1, 1, 10, 2, 1, 10);
         /*t.setTrueUserParty();
         t.setTrueUserReturned();*/
         User u=new User("franco", "gabossi", "1234", 0);
@@ -25,7 +26,23 @@ public class Main {
         } catch (MaximumReached ex) {
             System.out.println(ex.toString());
         }
-       
+        try {
+            u.travelPlanning(t1);
+        } catch (MaximumReached ex) {
+            System.out.println(ex.toString());
+        }
+        try {
+            u.travelPlanning(t2);
+        } catch (MaximumReached ex) {
+            System.out.println(ex.toString());
+        }
+        try {
+            u.postponeTravel(1, 1, 10, 0, 2, 10, 0);
+        } catch (ItemNotFound ex) {
+            System.out.println(ex.toString());
+        } catch (travelsNotFound ex) {
+            System.out.println(ex.toString());
+        }
         /*try {
             u.setTrueUserParty(0);
         } catch (MaximumReached ex) {
@@ -41,18 +58,19 @@ public class Main {
         } catch (MaximumReached ex) {
             System.out.println(ex.toString());
         }*/
-        
         try {
             System.out.println(u.showTravelsSortedByEntry());
         } catch (NullPointer ex) {
             System.out.println(ex.toString());
-        }      
+        }   catch (travelsNotFound ex) {
+            System.out.println(ex.toString());
+        }    
         try {
             System.out.println("\n"+u.showTravelSortedByDeparture());
         } catch (NullPointer ex) {
             System.out.println(ex.toString());
+        } catch (travelsNotFound ex) {
+            System.out.println(ex.toString());
         }
-        
-        
     }
 }
