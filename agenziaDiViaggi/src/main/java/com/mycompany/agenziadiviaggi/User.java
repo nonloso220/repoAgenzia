@@ -47,8 +47,10 @@ public class User {
         setPassword(u.getPassword());
         setId(u.getId());
         this.travelUser=new Travel[N_MAX_TRAVELS];/*generated a series(array) of travelUser*/
-        for(int i=0;i<u.getNumTravelPresent();i++)/*copy series(array) of travelUser inside new travelUser*/{
-            this.travelUser[i]=new Travel(u.travelUser[i]);
+        if(this.numTravelPresent!=0){
+            for(int i=0;i<u.getNumTravelPresent();i++)/*copy series(array) of travelUser inside new travelUser*/{
+                this.travelUser[i]=new Travel(u.travelUser[i]);
+            }
         }
     }
     /**
@@ -141,11 +143,13 @@ public class User {
         return s;
     }
     /*Other methods*/
-    public void travelPlanning(String destination, int id, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws MaximumReached
+    public void travelPlanning(String destination, int id, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws MaximumReached, travelsNotFound
     {
         /*
         parameter checks must be done within the calling method / class
         */
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
         try{
             travelUser[numTravelPresent]=new Travel(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
             numTravelPresent++;
@@ -154,11 +158,13 @@ public class User {
             throw new exception.MaximumReached(N_MAX_TRAVELS);
         }
     }
-    public void travelPlanning(Travel t) throws MaximumReached
+    public void travelPlanning(Travel t) throws MaximumReached, travelsNotFound
     {
         /*
         parameter checks must be done within the calling method / class
         */
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
         try{
             travelUser[numTravelPresent]=new Travel(t);
             numTravelPresent++;
@@ -167,11 +173,13 @@ public class User {
             throw new exception.MaximumReached(N_MAX_TRAVELS);
         }
     }
-    public int cancelATravel(int idTravel) throws ItemNotFound
+    public int cancelATravel(int idTravel) throws ItemNotFound, travelsNotFound
     {
         /*
         parameter checks must be done within the calling method / class
         */
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
         for(int i=0;i<numTravelPresent;i++){
             if(travelUser[i].getId()==idTravel){
                 for(int j=i;j<numTravelPresent-1;j++){
@@ -182,9 +190,11 @@ public class User {
                 return 0;
             }
         }
-        throw new exception.ItemNotFound(169,idTravel);/*id not found*/
+        throw new exception.ItemNotFound("idTravel");/*id not found*/
     }
-    public String showTravelsSortedByEntry() throws NullPointer{
+    public String showTravelsSortedByEntry() throws NullPointer, travelsNotFound{
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
         String s="";
         try{
             for(int i=0;i<numTravelPresent;i++){
@@ -196,10 +206,13 @@ public class User {
             throw new exception.NullPointer(184);
         }
     }
-    public String showTravelSortedByDeparture() throws NullPointer{//ERROR CONTROL THIS METHOD (null pointer declared)
+    public String showTravelSortedByDeparture() throws NullPointer, travelsNotFound{//ERROR CONTROL THIS METHOD (null pointer declared)
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
         String s="";
         try{
             Travel[] array=new Travel[this.numTravelPresent];
+            //ordinare travelUser
             array=Ordinatore.selectionSortStartTravelCrescente(travelUser);
             for(int i=0;i<numTravelPresent;i++){
                 s+="travel to location "+i+" is:\n"+array[i].toString();
@@ -210,10 +223,12 @@ public class User {
             throw new exception.NullPointer(202);
         }
     }
-    public int postponeTravel(int idTravel, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws ItemNotFound{
+    public int postponeTravel(int idTravel, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws ItemNotFound, travelsNotFound{
         /*
         parameter checks must be done within the calling method / class
         */
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
         for(int i=0;i<numTravelPresent;i++){
             if(travelUser[i].getId()==idTravel){
                 travelUser[i].setEndTravel(endDayOfMonths, endValueOfMonth, endYear);
@@ -221,8 +236,23 @@ public class User {
                 return 0;
             }
         }
-        throw new exception.ItemNotFound(249,idTravel);/*id not found*/
+        throw new exception.ItemNotFound("idTrave");/*id not found*/
     }
-    
+    private void travelPlanner() throws travelsNotFound{
+        if(this.numTravelPresent==0)
+            throw new exception.travelsNotFound();
+        boolean exchangeTookPlace=false;
+        for(int i=0;i<this.getN_MAX_TRAVELS();i++){
+            exchangeTookPlace=false;
+            if(this.travelUser[i]==null){
+                for(int j=i+1;j<this.getN_MAX_TRAVELS()-1;j++){
+                    if(this.travelUser[j]!=null && exchangeTookPlace!=true){
+                        Ordinatore.scambia(travelUser, i, j);
+                        exchangeTookPlace=true;
+                    }
+                }
+            }
+        }
+    }
     
 }
