@@ -2,7 +2,6 @@ AGENZIA VIAGGI (Gabossi)
 
 Un’agenzia viaggi vuole gestire le iscrizioni relative ai propri viaggi organizzati con un software 
 
-#define L 30 
 
 
 Per ogni iscrizione si vuole memorizzare(struttura dati da creare con relativi campi): 
