@@ -78,12 +78,8 @@ public class Main {
                                         case 5:{
                                             break;
                                         }
-                                        
                                     }
                                 }while(sceltaMenu01!=0);
-                                
-                                
-                                
                             }
                             else{
                                 System.out.println("Error: check password may be incorrect");
