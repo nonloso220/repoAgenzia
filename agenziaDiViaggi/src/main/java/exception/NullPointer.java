@@ -10,16 +10,11 @@ package exception;
  * @author luca gabossi
  */
 public class NullPointer extends Exception{
-    private int line;
-    public NullPointer(int line) {
-        this.line=line;
-    }
-    public int getLine(){
-        return this.line;
+    public NullPointer() {
     }
     @Override
     public String toString() {
-        String s=" >>>>>>in that line:"+this.getLine()+"!!!<<<<<< the NullPointerException may have occurred \ncheck the line: >>>>>>"+this.getLine()+"!!!!!<<<<<<";
+        String s="the NullPointerException may have occurred ";
         return s;
     }
 }

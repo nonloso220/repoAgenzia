@@ -19,6 +19,7 @@ public class User {
     private String name;
     private String surname;
     private String password;
+    private String email;
     private int id;
     private int numTravelPresent=0;/*counter travel*/
     private Travel[] travelUser;/*array travel*/
@@ -30,11 +31,12 @@ public class User {
      * @param password
      * @param id 
      */
-    public User(String name, String surname, String password, int id)/*first costructor*/{
+    public User(String name, String surname, String password, int id, String email)/*first costructor*/{
         setName(name);
         setSurname(surname);
         setPassword(password);
         setId(id);
+        setEmail(email);
         this.travelUser=new Travel[N_MAX_TRAVELS];/*generated a series(array) of travelUser*/
     }
     /**
@@ -46,6 +48,7 @@ public class User {
         setSurname(u.getSurname());
         setPassword(u.getPassword());
         setId(u.getId());
+        setEmail(u.getEmail());
         this.travelUser=new Travel[N_MAX_TRAVELS];/*generated a series(array) of travelUser*/
         if(this.numTravelPresent!=0){
             for(int i=0;i<u.getNumTravelPresent();i++)/*copy series(array) of travelUser inside new travelUser*/{
@@ -87,6 +90,13 @@ public class User {
      */
     public void setNumTravelPresent(int numTravelPresent) {
         this.numTravelPresent = numTravelPresent;
+    }
+    /**
+     * 
+     * @param email 
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
     /**
      * 
@@ -132,6 +142,13 @@ public class User {
     }
     public int getN_MAX_TRAVELS(){
         return this.N_MAX_TRAVELS;
+    }
+    /**
+     * 
+     * @return 
+     */
+    public String getEmail() {
+        return email;
     }
     /**
      * 
@@ -201,10 +218,10 @@ public class User {
             return s;
         }
         catch(NullPointerException exception){
-            throw new exception.NullPointer(184);
+            throw new exception.NullPointer();
         }
     }
-    public String showTravelSortedByDeparture() throws NullPointer, travelsNotFound{//ERROR CONTROL THIS METHOD (null pointer declared)
+    public String showTravelsSortedByDeparture() throws NullPointer, travelsNotFound{//ERROR CONTROL THIS METHOD (null pointer declared)
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
         String s="";
@@ -218,7 +235,7 @@ public class User {
             return s;
         }
         catch(NullPointerException exception){
-            throw new exception.NullPointer(202);
+            throw new exception.NullPointer();
         }
     }
     public int postponeTravel(int idTravel, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws ItemNotFound, travelsNotFound{
