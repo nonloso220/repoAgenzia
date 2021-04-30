@@ -7,6 +7,8 @@ package com.mycompany.agenziadiviaggi;
 
 import exception.*;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,6 +20,7 @@ public class Main {
         int N_MAX_USERS=100;
         int numberUsersPresent=1;
         int sceltaUtente=0;
+        int idTravel=0;
         String[] s=new String[3];
         User[] users=new User[N_MAX_USERS];
         s[0]="exit the program";
@@ -59,23 +62,54 @@ public class Main {
                                 do{
                                     sceltaMenu01=mUser.sceltaMenu(0);
                                     switch(sceltaMenu01){
-                                        case 0:{
+                                        case 0:{/*come back*/
                                             break;
                                         }
-                                        case 1:{
-                                            
+                                        case 1:{/*Travel planning*/
+                                            System.out.println("destination: ");
+                                            String destination=keyboard.nextLine();
+                                            int id=idTravel;
+                                            System.out.println("startDayOfMonths: ");
+                                            int startDayOfMonths=keyboard.nextInt(); 
+                                            System.out.println("startValueOfMonth: ");
+                                            int startValueOfMonth=keyboard.nextInt();
+                                            System.out.println("startYear: ");
+                                            int startYear=keyboard.nextInt();
+                                            System.out.println("endDayOfMonths: ");
+                                            int endDayOfMonths=keyboard.nextInt();
+                                            System.out.println("endValueOfMonth: ");
+                                            int endValueOfMonth=keyboard.nextInt();
+                                            System.out.println("endYear: ");
+                                            int endYear=keyboard.nextInt();
+                                            try {
+                                                users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                System.out.println("id Travel: "+id+"\n");
+                                            } catch (MaximumReached ex) {
+                                                System.out.println(ex.toString());
+                                            } catch (travelsNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            }
                                             break;
                                         }
-                                        case 2:{
+                                        case 2:{/*cancel a travel*/
+                                            System.out.println("id Travel: ");
+                                            int id=keyboard.nextInt();
+                                            try {
+                                                users[i].cancelATravel(id);
+                                            } catch (ItemNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            } catch (travelsNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            }
                                             break;
                                         }
-                                        case 3:{
+                                        case 3:{/*show Travels Sorted By Entry*/
                                             break;
                                         }
-                                        case 4:{
+                                        case 4:{/*show Travels Sorted By Departure*/
                                             break;
                                         }
-                                        case 5:{
+                                        case 5:{/*postpone Travel*/
                                             break;
                                         }
                                     }
