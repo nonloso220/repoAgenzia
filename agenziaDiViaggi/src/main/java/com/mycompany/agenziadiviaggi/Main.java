@@ -42,7 +42,7 @@ public class Main {
             sceltaUtente=mLogin.sceltaMenu(0);
             switch(sceltaUtente){
                 case 0:{
-                    System.out.println("ciao");
+                    System.out.println("Bye-Bye!");
                     break;
                 }
                 case 1:{
@@ -66,9 +66,10 @@ public class Main {
                                             break;
                                         }
                                         case 1:{/*Travel planning*/
+                                            int id=idTravel;
+                                            System.out.println("the travel ID is: "+id+"\n");
                                             System.out.println("destination: ");
                                             String destination=keyboard.nextLine();
-                                            int id=idTravel;
                                             System.out.println("startDayOfMonths: ");
                                             int startDayOfMonths=keyboard.nextInt(); 
                                             System.out.println("startValueOfMonth: ");
@@ -83,7 +84,10 @@ public class Main {
                                             int endYear=keyboard.nextInt();
                                             try {
                                                 users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                System.out.println("id Travel: "+id+"\n");
+                                                System.out.println("Successful operation, press any key to continue");
+                                                keyboard.nextLine();
+                                                keyboard.nextLine();
+                                                idTravel++;
                                             } catch (MaximumReached ex) {
                                                 System.out.println(ex.toString());
                                             } catch (travelsNotFound ex) {
@@ -92,10 +96,13 @@ public class Main {
                                             break;
                                         }
                                         case 2:{/*cancel a travel*/
-                                            System.out.println("id Travel: ");
+                                            System.out.println("enter the ID of the trip you want to delete: ");
                                             int id=keyboard.nextInt();
                                             try {
                                                 users[i].cancelATravel(id);
+                                                System.out.println("Successful operation, press any key to continue");
+                                                keyboard.nextLine();
+                                                keyboard.nextLine();
                                             } catch (ItemNotFound ex) {
                                                 System.out.println(ex.toString());
                                             } catch (travelsNotFound ex) {
@@ -104,12 +111,53 @@ public class Main {
                                             break;
                                         }
                                         case 3:{/*show Travels Sorted By Entry*/
+                                            try {
+                                                System.out.println(users[i].showTravelsSortedByEntry());
+                                                System.out.println("\nSuccessful operation, press any key to continue");
+                                                keyboard.nextLine();
+                                            } catch (NullPointer ex) {
+                                                System.out.println(ex.toString());
+                                            } catch (travelsNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            }
                                             break;
                                         }
                                         case 4:{/*show Travels Sorted By Departure*/
+                                            try {
+                                                System.out.println(users[i].showTravelsSortedByDeparture());
+                                                System.out.println("\nSuccessful operation, press any key to continue");
+                                                keyboard.nextLine();
+                                            } catch (NullPointer ex) {
+                                                System.out.println(ex.toString());
+                                            } catch (travelsNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            }
                                             break;
                                         }
                                         case 5:{/*postpone Travel*/
+                                            System.out.println("enter the ID of the trip you want to delete: ");
+                                            int id=keyboard.nextInt();
+                                            System.out.println("startDayOfMonths: ");
+                                            int startDayOfMonths=keyboard.nextInt(); 
+                                            System.out.println("startValueOfMonth: ");
+                                            int startValueOfMonth=keyboard.nextInt();
+                                            System.out.println("startYear: ");
+                                            int startYear=keyboard.nextInt();
+                                            System.out.println("endDayOfMonths: ");
+                                            int endDayOfMonths=keyboard.nextInt();
+                                            System.out.println("endValueOfMonth: ");
+                                            int endValueOfMonth=keyboard.nextInt();
+                                            System.out.println("endYear: ");
+                                            int endYear=keyboard.nextInt();
+                                            try {
+                                                users[i].postponeTravel(id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                System.out.println("\nSuccessful operation, press any key to continue");
+                                                keyboard.nextLine();
+                                            } catch (ItemNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            } catch (travelsNotFound ex) {
+                                                System.out.println(ex.toString());
+                                            }
                                             break;
                                         }
                                     }
