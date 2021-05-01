@@ -7,8 +7,6 @@ package com.mycompany.agenziadiviaggi;
 
 import exception.*;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -19,28 +17,33 @@ public class Main {
         Scanner keyboard=new Scanner(System.in);
         int N_MAX_USERS=100;
         int numberUsersPresent=1;
-        int sceltaUtente=0;
+        int userChoice=0;
         int idTravel=0;
+        int idUsers=0;
+        boolean c2=false;/*when user selected a case 2(generete an account and log into it) is true*/
         String[] s=new String[3];
         User[] users=new User[N_MAX_USERS];
         s[0]="exit the program";
         s[1]="log into an existing account";
         s[2]="create an account and log into it";
-        String[] l=new String[6];
+        String[] l=new String[7];
         l[0]="come back";
         l[1]="Travel planning";
         l[2]="cancel a travel";
         l[3]="show Travels Sorted By Entry";
         l[4]="show Travels Sorted By Departure";
         l[5]="postpone Travel";
+        l[6]="delete the account";
         Menu mLogin=new Menu(s);
         Menu mUser=new Menu(l);
-        
         User u=new User("luca", "gabossi", "123", 0, "lucagabossis@gmail.com");
         users[0]=new User(u);
         do{
-            sceltaUtente=mLogin.sceltaMenu(0);
-            switch(sceltaUtente){
+            if(c2)
+                userChoice=1;
+            else
+                userChoice=mLogin.sceltaMenu(0);
+            switch(userChoice){
                 case 0:{
                     System.out.println("Bye-Bye!");
                     break;
@@ -50,16 +53,28 @@ public class Main {
                         System.out.println("Error: cannot perform this option because there are not even one users");
                         keyboard.nextLine();
                         break;
-                    }    
-                    System.out.println("email: ");
-                    String email=keyboard.nextLine();
-                    System.out.println("account password: ");
-                    String password=keyboard.nextLine();
-                    for(int i=0;i<numberUsersPresent;i++){
+                    }  
+                    int i=0;
+                    String email = null;
+                    String password = null;
+                    if(!c2){
+                        System.out.println("email: ");
+                        email=keyboard.nextLine();
+                        System.out.println("account password: ");
+                        password=keyboard.nextLine();
+                    }
+                    for(i=0;i<numberUsersPresent;i++){
+                        if(c2){
+                            i=numberUsersPresent-1;
+                            email=users[i].getEmail();
+                            password=users[i].getPassword();
+                        }
+                        c2=false;
                         if(users[i].getEmail().equalsIgnoreCase(email)){
                             if(users[i].getPassword().equalsIgnoreCase(password)){
                                 int sceltaMenu01;
                                 do{
+                                    
                                     sceltaMenu01=mUser.sceltaMenu(0);
                                     switch(sceltaMenu01){
                                         case 0:{/*come back*/
@@ -160,6 +175,17 @@ public class Main {
                                             }
                                             break;
                                         }
+                                        case 6:{/*delete the account*/
+                                            for(int j=i;j<numberUsersPresent-1;j++){
+                                                users[j]=users[j+1];
+                                            }
+                                            users[numberUsersPresent-1]=null;
+                                            numberUsersPresent--;
+                                            sceltaMenu01=0;
+                                            System.out.println("\nSuccessful operation, press any key to continue");
+                                            keyboard.nextLine();
+                                            break;
+                                        }
                                     }
                                 }while(sceltaMenu01!=0);
                             }
@@ -173,11 +199,23 @@ public class Main {
                     break;
                 }
                 case 2:{
-                    
+                    System.out.println("name:");
+                    String name=keyboard.nextLine();
+                    System.out.println("surname:");
+                    String surname=keyboard.nextLine();
+                    System.out.println("email:");
+                    String email=keyboard.nextLine();
+                    System.out.println("password:");
+                    String password=keyboard.nextLine();
+                    int id=idUsers;
+                    users[numberUsersPresent]=new User(name, surname, password, id, email);
+                    idUsers++;
+                    numberUsersPresent++;
+                    c2=true;
                     break;
                 }
             }
-        }while(sceltaUtente!=0);
+        }while(userChoice!=0);
         
     }
 }
