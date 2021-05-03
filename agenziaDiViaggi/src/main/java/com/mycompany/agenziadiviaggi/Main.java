@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner keyboard=new Scanner(System.in);
         int N_MAX_USERS=100;
-        int numberUsersPresent=1;
+        int numberUsersPresent=0;
         int userChoice=0;
         int idTravel=0;
         int idUsers=0;
@@ -38,8 +38,8 @@ public class Main {
         l[6]="delete the account";
         Menu mLogin=new Menu(s);
         Menu mUser=new Menu(l);
-        User u=new User("luca", "gabossi", "123", 0, "lucagabossis@gmail.com");
-        users[0]=new User(u);
+        //User u=new User("luca", "gabossi", "123", 0, "lucagabossis@gmail.com");
+        //users[0]=new User(u);
         try{
             do{
                 if(c2)
@@ -123,7 +123,7 @@ public class Main {
                                                 }
                                                 case 2:{/*cancel a travel*/
                                                     if(users[i].getNumTravelPresent()==0){
-                                                        System.out.println("impossibile eseguire questo metodo, inserire prima un viaggio");
+                                                        System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
                                                     System.out.println("enter the ID of the trip you want to delete: ");
@@ -142,7 +142,7 @@ public class Main {
                                                 }
                                                 case 3:{/*show Travels Sorted By Entry*/
                                                     if(users[i].getNumTravelPresent()==0){
-                                                        System.out.println("impossibile eseguire questo metodo, inserire prima un viaggio");
+                                                        System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
                                                     try {
@@ -158,7 +158,7 @@ public class Main {
                                                 }
                                                 case 4:{/*show Travels Sorted By Departure*/
                                                     if(users[i].getNumTravelPresent()==0){
-                                                        System.out.println("impossibile eseguire questo metodo, inserire prima un viaggio");
+                                                        System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
                                                     try {
@@ -174,7 +174,7 @@ public class Main {
                                                 }
                                                 case 5:{/*postpone Travel*/
                                                     if(users[i].getNumTravelPresent()==0){
-                                                        System.out.println("impossibile eseguire questo metodo, inserire prima un viaggio");
+                                                        System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
                                                     System.out.println("enter the ID of the trip you want to delete: ");
@@ -207,10 +207,6 @@ public class Main {
                                                     break;
                                                 }
                                                 case 6:{/*delete the account*/
-                                                    if(users[i].getNumTravelPresent()==0){
-                                                        System.out.println("impossibile eseguire questo metodo, inserire prima un viaggio");
-                                                        break;
-                                                    }
                                                     for(int j=i;j<numberUsersPresent-1;j++){
                                                         users[j]=users[j+1];
                                                     }
@@ -223,7 +219,7 @@ public class Main {
                                                 }
                                             }
                                         }catch(InputMismatchException | NumberFormatException e1){
-                                            System.out.println("input non corretto, premi un tasto per continuare");
+                                            System.out.println("incorrect input, press any key to continue");
                                             keyboard.nextLine();
                                         }
                                     }while(sceltaMenu01!=0);
