@@ -207,6 +207,23 @@ public class Main {
                                                     break;
                                                 }
                                                 case 6:{/*delete the account*/
+                                                    System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
+                                                    String safety=keyboard.nextLine();
+                                                    if(safety.compareToIgnoreCase("n")==0){
+                                                        System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
+                                                        keyboard.nextLine();
+                                                        break;
+                                                    }  
+                                                    System.out.println("enter the password to confirm: ");
+                                                    String passwordConfirm;
+                                                    do{
+                                                        passwordConfirm=keyboard.nextLine();
+                                                        if(passwordConfirm.compareTo(users[i].getPassword())!=0){
+                                                            System.out.println("you made a mistake the password does not match, try to re-enter the password.");
+                                                            keyboard.nextLine();
+                                                            System.out.println("enter the password to confirm: ");
+                                                        }
+                                                    }while(passwordConfirm.compareTo(users[i].getPassword())!=0);
                                                     for(int j=i;j<numberUsersPresent-1;j++){
                                                         users[j]=users[j+1];
                                                     }
