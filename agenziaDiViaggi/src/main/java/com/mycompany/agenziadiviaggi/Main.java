@@ -216,12 +216,25 @@ public class Main {
                                                     }  
                                                     System.out.println("enter the password to confirm: ");
                                                     String passwordConfirm;
+                                                    int ci=0;
                                                     do{
                                                         passwordConfirm=keyboard.nextLine();
                                                         if(passwordConfirm.compareTo(users[i].getPassword())!=0){
+                                                            ci++;
                                                             System.out.println("you made a mistake the password does not match, try to re-enter the password.");
                                                             keyboard.nextLine();
-                                                            System.out.println("enter the password to confirm: ");
+                                                            if(ci==3){
+                                                                System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
+                                                                safety=keyboard.nextLine();
+                                                                ci=0;
+                                                                if(safety.compareToIgnoreCase("n")==0){
+                                                                    System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
+                                                                    keyboard.nextLine();
+                                                                    break;
+                                                                }
+                                                            }
+                                                            if(safety.compareToIgnoreCase("y")==0)
+                                                                System.out.println("you still have "+(3-ci)+"attempts, enter the password to confirm: ");
                                                         }
                                                     }while(passwordConfirm.compareTo(users[i].getPassword())!=0);
                                                     for(int j=i;j<numberUsersPresent-1;j++){
