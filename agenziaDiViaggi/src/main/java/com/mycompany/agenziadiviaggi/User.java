@@ -37,7 +37,7 @@ public class User {
         setPassword(password);
         setId(id);
         setEmail(email);
-        this.travelUser=new Travel[N_MAX_TRAVELS];/*generated a series(array) of travelUser*/
+        this.travelUser=new Travel[N_MAX_TRAVELS];/*generates a series(array) of travelUser*/
     }
     /**
      * 
