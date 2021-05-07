@@ -22,6 +22,8 @@ public class Main {
         int userChoice=0;
         int idTravel=0;
         int idUsers=0;
+        int startDayOfMonths,startValueOfMonth,startYear,endDayOfMonths,endValueOfMonth,endYear;
+        boolean dateCorrect;
         boolean c2=false;/*when user selected a case 2(generete an account and log into it) is true*/
         String[] s=new String[3];
         User[] users=new User[N_MAX_USERS];
@@ -89,23 +91,39 @@ public class Main {
                                                         break;
                                                     }
                                                     int id=idTravel;
-                                                    System.out.println("the travel ID is: "+id+"\n");
                                                     System.out.println("destination: ");
                                                     String destination=keyboard.nextLine();
-                                                    System.out.println("startDayOfMonths: ");
-                                                    int startDayOfMonths=keyboard.nextInt(); 
-                                                    System.out.println("startValueOfMonth: ");
-                                                    int startValueOfMonth=keyboard.nextInt();
-                                                    System.out.println("startYear: ");
-                                                    int startYear=keyboard.nextInt();
-                                                    System.out.println("endDayOfMonths: ");
-                                                    int endDayOfMonths=keyboard.nextInt();
-                                                    System.out.println("endValueOfMonth: ");
-                                                    int endValueOfMonth=keyboard.nextInt();
-                                                    System.out.println("endYear: ");
-                                                    int endYear=keyboard.nextInt();
+                                                    do{
+                                                        System.out.println("startDayOfMonths: ");
+                                                        startDayOfMonths=keyboard.nextInt();
+                                                        System.out.println("startValueOfMonth: ");
+                                                        startValueOfMonth=keyboard.nextInt();
+                                                        System.out.println("startYear: ");
+                                                        startYear=keyboard.nextInt();
+                                                        dateCorrect=isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                        if(dateCorrect)
+                                                            break;
+                                                        else{
+                                                            System.out.println("ERROR: invalid date");
+                                                        }
+                                                    }while(!dateCorrect);
+                                                    do{
+                                                        System.out.println("endDayOfMonths: ");
+                                                        endDayOfMonths=keyboard.nextInt();
+                                                        System.out.println("endValueOfMonth: ");
+                                                        endValueOfMonth=keyboard.nextInt();
+                                                        System.out.println("endYear: ");
+                                                        endYear=keyboard.nextInt();
+                                                        dateCorrect=isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                        if(dateCorrect)
+                                                            break;
+                                                        else{
+                                                            System.out.println("ERROR: invalid date");
+                                                        }
+                                                    }while(!dateCorrect);
                                                     try {
                                                         users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                        System.out.println("the travel ID is: "+id+"\n");
                                                         System.out.println("Successful operation, press any key to continue");
                                                         keyboard.nextLine();
                                                         keyboard.nextLine();
@@ -179,18 +197,34 @@ public class Main {
                                                     }
                                                     System.out.println("enter the ID of the trip you want to delete: ");
                                                     int id=keyboard.nextInt();
-                                                    System.out.println("startDayOfMonths: ");
-                                                    int startDayOfMonths=keyboard.nextInt(); 
-                                                    System.out.println("startValueOfMonth: ");
-                                                    int startValueOfMonth=keyboard.nextInt();
-                                                    System.out.println("startYear: ");
-                                                    int startYear=keyboard.nextInt();
-                                                    System.out.println("endDayOfMonths: ");
-                                                    int endDayOfMonths=keyboard.nextInt();
-                                                    System.out.println("endValueOfMonth: ");
-                                                    int endValueOfMonth=keyboard.nextInt();
-                                                    System.out.println("endYear: ");
-                                                    int endYear=keyboard.nextInt();
+                                                    do{
+                                                        System.out.println("startDayOfMonths: ");
+                                                        startDayOfMonths=keyboard.nextInt();
+                                                        System.out.println("startValueOfMonth: ");
+                                                        startValueOfMonth=keyboard.nextInt();
+                                                        System.out.println("startYear: ");
+                                                        startYear=keyboard.nextInt();
+                                                        dateCorrect=isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                        if(dateCorrect)
+                                                            break;
+                                                        else{
+                                                            System.out.println("ERROR: invalid date");
+                                                        }
+                                                    }while(!dateCorrect);
+                                                    do{
+                                                        System.out.println("endDayOfMonths: ");
+                                                        endDayOfMonths=keyboard.nextInt();
+                                                        System.out.println("endValueOfMonth: ");
+                                                        endValueOfMonth=keyboard.nextInt();
+                                                        System.out.println("endYear: ");
+                                                        endYear=keyboard.nextInt();
+                                                        dateCorrect=isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                        if(dateCorrect)
+                                                            break;
+                                                        else{
+                                                            System.out.println("ERROR: invalid date");
+                                                        }
+                                                    }while(!dateCorrect);
                                                     try {
                                                         users[i].postponeTravel(id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
                                                         System.out.println("\nSuccessful operation, press any key to continue");
@@ -264,7 +298,7 @@ public class Main {
                         break;
                     }
                     case 2:{
-                        System.out.println("name:");
+                        System.out.println("name:"); 
                         String name=keyboard.nextLine();
                         System.out.println("surname:");
                         String surname=keyboard.nextLine();
@@ -285,5 +319,16 @@ public class Main {
             System.out.println("input non corretto, premi un tasto per continuare");
             keyboard.nextLine();
         }
+    }
+    private static boolean isDataValida(int giorno, int mese, int anno)
+    {
+        if(giorno<0 || giorno>31)
+            return false;
+        if(mese<0 || mese>12)
+            return false;
+        if(anno<0 || anno>9999)
+            return false;
+        else
+            return true;
     }
 }
