@@ -63,10 +63,8 @@ public class Main {
                         String email = null;
                         String password = null;
                         if(!c2){
-                            System.out.println("email: ");
-                            email=keyboard.nextLine();
-                            System.out.println("account password: ");
-                            password=keyboard.nextLine();
+                            email=inputAnalyzer("email",2);
+                            password=inputAnalyzer("account password",8);
                         }
                         for(i=0;i<numberUsersPresent;i++){
                             if(c2){
@@ -94,12 +92,11 @@ public class Main {
                                                     System.out.println("destination: ");
                                                     String destination=keyboard.nextLine();
                                                     do{
-                                                        System.out.println("startDayOfMonths: ");
-                                                        startDayOfMonths=keyboard.nextInt();
+                                                        startDayOfMonths=Integer.valueOf(inputAnalyzer("startDayOfMonths",1));//CONTROLLO INSERIMENTO INTERO 
                                                         System.out.println("startValueOfMonth: ");
-                                                        startValueOfMonth=keyboard.nextInt();
+                                                        startValueOfMonth=Integer.valueOf(inputAnalyzer("startValueOfMonth",1));//CONTROLLO INSERIMENTO INTERO 
                                                         System.out.println("startYear: ");
-                                                        startYear=keyboard.nextInt();
+                                                        startYear=Integer.valueOf(inputAnalyzer("startYear",1));//CONTROLLO INSERIMENTO INTERO 
                                                         dateCorrect=isDataValida(startDayOfMonths, startValueOfMonth, startYear);
                                                         if(dateCorrect)
                                                             break;
@@ -108,11 +105,11 @@ public class Main {
                                                         }
                                                     }while(!dateCorrect);
                                                     do{
-                                                        System.out.println("endDayOfMonths: ");
+                                                        System.out.println("endDayOfMonths: ");//CONTROLLO INSERIMENTO INTERO 
                                                         endDayOfMonths=keyboard.nextInt();
-                                                        System.out.println("endValueOfMonth: ");
+                                                        System.out.println("endValueOfMonth: ");//CONTROLLO INSERIMENTO INTERO 
                                                         endValueOfMonth=keyboard.nextInt();
-                                                        System.out.println("endYear: ");
+                                                        System.out.println("endYear: ");//CONTROLLO INSERIMENTO INTERO 
                                                         endYear=keyboard.nextInt();
                                                         dateCorrect=isDataValida(endDayOfMonths, endValueOfMonth, endYear);
                                                         if(dateCorrect)
@@ -144,8 +141,7 @@ public class Main {
                                                         System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
-                                                    System.out.println("enter the ID of the trip you want to delete: ");
-                                                    int id=keyboard.nextInt();
+                                                    int id=Integer.valueOf(inputAnalyzer("enter the ID of the trip you want to delete",1));//CONTROLLO INSERIMENTO INTERO 
                                                     try {
                                                         users[i].cancelATravel(id);
                                                         System.out.println("Successful operation, press any key to continue");
@@ -195,14 +191,13 @@ public class Main {
                                                         System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
-                                                    System.out.println("enter the ID of the trip you want to delete: ");
-                                                    int id=keyboard.nextInt();
+                                                    int id=Integer.valueOf(inputAnalyzer("enter the ID of the trip you want to postpone",1));
                                                     do{
-                                                        System.out.println("startDayOfMonths: ");
+                                                        System.out.println("startDayOfMonths: ");//CONTROLLO INSERIMENTO INTERO 
                                                         startDayOfMonths=keyboard.nextInt();
-                                                        System.out.println("startValueOfMonth: ");
+                                                        System.out.println("startValueOfMonth: ");//CONTROLLO INSERIMENTO INTERO 
                                                         startValueOfMonth=keyboard.nextInt();
-                                                        System.out.println("startYear: ");
+                                                        System.out.println("startYear: ");//CONTROLLO INSERIMENTO INTERO 
                                                         startYear=keyboard.nextInt();
                                                         dateCorrect=isDataValida(startDayOfMonths, startValueOfMonth, startYear);
                                                         if(dateCorrect)
@@ -212,11 +207,11 @@ public class Main {
                                                         }
                                                     }while(!dateCorrect);
                                                     do{
-                                                        System.out.println("endDayOfMonths: ");
+                                                        System.out.println("endDayOfMonths: ");//CONTROLLO INSERIMENTO INTERO 
                                                         endDayOfMonths=keyboard.nextInt();
-                                                        System.out.println("endValueOfMonth: ");
+                                                        System.out.println("endValueOfMonth: ");//CONTROLLO INSERIMENTO INTERO 
                                                         endValueOfMonth=keyboard.nextInt();
-                                                        System.out.println("endYear: ");
+                                                        System.out.println("endYear: ");//CONTROLLO INSERIMENTO INTERO 
                                                         endYear=keyboard.nextInt();
                                                         dateCorrect=isDataValida(endDayOfMonths, endValueOfMonth, endYear);
                                                         if(dateCorrect)
@@ -253,6 +248,11 @@ public class Main {
                                                     int ci=0;
                                                     do{
                                                         passwordConfirm=keyboard.nextLine();
+                                                        do{
+                                                            if(passwordConfirm.length()<3){
+                                                            System.out.println("ERROR: the password cannot be less than 3 characters re-enter the password: ");
+                                                            }
+                                                        }while(passwordConfirm.length()<3);
                                                         if(passwordConfirm.compareTo(users[i].getPassword())!=0){
                                                             ci++;
                                                             System.out.println("you made a mistake the password does not match, try to re-enter the password.");
@@ -298,14 +298,11 @@ public class Main {
                         break;
                     }
                     case 2:{
-                        System.out.println("name:"); 
-                        String name=keyboard.nextLine();
-                        System.out.println("surname:");
-                        String surname=keyboard.nextLine();
-                        System.out.println("email:");
-                        String email=keyboard.nextLine();
-                        System.out.println("password:");
-                        String password=keyboard.nextLine();
+                        
+                        String name=inputAnalyzer("name",3);
+                        String surname=inputAnalyzer("surname",1);
+                        String email=inputAnalyzer("email",2);
+                        String password=inputAnalyzer("password",8);
                         int id=idUsers;
                         users[numberUsersPresent]=new User(name, surname, password, id, email);
                         idUsers++;
@@ -316,9 +313,25 @@ public class Main {
                 }
             }while(userChoice!=0);
         }catch(InputMismatchException | NumberFormatException e1){
-            System.out.println("input non corretto, premi un tasto per continuare");
+            System.out.println("incorrect input, press any key to continue");
             keyboard.nextLine();
         }
+    }
+    private static String inputAnalyzer(String item,int length){
+        Scanner keyboard=new Scanner(System.in);
+        System.out.println(item+": ");
+        String s=keyboard.nextLine();
+        do{
+           if(s.length()==0){
+               System.out.println("ERROR: invalid input insert something before sending, re-enter "+item+": ");
+               s=keyboard.nextLine();
+           }
+           if(s.length()<length){
+               System.out.println("ERROR: invalid input because "+item+" length is less than "+length+", re-enter "+item+": ");
+               s=keyboard.nextLine();
+           }
+        }while(s.length()==0 || s.length()<length);
+        return s;
     }
     private static boolean isDataValida(int giorno, int mese, int anno)
     {
