@@ -63,8 +63,8 @@ public class Main {
                         String email = null;
                         String password = null;
                         if(!c2){
-                            email=inputAnalyzer("email",2);
-                            password=inputAnalyzer("account password",8);
+                            email=inputAnalyzerString("email",2);
+                            password=inputAnalyzerString("account password",8);
                         }
                         for(i=0;i<numberUsersPresent;i++){
                             if(c2){
@@ -92,11 +92,9 @@ public class Main {
                                                     System.out.println("destination: ");
                                                     String destination=keyboard.nextLine();
                                                     do{
-                                                        startDayOfMonths=Integer.valueOf(inputAnalyzer("startDayOfMonths",1));//CONTROLLO INSERIMENTO INTERO 
-                                                        System.out.println("startValueOfMonth: ");
-                                                        startValueOfMonth=Integer.valueOf(inputAnalyzer("startValueOfMonth",1));//CONTROLLO INSERIMENTO INTERO 
-                                                        System.out.println("startYear: ");
-                                                        startYear=Integer.valueOf(inputAnalyzer("startYear",1));//CONTROLLO INSERIMENTO INTERO 
+                                                        startDayOfMonths=inputAnalyzerInt("startDayOfMonths",1);
+                                                        startValueOfMonth=inputAnalyzerInt("startValueOfMonth",1);
+                                                        startYear=inputAnalyzerInt("startYear",1);
                                                         dateCorrect=isDataValida(startDayOfMonths, startValueOfMonth, startYear);
                                                         if(dateCorrect)
                                                             break;
@@ -105,12 +103,9 @@ public class Main {
                                                         }
                                                     }while(!dateCorrect);
                                                     do{
-                                                        System.out.println("endDayOfMonths: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        endDayOfMonths=keyboard.nextInt();
-                                                        System.out.println("endValueOfMonth: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        endValueOfMonth=keyboard.nextInt();
-                                                        System.out.println("endYear: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        endYear=keyboard.nextInt();
+                                                        endDayOfMonths=inputAnalyzerInt("endDayOfMonths: ",1);
+                                                        endValueOfMonth=inputAnalyzerInt("endValueOfMonth: ",1);
+                                                        endYear=inputAnalyzerInt("endYear: ",1);
                                                         dateCorrect=isDataValida(endDayOfMonths, endValueOfMonth, endYear);
                                                         if(dateCorrect)
                                                             break;
@@ -120,7 +115,7 @@ public class Main {
                                                     }while(!dateCorrect);
                                                     try {
                                                         users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                        System.out.println("the travel ID is: "+id+"\n");
+                                                        System.out.println("the travel ID is: "+id);
                                                         System.out.println("Successful operation, press any key to continue");
                                                         keyboard.nextLine();
                                                         keyboard.nextLine();
@@ -141,7 +136,7 @@ public class Main {
                                                         System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
-                                                    int id=Integer.valueOf(inputAnalyzer("enter the ID of the trip you want to delete",1));//CONTROLLO INSERIMENTO INTERO 
+                                                    int id=inputAnalyzerInt("enter the ID of the trip you want to delete",1);
                                                     try {
                                                         users[i].cancelATravel(id);
                                                         System.out.println("Successful operation, press any key to continue");
@@ -191,14 +186,11 @@ public class Main {
                                                         System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
-                                                    int id=Integer.valueOf(inputAnalyzer("enter the ID of the trip you want to postpone",1));
+                                                    int id=inputAnalyzerInt("enter the ID of the trip you want to postpone",1);
                                                     do{
-                                                        System.out.println("startDayOfMonths: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        startDayOfMonths=keyboard.nextInt();
-                                                        System.out.println("startValueOfMonth: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        startValueOfMonth=keyboard.nextInt();
-                                                        System.out.println("startYear: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        startYear=keyboard.nextInt();
+                                                        startDayOfMonths=inputAnalyzerInt("startDayOfMonths",1);
+                                                        startValueOfMonth=inputAnalyzerInt("startValueOfMonth",1);
+                                                        startYear=inputAnalyzerInt("startYear",1);
                                                         dateCorrect=isDataValida(startDayOfMonths, startValueOfMonth, startYear);
                                                         if(dateCorrect)
                                                             break;
@@ -207,12 +199,9 @@ public class Main {
                                                         }
                                                     }while(!dateCorrect);
                                                     do{
-                                                        System.out.println("endDayOfMonths: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        endDayOfMonths=keyboard.nextInt();
-                                                        System.out.println("endValueOfMonth: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        endValueOfMonth=keyboard.nextInt();
-                                                        System.out.println("endYear: ");//CONTROLLO INSERIMENTO INTERO 
-                                                        endYear=keyboard.nextInt();
+                                                        endDayOfMonths=inputAnalyzerInt("endDayOfMonths: ",1);
+                                                        endValueOfMonth=inputAnalyzerInt("endValueOfMonth: ",1);
+                                                        endYear=inputAnalyzerInt("endYear: ",1);
                                                         dateCorrect=isDataValida(endDayOfMonths, endValueOfMonth, endYear);
                                                         if(dateCorrect)
                                                             break;
@@ -299,10 +288,10 @@ public class Main {
                     }
                     case 2:{
                         
-                        String name=inputAnalyzer("name",3);
-                        String surname=inputAnalyzer("surname",1);
-                        String email=inputAnalyzer("email",2);
-                        String password=inputAnalyzer("password",8);
+                        String name=inputAnalyzerString("name",3);
+                        String surname=inputAnalyzerString("surname",1);
+                        String email=inputAnalyzerString("email",2);
+                        String password=inputAnalyzerString("password",8);
                         int id=idUsers;
                         users[numberUsersPresent]=new User(name, surname, password, id, email);
                         idUsers++;
@@ -317,7 +306,7 @@ public class Main {
             keyboard.nextLine();
         }
     }
-    private static String inputAnalyzer(String item,int length){
+    private static String inputAnalyzerString(String item,int length){
         Scanner keyboard=new Scanner(System.in);
         System.out.println(item+": ");
         String s=keyboard.nextLine();
@@ -332,6 +321,22 @@ public class Main {
            }
         }while(s.length()==0 || s.length()<length);
         return s;
+    }
+    private static int inputAnalyzerInt(String item,int length){
+        String s;
+        int n=0;
+        boolean execution;
+        do{
+            s=inputAnalyzerString(item, length);
+            try{
+                n=Integer.parseInt(s);
+                execution=true;
+            }catch(NumberFormatException e){
+                System.out.println("ERROR:invalid input insert because "+item+" contains letters");
+                execution=false;
+            }
+        }while(!execution);
+        return n;
     }
     private static boolean isDataValida(int giorno, int mese, int anno)
     {
