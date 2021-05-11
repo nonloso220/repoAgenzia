@@ -5,6 +5,7 @@
  */
 package com.mycompany.agenziadiviaggi;
 
+import exception.ItemNotFound;
 import java.util.Scanner;
 
 /**
@@ -81,48 +82,19 @@ public class Menu {
         se dopo la visualizzazione l'utente inserisce una stringa numerica non valida da un errore di -2 con il reinserimento
         se dopo la visualizzazione l'utente inserisce una stringa numerica valida ritorno il valore numerico(che verrà gestito nel main)
      */
-    public int sceltaMenu(int numeroNonUsato)
+    public int sceltaMenu(int numeroNonUsato) throws ItemNotFound
     {
         /*
         METHOD RETURN RULES:
-        se dopo la visualizzazione l'utente inserisce una stringa non numerica un errore di -1 con il reinserimento
-        se dopo la visualizzazione l'utente inserisce una stringa numerica non valida da un errore di -2 con il reinserimento
+        se dopo la visualizzazione l'utente inserisce una stringa numerica non valida da una eccezione con il reinserimento
         se dopo la visualizzazione l'utente inserisce una stringa numerica valida ritorno il valore numerico(che verrà gestito nel main)
         */
         int sceltaUtente=0;
-        int c=0;//id dell'errore
-        do
-        {
-            c=0;
-            visualizzaMenu();
-            System.out.println("scelta---> ");
-            String s=keyboard.nextLine();
-            for(int i=0;i<s.length();i++)
-            {
-                if(s.charAt(i)>='0' && s.charAt(i)<='9')
-                    i++;
-                else
-                    c=-1;
-            }
-            if(c==0)
-            {
-                sceltaUtente=Integer.parseInt(s);
-                if(sceltaUtente<0 || sceltaUtente>this.numeroVoci-1)
-                    c=-2;
-                else 
-                    return sceltaUtente;
-            }
-            if(c==-1)
-            {
-                System.out.println("errore -1");
-                keyboard.nextLine(); 
-            }
-            else if(c==-2)
-            {
-                System.out.println("errore -2");
-                keyboard.nextLine(); 
-            }
-        }while(c==-1 || c==-2);
-        return 0;
+        visualizzaMenu();
+        sceltaUtente=InputControlls.inputAnalyzerInt("scelta", 0);
+        if(sceltaUtente<0 || sceltaUtente>this.numeroVoci-1)
+            throw new exception.ItemNotFound("scelta");
+        else 
+            return sceltaUtente;
     }
 }
