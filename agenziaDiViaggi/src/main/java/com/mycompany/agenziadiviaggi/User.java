@@ -21,6 +21,7 @@ public class User {
     private String password;
     private String email;
     private int id;
+    private float wallet;
     private int numTravelPresent=0;/*counter travel*/
     private Travel[] travelUser;/*array travel*/
     private final int N_MAX_TRAVELS=20;/*maximum number of travels that can be entered*/
@@ -37,6 +38,7 @@ public class User {
         setPassword(password);
         setId(id);
         setEmail(email);
+        addCredit(0);
         this.travelUser=new Travel[N_MAX_TRAVELS];/*generates a series(array) of travelUser*/
     }
     /**
@@ -49,6 +51,7 @@ public class User {
         setPassword(u.getPassword());
         setId(u.getId());
         setEmail(u.getEmail());
+        addCredit(u.getWallet());
         this.travelUser=new Travel[N_MAX_TRAVELS];/*generated a series(array) of travelUser*/
         if(this.numTravelPresent!=0){
             for(int i=0;i<u.getNumTravelPresent();i++)/*copy series(array) of travelUser inside new travelUser*/{
@@ -154,9 +157,16 @@ public class User {
      * 
      * @return 
      */
+    public float getWallet() {
+        return wallet;
+    }
+    /**
+     * 
+     * @return 
+     */
     @Override
     public String toString()/*to string*/ {
-        String s="\nname: "+this.getName()+"\nsurname:"+this.getSurname()+"\npassword: "+this.getPassword()+"\nid: "+this.getId()+"\nnumber of travel: "+this.getNumTravelPresent();
+        String s="\nname: "+this.getName()+"\nsurname:"+this.getSurname()+"\npassword: "+this.getPassword()+"\nid: "+this.getId()+"\nnumber of travel: "+this.getNumTravelPresent()+"\nwallet: "+this.getWallet();
         return s;
     }
     /*Other methods*/
@@ -168,6 +178,10 @@ public class User {
         
         try{
             travelUser[numTravelPresent]=new Travel(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+            if(wallet>travelUser[numTravelPresent].calculateTravelCost()){
+                this.wallet-=travelUser[numTravelPresent].calculateTravelCost();
+                travelUser[numTravelPresent].setPaidTravel();
+            }
             numTravelPresent++;
         }
         catch(ArrayIndexOutOfBoundsException firstException){
@@ -179,9 +193,12 @@ public class User {
         /*
         parameter checks must be done within the calling method / class
         */
-        
         try{
             travelUser[numTravelPresent]=new Travel(t);
+            if(wallet>travelUser[numTravelPresent].calculateTravelCost()){
+                this.wallet-=travelUser[numTravelPresent].calculateTravelCost();
+                travelUser[numTravelPresent].setPaidTravel();
+            }
             numTravelPresent++;
         }
         catch(ArrayIndexOutOfBoundsException firstException){
@@ -253,7 +270,9 @@ public class User {
         }
         throw new exception.ItemNotFound("idTrave");/*id not found*/
     }
-    
+    public void addCredit(float credit){
+        this.wallet+=credit;
+    }
     /*private void travelPlanner() throws travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
