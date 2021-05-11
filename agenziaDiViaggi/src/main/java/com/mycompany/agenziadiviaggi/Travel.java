@@ -6,6 +6,7 @@
 package com.mycompany.agenziadiviaggi;
 
 import java.time.LocalDate;
+import static java.time.temporal.ChronoUnit.DAYS;
 
 /**
  *
@@ -22,6 +23,9 @@ class Travel {
     private int id;
     private LocalDate startTravel;
     private LocalDate endTravel;
+    private static float FIXED_COST=100;
+    private float cost;
+    private boolean paidTravel=false;
     /**
      * 
      * @param destination
@@ -80,6 +84,12 @@ class Travel {
     }
     /**
      * 
+     */
+    public void setPaidTravel() {
+        this.paidTravel =true;
+    }
+    /**
+     * 
      * @return 
      */
     public String getDestination() {
@@ -106,6 +116,12 @@ class Travel {
     public LocalDate getEndTravel() {
         return endTravel;
     }
+    public String getPaidTravel(){
+        String s="no";
+        if(this.paidTravel)
+            s="yes";
+        return s;
+    }
     /**
      * @return
      * 
@@ -113,7 +129,18 @@ class Travel {
      */
     @Override
     public String toString()/*to string*/ {
-        String s="\ndestination: "+this.getDestination()+"\ntravel id: "+this.getId()+"\nstart travel: "+this.getStartTravel()+"\nend travel: "+this.getEndTravel();
+        String s="\ndestination: "+this.getDestination()+"\ntravel id: "+this.getId()+"\nstart travel: "+this.getStartTravel()+"\nend travel: "+this.getEndTravel()+"\ncost: "+this.calculateTravelCost()+"\npaidTravel: "+this.getPaidTravel();
         return s;
+    }
+    /**
+     * 
+     * @return 
+     * 
+     * 
+     */
+    public float calculateTravelCost(){
+        float daysBetween = DAYS.between(startTravel, endTravel);
+        cost=FIXED_COST*daysBetween;
+        return cost;
     }
 }
