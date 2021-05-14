@@ -40,8 +40,9 @@ public class Main {
         l[2]="cancel a travel";
         l[3]="show Travels Sorted By Entry";
         l[4]="show Travels Sorted By Departure";
-        l[5]="postpone Travel";
-        l[6]="delete the account";
+        l[5]="show destination"
+        l[6]="postpone Travel";
+        l[7]="delete the account";
         Menu mLogin=new Menu(s);
         Menu mUser=new Menu(l);
         //User u=new User("luca", "gabossi", "123", 0, "lucagabossis@gmail.com");
@@ -195,7 +196,10 @@ public class Main {
                                                     }
                                                     break;
                                                 }
-                                                case 5:{/*postpone Travel*/
+                                                case 5{/*show destination*/
+                                                    
+                                                }
+                                                case 6:{/*postpone Travel*/
                                                     if(users[i].getNumTravelPresent()==0){
                                                         System.out.println("unable to perform this method, enter a trip first");
                                                         break;
@@ -238,7 +242,7 @@ public class Main {
                                                     }
                                                     break;
                                                 }
-                                                case 6:{/*delete the account*/
+                                                case 7:{/*delete the account*/
                                                     System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
                                                     String safety=keyboard.nextLine();
                                                     if(safety.compareToIgnoreCase("n")==0){
