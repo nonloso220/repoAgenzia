@@ -301,10 +301,10 @@ public class Main {
                         break;
                     }
                     case 2:{
-                        
                         String name=InputControlls.inputAnalyzerString("name",3);
                         String surname=InputControlls.inputAnalyzerString("surname",1);
                         String email=InputControlls.inputAnalyzerString("email",2);
+                        email=controlEmail(numberUsersPresent, users, email);
                         String password=InputControlls.inputAnalyzerString("password",8);
                         int id=idUsers;
                         users[numberUsersPresent]=new User(name, surname, password, id, email);
@@ -355,5 +355,16 @@ public class Main {
         }
         else
             throw new exception.FileException("no user present, press any key to continue");
+    }
+    private static String controlEmail(int numberUsersPresent,User users[],String email){
+        for(int i=0;i<numberUsersPresent;i++){
+            if(email.compareToIgnoreCase(users[i].getEmail())==0){
+                System.out.println("Error: invalid email, re-enter");
+                email=InputControlls.inputAnalyzerString("email",2);
+                email=controlEmail(numberUsersPresent, users, email);
+                return email;
+            }
+        }
+        return email;
     }
 }
