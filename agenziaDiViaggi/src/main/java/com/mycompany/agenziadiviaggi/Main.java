@@ -34,13 +34,13 @@ public class Main {
         s[1]="log into an existing account";
         s[2]="create an account and log into it";
         s[3]="exports users to CSV files";
-        String[] l=new String[7];
+        String[] l=new String[8];
         l[0]="come back";
         l[1]="Travel planning";
         l[2]="cancel a travel";
         l[3]="show Travels Sorted By Entry";
         l[4]="show Travels Sorted By Departure";
-        l[5]="show destination";
+        l[5]="show destinations";
         l[6]="postpone Travel";
         l[7]="delete the account";
         Menu mLogin=new Menu(s);
@@ -197,7 +197,8 @@ public class Main {
                                                     break;
                                                 }
                                                 case 5:{/*show destination*/
-                                                    
+                                                    System.out.println(users[i].showDestinations());
+                                                    break;
                                                 }
                                                 case 6:{/*postpone Travel*/
                                                     if(users[i].getNumTravelPresent()==0){
