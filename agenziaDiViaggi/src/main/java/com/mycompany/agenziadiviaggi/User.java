@@ -273,6 +273,34 @@ public class User {
     public void addCredit(float credit){
         this.wallet+=credit;
     }
+    public String showDestinations(){/*CONTROLLA*/
+        String s =" ";
+        int counter=0;
+        if(this.numTravelPresent==0){
+            return s+="there are no travel";
+        }
+        for(int i=0;i<this.numTravelPresent;i++){
+            for(int j=1;j<this.numTravelPresent;j++){
+                if(i!=j){
+                    if(this.travelUser[i].getDestination().compareToIgnoreCase(this.travelUser[j].getDestination())!=0){
+                        if(j==this.numTravelPresent-1){
+                            System.out.println("destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n");
+                            counter++;
+                        }    
+                    }
+                    else if(this.travelUser[i].getDestination().compareToIgnoreCase(this.travelUser[j].getDestination())==0){
+                        if(i<j)
+                            break;
+                    }
+                }
+                else if(i==this.numTravelPresent-1){
+                    System.out.println("destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n");
+                    counter++;
+                }      
+            }
+        } 
+        return s;
+    }
     /*private void travelPlanner() throws travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
