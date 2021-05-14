@@ -40,7 +40,7 @@ public class Main {
         l[2]="cancel a travel";
         l[3]="show Travels Sorted By Entry";
         l[4]="show Travels Sorted By Departure";
-        l[5]="show destination"
+        l[5]="show destination";
         l[6]="postpone Travel";
         l[7]="delete the account";
         Menu mLogin=new Menu(s);
@@ -196,7 +196,7 @@ public class Main {
                                                     }
                                                     break;
                                                 }
-                                                case 5{/*show destination*/
+                                                case 5:{/*show destination*/
                                                     
                                                 }
                                                 case 6:{/*postpone Travel*/
