@@ -23,7 +23,7 @@ class Travel {
     private int id;
     private LocalDate startTravel;
     private LocalDate endTravel;
-    private static float FIXED_COST=100;
+    private static float FIXED_COST=25;
     private float cost;
     private boolean paidTravel=false;
     /**
