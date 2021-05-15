@@ -274,17 +274,25 @@ public class User {
         this.wallet+=credit;
     }
     public String showDestinations(){/*CONTROLLA*/
-        String s =" ";
+        String s="";
         int counter=0;
         if(this.numTravelPresent==0){
             return s+="there are no travel";
+        }
+        if(this.numTravelPresent==1){
+            for(int i=0;i<this.numTravelPresent;i++){
+                if(this.travelUser[i]!=null){
+                    s+="destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n";
+                    return s;
+                }
+            }
         }
         for(int i=0;i<this.numTravelPresent;i++){
             for(int j=1;j<this.numTravelPresent;j++){
                 if(i!=j){
                     if(this.travelUser[i].getDestination().compareToIgnoreCase(this.travelUser[j].getDestination())!=0){
                         if(j==this.numTravelPresent-1){
-                            System.out.println("destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n");
+                            s+="destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n";
                             counter++;
                         }    
                     }
@@ -294,7 +302,7 @@ public class User {
                     }
                 }
                 else if(i==this.numTravelPresent-1){
-                    System.out.println("destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n");
+                    s+="destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n";
                     counter++;
                 }      
             }
