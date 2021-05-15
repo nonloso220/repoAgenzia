@@ -45,8 +45,7 @@ public class Main {
         l[7]="delete the account";
         Menu mLogin=new Menu(s);
         Menu mUser=new Menu(l);
-        //User u=new User("luca", "gabossi", "123", 0, "lucagabossis@gmail.com");
-        //users[0]=new User(u);
+        User administrator=new User("admin", "admin", "2KY5H8l2", -1, "administrator.travelAgency@Yahoo.com");
         try{
             do{
                 if(c2)
@@ -202,6 +201,10 @@ public class Main {
                                                     break;
                                                 }
                                                 case 5:{/*show destination*/
+                                                    if(users[i].getNumTravelPresent()==0){
+                                                        System.out.println("unable to perform this method, enter a trip first");
+                                                        break;
+                                                    }
                                                     System.out.println(users[i].showDestinations());
                                                     break;
                                                 }
