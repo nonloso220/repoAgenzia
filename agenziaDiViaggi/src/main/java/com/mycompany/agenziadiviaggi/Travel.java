@@ -39,6 +39,7 @@ class Travel {
         setId(id);
         setStartTravel(startDayOfMonths, startValueOfMonth, startYear);
         setEndTravel(endDayOfMonths, endValueOfMonth, endYear);
+        calculateTravelCost();
     }
     /**
      * 
@@ -49,6 +50,7 @@ class Travel {
         setId(t.getId());
         setStartTravel(t.getStartTravel().getDayOfMonth(), t.getStartTravel().getMonthValue(),t.getStartTravel().getYear());
         setEndTravel(t.getEndTravel().getDayOfMonth(), t.getEndTravel().getMonthValue(),t.getEndTravel().getYear());
+        calculateTravelCost();
     }
     /**
      * 
@@ -88,6 +90,8 @@ class Travel {
     public void setPaidTravel() {
         this.paidTravel =true;
     }
+
+    
     /**
      * 
      * @return 
@@ -122,6 +126,11 @@ class Travel {
             s="yes";
         return s;
     }
+
+    public float getCost() {
+        return cost;
+    }
+    
     /**
      * @return
      * 
@@ -129,7 +138,7 @@ class Travel {
      */
     @Override
     public String toString()/*to string*/ {
-        String s="\ndestination: "+this.getDestination()+"\ntravel id: "+this.getId()+"\nstart travel: "+this.getStartTravel()+"\nend travel: "+this.getEndTravel()+"\ncost: "+this.calculateTravelCost()+"\npaidTravel: "+this.getPaidTravel();
+        String s="\ndestination: "+this.getDestination()+"\ntravel id: "+this.getId()+"\nstart travel: "+this.getStartTravel()+"\nend travel: "+this.getEndTravel()+"\ncost: "+this.getCost()+"\npaidTravel: "+this.getPaidTravel();
         return s;
     }
     /**
@@ -139,8 +148,8 @@ class Travel {
      * 
      */
     public float calculateTravelCost(){
-        float daysBetween = DAYS.between(startTravel, endTravel);
-        cost=FIXED_COST*daysBetween;
+        float daysBetween = DAYS.between(this.startTravel, this.endTravel);
+        this.cost=FIXED_COST*daysBetween;
         return cost;
     }
 }

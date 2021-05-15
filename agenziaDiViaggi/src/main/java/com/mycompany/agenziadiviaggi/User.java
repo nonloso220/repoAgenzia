@@ -6,6 +6,8 @@
 package com.mycompany.agenziadiviaggi;
 
 import exception.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -172,10 +174,6 @@ public class User {
     /*Other methods*/
     public void travelPlanning(String destination, int id, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws MaximumReached, travelsNotFound
     {
-        /*
-        parameter checks must be done within the calling method / class
-        */
-        
         try{
             travelUser[numTravelPresent]=new Travel(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
             if(wallet>travelUser[numTravelPresent].calculateTravelCost()){
@@ -190,9 +188,6 @@ public class User {
     }
     public void travelPlanning(Travel t) throws MaximumReached
     {
-        /*
-        parameter checks must be done within the calling method / class
-        */
         try{
             travelUser[numTravelPresent]=new Travel(t);
             if(wallet>travelUser[numTravelPresent].calculateTravelCost()){
@@ -207,9 +202,6 @@ public class User {
     }
     public int cancelATravel(int idTravel) throws ItemNotFound, travelsNotFound
     {
-        /*
-        parameter checks must be done within the calling method / class
-        */
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
         for(int i=0;i<numTravelPresent;i++){
@@ -229,8 +221,11 @@ public class User {
             throw new exception.travelsNotFound();
         String s="";
         try{
+            s+="\nTRAVEL USER: \n";
             for(int i=0;i<numTravelPresent;i++){
-                s+="\nTRAVEL: "+i+travelUser[i].toString();
+                s+="\n----------------------------------------";
+                s+=travelUser[i].toString();
+                s+="\n----------------------------------------";
             }
             return s;
         }
@@ -238,16 +233,18 @@ public class User {
             throw new exception.NullPointer();
         }
     }
-    public String showTravelsSortedByDeparture() throws NullPointer, travelsNotFound{//ERROR CONTROL THIS METHOD (null pointer declared)
+    public String showTravelsSortedByDeparture() throws NullPointer, travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
         String s="";
         try{
             Travel[] array=new Travel[this.numTravelPresent];
-            //travelPlanner();
             array=Ordinatore.selectionSortStartTravelCrescente(travelUser);
+            s+="\nTRAVEL USER: \n";
             for(int i=0;i<numTravelPresent;i++){
-                s+="\ntravel to location "+i+" is:\n"+array[i].toString();
+                s+="\n----------------------------------------";
+                s+=array[i].toString();
+                s+="\n----------------------------------------";
             }
             return s;
         }
@@ -256,9 +253,6 @@ public class User {
         }
     }
     public int postponeTravel(int idTravel, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws ItemNotFound, travelsNotFound{
-        /*
-        parameter checks must be done within the calling method / class
-        */
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
         for(int i=0;i<numTravelPresent;i++){
@@ -268,21 +262,21 @@ public class User {
                 return 0;
             }
         }
-        throw new exception.ItemNotFound("idTrave");/*id not found*/
+        throw new exception.ItemNotFound("idTrave");
     }
     public void addCredit(float credit){
         this.wallet+=credit;
     }
-    public String showDestinations(){/*CONTROLLA*/
+    public String showDestinations(){
         String s="";
-        int counter=0;
         if(this.numTravelPresent==0){
             return s+="there are no travel";
         }
+        s+="\nDESTINATIONS OF YOUR TRAVELS:\n";
         if(this.numTravelPresent==1){
             for(int i=0;i<this.numTravelPresent;i++){
                 if(this.travelUser[i]!=null){
-                    s+="destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n";
+                    s+=this.travelUser[i].getDestination()+"\n";
                     return s;
                 }
             }
@@ -292,8 +286,7 @@ public class User {
                 if(i!=j){
                     if(this.travelUser[i].getDestination().compareToIgnoreCase(this.travelUser[j].getDestination())!=0){
                         if(j==this.numTravelPresent-1){
-                            s+="destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n";
-                            counter++;
+                            s+=this.travelUser[i].getDestination()+"\n";
                         }    
                     }
                     else if(this.travelUser[i].getDestination().compareToIgnoreCase(this.travelUser[j].getDestination())==0){
@@ -302,28 +295,12 @@ public class User {
                     }
                 }
                 else if(i==this.numTravelPresent-1){
-                    s+="destinatination "+counter+" :"+this.travelUser[i].getDestination()+"\n";
-                    counter++;
+                    s+=this.travelUser[i].getDestination()+"\n";
                 }      
             }
         } 
         return s;
     }
-    /*private void travelPlanner() throws travelsNotFound{
-        if(this.numTravelPresent==0)
-            throw new exception.travelsNotFound();
-        boolean exchangeTookPlace=false;
-        for(int i=0;i<this.getN_MAX_TRAVELS();i++){
-            exchangeTookPlace=false;
-            if(this.travelUser[i]==null){
-                for(int j=i+1;j<this.getN_MAX_TRAVELS()-1;j++){
-                    if(this.travelUser[j]!=null && exchangeTookPlace!=true){
-                        Ordinatore.scambia(travelUser, i, j);
-                        exchangeTookPlace=true;
-                    }
-                }
-            }
-        }
-    }*/
+    
     
 }

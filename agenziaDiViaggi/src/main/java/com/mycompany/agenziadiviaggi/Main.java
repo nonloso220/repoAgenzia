@@ -133,7 +133,6 @@ public class Main {
                                                         System.out.println("the travel ID is: "+id);
                                                         System.out.println("Successful operation, press any key to continue");
                                                         keyboard.nextLine();
-                                                        keyboard.nextLine();
                                                         idTravel++;
                                                     } catch (MaximumReached ex) {
                                                         System.out.println(ex.toString());
@@ -141,7 +140,6 @@ public class Main {
                                                         System.out.println(ex.toString());
                                                     }catch(DateTimeException ex){
                                                         System.out.println("Error: the date is invalid");
-                                                        keyboard.nextLine();
                                                         keyboard.nextLine();
                                                     }
                                                     break;
@@ -151,6 +149,13 @@ public class Main {
                                                         System.out.println("unable to perform this method, enter a trip first");
                                                         break;
                                                     }
+                                                try {
+                                                    System.out.println(users[i].showTravelsSortedByEntry());
+                                                } catch (NullPointer ex) {
+                                                    System.out.println(ex.toString());
+                                                } catch (travelsNotFound ex) {
+                                                    System.out.println(ex.toString());
+                                                }
                                                     int id=InputControlls.inputAnalyzerInt("enter the ID of the trip you want to delete",1);
                                                     try {
                                                         users[i].cancelATravel(id);
@@ -238,7 +243,6 @@ public class Main {
                                                         System.out.println(ex.toString());
                                                     }catch(DateTimeException ex){
                                                         System.out.println("Error: the date is invalid");
-                                                        keyboard.nextLine();
                                                         keyboard.nextLine();
                                                     }
                                                     break;
