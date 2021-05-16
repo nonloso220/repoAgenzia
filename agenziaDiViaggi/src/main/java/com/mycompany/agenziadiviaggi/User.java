@@ -6,6 +6,7 @@
 package com.mycompany.agenziadiviaggi;
 
 import exception.*;
+import java.io.Serializable;
 
 /**
  *
@@ -15,7 +16,7 @@ import exception.*;
  * 
  * 
  */
-public class User {
+public class User implements Serializable{
     private String name;
     private String surname;
     private String password;

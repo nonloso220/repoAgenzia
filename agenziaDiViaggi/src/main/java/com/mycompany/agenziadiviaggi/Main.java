@@ -7,7 +7,12 @@ package com.mycompany.agenziadiviaggi;
 
 import exception.*;
 import file.TextFile;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.time.DateTimeException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -19,34 +24,59 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        int N_MAX_USERS = 100;
-        int numberUsersPresent = 0;
-        int userChoice = -1;
-        int idTravel = 0;
-        int idUsers = 0;
+        Scanner keyboard=new Scanner(System.in);
+        int N_MAX_USERS=100;
+        int numberUsersPresent=0;
+        int userChoice=-1;
+        int idTravel=0;
+        int idUsers=0;
         int startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear;
         boolean dateCorrect;
-        boolean c2 = false;/*when user selected a case 2(generete an account and log into it) is true*/
-        String nsmeFileTxt = "file-exported-to-users-CSV.txt";
-        String[] s = new String[4];
-        User[] users = new User[N_MAX_USERS];
-        s[0] = "exit the program";
-        s[1] = "log into an existing account";
-        s[2] = "create an account and log into it";
-        s[3] = "exports users to CSV files";
+        boolean c2=false;/*when user selected a case 2(generete an account and log into it) is true*/
+        String nsmeFileTxt="file-exported-to-users-CSV.txt";
+        String nsmeFileBinary="binary-file-for-users.bin";
+        String[] s=new String[5];
+        User[] users=new User[N_MAX_USERS];
+        s[0]="exit the program";
+        s[1]="log into an existing account";
+        s[2]="create an account and log into it";
+        s[3]="exports users to CSV files";
+        s[4]="save to binary file";
         String[] l = new String[8];
-        l[0] = "come back";
-        l[1] = "Travel planning";
-        l[2] = "cancel a travel";
-        l[3] = "show Travels Sorted By Entry";
-        l[4] = "show Travels Sorted By Departure";
-        l[5] = "show destinations";
-        l[6] = "postpone Travel";
-        l[7] = "delete the account";
-        Menu mLogin = new Menu(s);
-        Menu mUser = new Menu(l);
-        User administrator = new User("admin", "admin", "2KY5H8l2", -1, "administrator.travelAgency@Yahoo.com");
+        l[0]="come back";
+        l[1]="Travel planning";
+        l[2]="cancel a travel";
+        l[3]="show Travels Sorted By Entry";
+        l[4]="show Travels Sorted By Departure";
+        l[5]="show destinations";
+        l[6]="postpone Travel";
+        l[7]="delete the account";
+        Menu mLogin=new Menu(s);
+        Menu mUser=new Menu(l);
+        User administrator=new User("admin", "admin", "2KY5H8l2", -1, "administrator.travelAgency@Yahoo.com");
+        try{ 
+            FileInputStream f1=new FileInputStream(nsmeFileBinary);
+            ObjectInputStream reader=new ObjectInputStream(f1); 
+            try{
+                users=(User[])reader.readObject();
+                idTravel=(int)reader.readInt();//chiedi al prof
+                idUsers=(int)reader.readInt();//chiedi al prof
+                numberUsersPresent=(int)reader.readInt();//chiedi al prof
+                reader.close();
+                System.out.println("\nSuccessful operation, press any key to continue");
+                keyboard.nextLine();
+            }catch (ClassNotFoundException ex){
+                reader.close();
+                System.out.println("Error: unable to read file, press any key to continue");
+                keyboard.nextLine();
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("Error: cannot find the file, press any key to continue");
+            keyboard.nextLine();
+        } catch (IOException ex) {
+            System.out.println("Error: unable to open file, press any key to continue");
+            keyboard.nextLine();
+        }
         try {
             do {
                 if (c2) {
@@ -118,9 +148,9 @@ public class Main {
                                                         }
                                                     } while (!dateCorrect);
                                                     do {
-                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths: ", 1);
-                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth: ", 1);
-                                                        endYear = InputControlls.inputAnalyzerInt("endYear: ", 1);
+                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
                                                         dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
                                                         if (dateCorrect) {
                                                             break;
@@ -337,6 +367,25 @@ public class Main {
                             keyboard.nextLine();
                         }
                     }
+                    case 4: {
+                        FileOutputStream f1;
+                        try {
+                            f1 = new FileOutputStream(nsmeFileBinary);
+                            ObjectOutputStream writer=new ObjectOutputStream(f1);
+                            writer.writeObject(users);
+                            writer.write(idTravel);
+                            writer.write(idUsers);
+                            writer.write(numberUsersPresent);
+                            writer.flush();
+                            writer.close();
+                            System.out.println("\nSuccessful operation, press any key to continue");
+                            keyboard.nextLine();
+                        } catch(FileNotFoundException ex) {
+                            System.out.println(ex.toString());
+                        } catch(IOException ex) {
+                            System.out.println(ex.toString());
+                        }
+                    }
                 }
             } while (userChoice != 0);
         } catch (InputMismatchException | NumberFormatException e1) {
@@ -344,42 +393,39 @@ public class Main {
             keyboard.nextLine();
         }
     }
-
     private static boolean isDataValida(int giorno, int mese, int anno) {
-        if (giorno < 0 || giorno > 31) {
+        if(giorno<0 || giorno>31) {
             return false;
         }
-        if (mese < 0 || mese > 12) {
+        if(mese<0 || mese>12) {
             return false;
         }
-        if (anno < 0 || anno > 9999) {
+        if(anno<0 || anno>9999) {
             return false;
         } else {
             return true;
         }
     }
-
     public static void salvaClassInFileCSV(String nomeFile, int numberUsersPresent, User users[]) throws IOException, FileException {
-        if (numberUsersPresent != 0) {
-            TextFile f1 = new TextFile('W', nomeFile);
-            for (int i = 0; i < numberUsersPresent; i++) {
-                if (users[i] != null) {
-                    f1.toFile(users[i].getId() + ";" + users[i].getName() + ";" + users[i].getSurname() + ";" + users[i].getEmail() + ";" + users[i].getPassword() + ";");
+        if(numberUsersPresent != 0){
+            TextFile f1=new TextFile('W',nomeFile);
+            for(int i=0;i<numberUsersPresent;i++) {
+                if(users[i]!=null){
+                    f1.toFile(users[i].getId()+";"+users[i].getName()+";"+users[i].getSurname()+";"+users[i].getEmail()+";"+users[i].getPassword()+";");
                 }
             }
-            f1.toFile(numberUsersPresent + ";");
+            f1.toFile(numberUsersPresent+";");
             f1.close();
         } else {
             throw new exception.FileException("no user present, press any key to continue");
         }
     }
-
     private static String controlEmail(int numberUsersPresent, User users[], String email) {
-        for (int i = 0; i < numberUsersPresent; i++) {
-            if (email.compareToIgnoreCase(users[i].getEmail()) == 0) {
+        for (int i=0;i<numberUsersPresent;i++) {
+            if(email.compareToIgnoreCase(users[i].getEmail())==0) {
                 System.out.println("Error: invalid email, re-enter");
-                email = InputControlls.inputAnalyzerString("email", 2);
-                email = controlEmail(numberUsersPresent, users, email);
+                email=InputControlls.inputAnalyzerString("email", 2);
+                email=controlEmail(numberUsersPresent, users, email);
                 return email;
             }
         }

@@ -5,6 +5,7 @@
  */
 package com.mycompany.agenziadiviaggi;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
 
@@ -18,7 +19,7 @@ import static java.time.temporal.ChronoUnit.DAYS;
  * 
  * 
  */
-class Travel {
+class Travel implements Serializable{
     private String destination;
     private int id;
     private LocalDate startTravel;
