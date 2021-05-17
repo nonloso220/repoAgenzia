@@ -10,6 +10,13 @@ package com.mycompany.agenziadiviaggi;
  * @author luca
  */
 public class Ordinatore {
+    public static void scambia(User[] v,int posizione1,int posizione2)
+    {
+        User c;
+        c=v[posizione1];
+        v[posizione1]=v[posizione2];
+        v[posizione2]=c;
+    }
     public static void scambia(Travel[] v,int posizione1,int posizione2)
     {
         Travel c;
@@ -30,6 +37,22 @@ public class Ordinatore {
         c=v[posizione1];
         v[posizione1]=v[posizione2];
         v[posizione2]=c;
+    }
+    public static User[] selectionSortAlphabeticUsers(int n,User users[]){
+        User[] ordinato=new User[n];
+        for(int i=0;i<n;i++)
+            ordinato[i]=users[i];
+        for(int i=0;i<ordinato.length-1;i++)
+        {
+            for(int j=i+1;j<ordinato.length;j++)
+            {
+                if(ordinato[j].getName().compareToIgnoreCase(ordinato[i].getName())<0){
+                    if(ordinato[j].getSurname().compareToIgnoreCase(ordinato[i].getSurname())<0)
+                        scambia(ordinato,i,j);
+                }   
+            }
+        }
+        return ordinato; 
     }
     public static Travel[] selectionSortStartTravelCrescente(Travel[] a)
     {
