@@ -58,9 +58,9 @@ public class Main {
             FileInputStream f1=new FileInputStream(nsmeFileBinary);
             ObjectInputStream reader=new ObjectInputStream(f1); 
             try{
-                idTravel=(Integer)reader.readObject();//chiedi al prof
-                idUsers=(Integer)reader.readObject();//chiedi al prof
-                numberUsersPresent=(Integer)reader.readObject();//chiedi al prof
+                idTravel=(int)reader.readInt();//chiedi al prof
+                idUsers=(int)reader.readInt();//chiedi al prof
+                numberUsersPresent=(int)reader.readInt();//chiedi al prof
                 users=(User[])reader.readObject();
                 reader.close();
                 System.out.println("\nSuccessful operation, press any key to continue");
@@ -190,7 +190,6 @@ public class Main {
                                                     try {
                                                         users[i].cancelATravel(id);
                                                         System.out.println("Successful operation, press any key to continue");
-                                                        keyboard.nextLine();
                                                         keyboard.nextLine();
                                                     } catch (ItemNotFound ex) {
                                                         System.out.println(ex.toString());
@@ -372,9 +371,9 @@ public class Main {
                         try {
                             f1 = new FileOutputStream(nsmeFileBinary);
                             ObjectOutputStream writer=new ObjectOutputStream(f1);
-                            writer.write(idTravel);
-                            writer.write(idUsers);
-                            writer.write(numberUsersPresent);
+                            writer.writeInt(idTravel);
+                            writer.writeInt(idUsers);
+                            writer.writeInt(numberUsersPresent);
                             writer.writeObject(users);
                             writer.flush();
                             writer.close();
