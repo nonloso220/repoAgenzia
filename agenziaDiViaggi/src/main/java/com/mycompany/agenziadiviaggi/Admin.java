@@ -11,6 +11,13 @@ import static java.time.temporal.ChronoUnit.DAYS;
 /**
  *
  * @author luca gabossi
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 public class Admin {
     private String name;
@@ -18,6 +25,14 @@ public class Admin {
     private String password;
     private String email;
     private int id;
+    /**
+     * 
+     * @param name
+     * @param surname
+     * @param password
+     * @param email
+     * @param id 
+     */
     public Admin(String name, String surname, String password, String email, int id) {
         setName(name);
         setSurname(surname);
@@ -25,40 +40,92 @@ public class Admin {
         setEmail(email);
         setId(id);
     }
+    /**
+     * 
+     * @return 
+     */
     public String getName() {
         return name;
     }
+    /**
+     * 
+     * @param name 
+     */
     public void setName(String name) {
         this.name = name;
     }
+    /**
+     * 
+     * @return 
+     */
     public String getSurname() {
         return surname;
     }
+    /**
+     * 
+     * @param surname 
+     */
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    /**
+     * 
+     * @return 
+     */
     public String getPassword() {
         return password;
     }
+    /**
+     * 
+     * @param password 
+     */
     public void setPassword(String password) {
         this.password = password;
     }
+    /**
+     * 
+     * @return 
+     */
     public String getEmail() {
         return email;
     }
+    /**
+     * 
+     * @param email 
+     */
     public void setEmail(String email) {
         this.email = email;
     }
+    /**
+     * 
+     * @return 
+     */
     public int getId() {
         return id;
     }
+    /**
+     * 
+     * @param id 
+     */
     public void setId(int id) {
         this.id = id;
     }
+    /**
+     * 
+     * @return 
+     */
     @Override
     public String toString() {
         return "\nname: "+this.getName()+"\nsurname: "+this.getSurname()+"\npassword: "+this.getPassword()+"\nemail: "+this.getEmail()+"\nid: "+this.getId();
     }
+    /**
+     * 
+     * @param users
+     * @param numberUsersPresent
+     * @param date
+     * @param destination
+     * @return 
+     */
     public String viewParticipantsInATravel(User users[],int numberUsersPresent,LocalDate date,String destination){
         if(numberUsersPresent==0)
             return "no user present";
