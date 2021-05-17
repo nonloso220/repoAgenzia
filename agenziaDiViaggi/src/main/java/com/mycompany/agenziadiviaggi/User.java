@@ -27,13 +27,12 @@ public class User implements Serializable{
     private Travel[] travelUser;/*array travel*/
     private final int N_MAX_TRAVELS=20;/*maximum number of travels that can be entered*/
     /**
-     * 
      * @param name
      * @param surname
      * @param password
      * @param id 
      */
-    public User(String name, String surname, String password, int id, String email)/*first costructor*/{
+    public User(String name, String surname, String password, int id, String email){
         setName(name);
         setSurname(surname);
         setPassword(password);
@@ -46,7 +45,7 @@ public class User implements Serializable{
      * 
      * @param u 
      */
-    public User(User u)/*copy costructor*/{
+    public User(User u){
         setName(u.getName());
         setSurname(u.getSurname());
         setPassword(u.getPassword());
@@ -170,9 +169,20 @@ public class User implements Serializable{
         String s="\nname: "+this.getName()+"\nsurname:"+this.getSurname()+"\npassword: "+this.getPassword()+"\nid: "+this.getId()+"\nnumber of travel: "+this.getNumTravelPresent()+"\nwallet: "+this.getWallet();
         return s;
     }
-    /*Other methods*/
-    public void travelPlanning(String destination, int id, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws MaximumReached, travelsNotFound
-    {
+    /**
+     * 
+     * @param destination
+     * @param id
+     * @param startDayOfMonths
+     * @param startValueOfMonth
+     * @param startYear
+     * @param endDayOfMonths
+     * @param endValueOfMonth
+     * @param endYear
+     * @throws MaximumReached
+     * @throws travelsNotFound 
+     */
+    public void travelPlanning(String destination, int id, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws MaximumReached, travelsNotFound{
         try{
             travelUser[numTravelPresent]=new Travel(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
             if(wallet>travelUser[numTravelPresent].calculateTravelCost()){
@@ -185,8 +195,12 @@ public class User implements Serializable{
             throw new exception.MaximumReached(N_MAX_TRAVELS);
         }
     }
-    public void travelPlanning(Travel t) throws MaximumReached
-    {
+    /**
+     * 
+     * @param t
+     * @throws MaximumReached 
+     */
+    public void travelPlanning(Travel t) throws MaximumReached{
         try{
             travelUser[numTravelPresent]=new Travel(t);
             if(wallet>travelUser[numTravelPresent].calculateTravelCost()){
@@ -199,6 +213,13 @@ public class User implements Serializable{
             throw new exception.MaximumReached(N_MAX_TRAVELS);
         }
     }
+    /**
+     * 
+     * @param idTravel
+     * @return
+     * @throws ItemNotFound
+     * @throws travelsNotFound 
+     */
     public int cancelATravel(int idTravel) throws ItemNotFound, travelsNotFound
     {
         if(this.numTravelPresent==0)
@@ -215,6 +236,12 @@ public class User implements Serializable{
         }
         throw new exception.ItemNotFound("idTravel");/*id not found*/
     }
+    /**
+     * 
+     * @return
+     * @throws NullPointer
+     * @throws travelsNotFound 
+     */
     public String showTravelsSortedByEntry() throws NullPointer, travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
@@ -232,6 +259,12 @@ public class User implements Serializable{
             throw new exception.NullPointer();
         }
     }
+    /**
+     * 
+     * @return
+     * @throws NullPointer
+     * @throws travelsNotFound 
+     */
     public String showTravelsSortedByDeparture() throws NullPointer, travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
@@ -251,6 +284,19 @@ public class User implements Serializable{
             throw new exception.NullPointer();
         }
     }
+    /**
+     * 
+     * @param idTravel
+     * @param startDayOfMonths
+     * @param startValueOfMonth
+     * @param startYear
+     * @param endDayOfMonths
+     * @param endValueOfMonth
+     * @param endYear
+     * @return
+     * @throws ItemNotFound
+     * @throws travelsNotFound 
+     */
     public int postponeTravel(int idTravel, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws ItemNotFound, travelsNotFound{
         if(this.numTravelPresent==0)
             throw new exception.travelsNotFound();
@@ -263,9 +309,17 @@ public class User implements Serializable{
         }
         throw new exception.ItemNotFound("idTrave");
     }
+    /**
+     * 
+     * @param credit 
+     */
     public void addCredit(float credit){
         this.wallet+=credit;
     }
+    /**
+     * 
+     * @return 
+     */
     public String showDestinations(){
         String s="";
         if(this.numTravelPresent==0){
@@ -300,6 +354,4 @@ public class User implements Serializable{
         } 
         return s;
     }
-    
-    
 }
