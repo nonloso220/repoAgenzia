@@ -27,10 +27,11 @@ public class User implements Serializable{
     private Travel[] travelUser;/*array travel*/
     private final int N_MAX_TRAVELS=20;/*maximum number of travels that can be entered*/
     /**
-     * @param name
-     * @param surname
-     * @param password
-     * @param id 
+     * is the constructor receives as input a name, surname, password, id.
+     * @param name:
+     * @param surname:
+     * @param password:
+     * @param id: 
      */
     public User(String name, String surname, String password, int id, String email){
         setName(name);
