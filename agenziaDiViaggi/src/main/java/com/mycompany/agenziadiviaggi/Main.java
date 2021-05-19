@@ -133,7 +133,8 @@ public class Main {
                                             if (dateCorrect) {
                                                 break;
                                             } else {
-                                                System.out.println("ERROR: invalid date");
+                                                System.out.println("ERROR: invalid date, press any key to continue");
+                                                keyboard.nextLine();
                                             }
                                         } while (!dateCorrect);
                                         LocalDate date=LocalDate.of(startYear, startValueOfMonth, startDayOfMonths);
@@ -446,7 +447,12 @@ public class Main {
         if(anno<0 || anno>9999) {
             return false;
         } else {
-            return true;
+            LocalDate today=LocalDate.now();
+            LocalDate userDate=LocalDate.of(anno,mese,giorno);
+            if(userDate.isBefore(today))
+                return false;
+            else
+                return true;
         }
     }
     public static void salvaClassInFileCSV(String nomeFile, int numberUsersPresent, User users[]) throws IOException, FileException {
