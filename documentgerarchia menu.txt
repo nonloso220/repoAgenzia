@@ -1,0 +1,144 @@
+AGENZIA VIAGGI (Gabossi) 
+
+Un’agenzia viaggi vuole gestire le iscrizioni relative ai propri viaggi organizzati con un software 
+
+
+
+Per ogni iscrizione si vuole memorizzare(struttura dati da creare con relativi campi): 
+-un codice identificativo numerico, (numero intero)
+-il cognome e nome della persona iscritta, (array di char, di lunghezza L) 
+-la destinazione del viaggio, (array di char, di lunghezza L)
+-la data di partenza. (array di char, di lunghezza L) DUBBIO: non so se fare un array di char per fare l'inserimento della data cioè giorno/mese/anno,
+ oppure fare un intero per l'anno il mese e il giorno ????,per ora faccio un array di char. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Si vuole che il software consenta di (funzioni base che devo creare) :
+1)--->aggiungere una persona.
+
+2)--->aggiungere una iscrizione. 
+
+3)--->cancellare una iscrizione (prima verrà chiesto il cognome nome dell’iscritto, verranno mostrate tutte le iscrizioni a cui è iscritta quella persona,
+ poi verrà inserito il codice della iscrizione da eliminare) 
+
+4)--->Visualizzare tutti i viaggi a cui si è iscritta una persona *****
+
+5)--->Visualizzare l’elenco dei partecipanti ad un determinato viaggio inserendo data e destinazione *****
+
+6)--->Visualizzare l’elenco delle destinazioni.****
+--------------------------------------------------------------------------------------------------------------------------------------------------
+  
+
+
+menu 0000000
+
+	0)esci
+	1)entra come amministratore
+	2)accedi al tuo account (parte dal menu 01)
+	3)crea un account (parte dal menu 01)
+
+
+
+
+menu 000(amministratore)
+	0)esci
+	1)aggiungi utente
+	2)elimina utente
+	3)visualizzare tutti i viaggi di un utente
+	4)Visualizzare l’elenco dei partecipanti ad un determinato viaggio inserendo data e destinazione(senza doppioni)
+	5)Visualizzare l’elenco delle destinazioni disponibili 
+	6)seleziona un utente MENU 01
+	7)salva
+	{
+	menu 01("selezionato un utente")
+		0)torna indietro
+		1)prenota un viaggio
+		2)disdici un viaggio
+		{
+			menu 02("prenota viaggio")
+				0)torna indietro
+				1)inserire viaggio(viene creato un viaggio autonomo cioè con le scelte autonome dell'utente)
+				2)mostra destinazioni disponibili
+				{
+					menu 04("mostra destinazione")
+						(mostra destinazioni disponibili)
+						0)torna indietro
+						1)visualizza dettagli(inserendo la destinazione es. destinazione 1)
+				}
+				3)programmi pre-fatti
+				{
+					menu 03("programmi pre-fatti")
+						(mostra programmi pre-fatti)
+						0)torna indietro
+						1)mostra dettagli di un programma pre-fatto(inserendo il programma pre-fatto es. programma pre-fatto 1) 
+						2)seleziona un programma pre-fatto (e chiedi la conferma del programma selezionato)
+				}
+		}
+	}
+
+
+
+
+menu 001 (guest)
+	0)esci
+	1)prenota un viaggio
+	2)disdici un viaggio
+	3)visualizza viaggi prenotati (ordinati per inserimento)
+	4)visualizza viaggi prenotati (ordinati per data)
+	5)salva
+	menu 02("prenota viaggio")
+		0)torna indietro
+		1)inserire viaggio(viene creato un viaggio autonomo cioè con le scelte autonome dell'utente)
+		2)mostra destinazioni disponibili
+		{
+			menu 04("mostra destinazione")
+				(mostra destinazioni disponibili)
+				0)torna indietro
+				1)visualizza dettagli(inserendo la destinazione es. destinazione 1)
+		}
+		3)programmi pre-fatti
+		{
+			menu 03("programmi pre-fatti")
+				(mostra programmi pre-fatti)
+				0)torna indietro
+				1)mostra dettagli di un programma pre-fatto(inserendo il programma pre-fatto es. programma pre-fatto 1) 
+				2)seleziona un programma pre-fato (e chiedi la conferma del programma selezionato)
+		}
+	
+
+
+
+QUANDO ESCI FAI L'OPZIONE CHE PUò ANCHE SALVARE SE VUOLE SE NO NON SALVA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
