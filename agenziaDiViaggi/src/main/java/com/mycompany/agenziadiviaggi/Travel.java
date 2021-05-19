@@ -24,7 +24,7 @@ class Travel implements Serializable{
     /**
      * is the constructor receives as input a destination, id, dayOfMonth, valueOfMonth, year.
      * @param destination:(String)is the travel destination.
-     * @param id:(int)is an entire identification code, used to make a user unique.
+     * @param id:(int)is an entire identification code, used to make a trip unique.
      * @param dayOfMonths:(int) it is the day of departure of a trip.
      * @param valueOfMonth:(int) is the month of departure of the trip.
      * @param year:(int) it is the year of departure of the trip.
@@ -48,6 +48,10 @@ class Travel implements Serializable{
         setStartTravel(t.getStartTravel().getDayOfMonth(), t.getStartTravel().getMonthValue(),t.getStartTravel().getYear());
         setEndTravel(t.getEndTravel().getDayOfMonth(), t.getEndTravel().getMonthValue(),t.getEndTravel().getYear());
         calculateTravelCost();
+    }
+
+    Travel(Travel[] travelUser) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     /**
      * is a setter and is used to set the destination.

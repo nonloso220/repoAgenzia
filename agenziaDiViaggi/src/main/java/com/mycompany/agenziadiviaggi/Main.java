@@ -205,8 +205,6 @@ public class Main {
                                                             idTravel++;
                                                         } catch (MaximumReached ex) {
                                                             System.out.println(ex.toString());
-                                                        } catch (travelsNotFound ex) {
-                                                            System.out.println(ex.toString());
                                                         } catch (DateTimeException ex) {
                                                             System.out.println("Error: the date is invalid");
                                                             keyboard.nextLine();
