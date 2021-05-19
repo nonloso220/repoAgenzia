@@ -4,7 +4,7 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>18</x>
+      <x>342</x>
       <y>432</y>
       <w>36</w>
       <h>66</h>
@@ -15,7 +15,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>144</x>
+      <x>468</x>
       <y>48</y>
       <w>72</w>
       <h>24</h>
@@ -26,7 +26,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>144</x>
+      <x>468</x>
       <y>72</y>
       <w>72</w>
       <h>24</h>
@@ -37,7 +37,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>114</x>
+      <x>438</x>
       <y>96</y>
       <w>144</w>
       <h>48</h>
@@ -48,7 +48,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>114</x>
+      <x>438</x>
       <y>144</y>
       <w>138</w>
       <h>66</h>
@@ -62,7 +62,7 @@ inserendo data e destinazione</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>132</x>
+      <x>456</x>
       <y>210</y>
       <w>102</w>
       <h>60</h>
@@ -75,7 +75,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>138</x>
+      <x>462</x>
       <y>270</y>
       <w>90</w>
       <h>30</h>
@@ -86,7 +86,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>138</x>
+      <x>462</x>
       <y>0</y>
       <w>84</w>
       <h>48</h>
@@ -97,7 +97,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>150</x>
+      <x>474</x>
       <y>300</y>
       <w>72</w>
       <h>24</h>
@@ -108,7 +108,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>18</y>
       <w>108</w>
       <h>144</h>
@@ -119,7 +119,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>108</y>
       <w>84</w>
       <h>54</h>
@@ -130,7 +130,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>54</y>
       <w>114</w>
       <h>108</h>
@@ -141,7 +141,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>78</y>
       <w>114</w>
       <h>84</h>
@@ -152,7 +152,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>144</y>
       <w>102</w>
       <h>102</h>
@@ -163,7 +163,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>144</y>
       <w>108</w>
       <h>150</h>
@@ -174,7 +174,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>144</y>
       <w>120</w>
       <h>180</h>
@@ -185,7 +185,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>144</y>
       <w>84</w>
       <h>36</h>
@@ -196,7 +196,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>0</x>
+      <x>324</x>
       <y>126</y>
       <w>72</w>
       <h>66</h>
@@ -207,7 +207,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>144</x>
+      <x>468</x>
       <y>384</y>
       <w>84</w>
       <h>48</h>
@@ -218,7 +218,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>150</x>
+      <x>474</x>
       <y>438</y>
       <w>72</w>
       <h>24</h>
@@ -229,7 +229,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>396</y>
       <w>114</w>
       <h>72</h>
@@ -240,7 +240,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>438</y>
       <w>120</w>
       <h>30</h>
@@ -251,7 +251,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>126</x>
+      <x>450</x>
       <y>468</y>
       <w>114</w>
       <h>66</h>
@@ -264,7 +264,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>144</x>
+      <x>468</x>
       <y>534</y>
       <w>72</w>
       <h>60</h>
@@ -277,7 +277,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>132</x>
+      <x>456</x>
       <y>654</y>
       <w>102</w>
       <h>48</h>
@@ -288,7 +288,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>138</x>
+      <x>462</x>
       <y>702</y>
       <w>102</w>
       <h>24</h>
@@ -299,7 +299,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>450</y>
       <w>108</w>
       <h>276</h>
@@ -310,7 +310,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>450</y>
       <w>114</w>
       <h>126</h>
@@ -321,7 +321,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>42</x>
+      <x>366</x>
       <y>450</y>
       <w>102</w>
       <h>234</h>
@@ -332,7 +332,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>222</x>
+      <x>546</x>
       <y>270</y>
       <w>96</w>
       <h>24</h>
@@ -343,7 +343,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>318</x>
+      <x>642</x>
       <y>228</y>
       <w>72</w>
       <h>24</h>
@@ -354,7 +354,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>318</x>
+      <x>642</x>
       <y>264</y>
       <w>72</w>
       <h>24</h>
@@ -365,7 +365,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>318</x>
+      <x>642</x>
       <y>306</y>
       <w>72</w>
       <h>24</h>
@@ -376,7 +376,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
+      <x>708</x>
       <y>258</y>
       <w>114</w>
       <h>30</h>
@@ -387,7 +387,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>510</x>
+      <x>834</x>
       <y>186</y>
       <w>72</w>
       <h>24</h>
@@ -398,7 +398,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>498</x>
+      <x>822</x>
       <y>216</y>
       <w>108</w>
       <h>96</h>
@@ -413,7 +413,7 @@ dell'utente)</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>504</x>
+      <x>828</x>
       <y>318</y>
       <w>102</w>
       <h>36</h>
@@ -425,7 +425,7 @@ destinazioni disponibili</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
+      <x>924</x>
       <y>294</y>
       <w>108</w>
       <h>54</h>
@@ -436,7 +436,7 @@ destinazioni disponibili</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>498</x>
+      <x>822</x>
       <y>372</y>
       <w>108</w>
       <h>36</h>
@@ -447,7 +447,7 @@ destinazioni disponibili</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
+      <x>924</x>
       <y>384</y>
       <w>60</w>
       <h>120</h>
@@ -458,7 +458,7 @@ destinazioni disponibili</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>708</x>
+      <x>1032</x>
       <y>228</y>
       <w>72</w>
       <h>24</h>
@@ -469,7 +469,7 @@ destinazioni disponibili</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>684</x>
+      <x>1008</x>
       <y>426</y>
       <w>72</w>
       <h>24</h>
@@ -480,7 +480,7 @@ destinazioni disponibili</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>702</x>
+      <x>1026</x>
       <y>258</y>
       <w>102</w>
       <h>72</h>
@@ -494,7 +494,7 @@ es. destinazione 1)</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>660</x>
+      <x>984</x>
       <y>450</y>
       <w>120</w>
       <h>108</h>
@@ -509,7 +509,7 @@ es. programma pre-fatto 1)</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>654</x>
+      <x>978</x>
       <y>558</y>
       <w>132</w>
       <h>126</h>
@@ -523,7 +523,7 @@ del programma selezionato)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>228</x>
+      <x>552</x>
       <y>282</y>
       <w>96</w>
       <h>408</h>
@@ -534,636 +534,129 @@ del programma selezionato)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>234</x>
-      <y>984</y>
-      <w>126</w>
-      <h>114</h>
+      <x>36</x>
+      <y>792</y>
+      <w>660</w>
+      <h>342</h>
     </coordinates>
-    <panel_attributes>utente
+    <panel_attributes>user
 --
-nome
-cognome
-id
-password
-array di viaggi
+-name:StringString
+-surname:
+-id:int
+-email:String
+-wallet:float
+-numTravelPresent=0:int
+-final N_MAX_TRAVELS=20:int
 --
-costruttore
-costruttore di copia
-setter e getter
-to string
++ User(in String name,in String surname,in String password,in int id,in String email)
++ User(in User u)
++ setName(in String name)
++ setSurname(in String surname)
++ setPassword(in String password)
++ setId(in int id)
++ setEmail(in String email)
++ getName():String
++ getSurname():String
++ getPassword:String
++ getId():int
++ getNumTravelPresent():int
++ getTravelUser():Travel[]
++ getN_MAX_TRAVELS():int
++ getEmail():String
++ getWallet():float
++ toString():String
++ travelPlanning(in String destination,in int id,in int startDayOfMonths,in int startValueOfMonth,in int startYear,in  int endDayOfMonths,in int endValueOfMonth,in int endYear)
++ cancelATravel(in int idTravel):int
++ showTravelsSortedByEntry():String
++ showTravelsSortedByDeparture():String
++ postponeTravel(in int idTravel,in int startDayOfMonths,in int startValueOfMonth,in int startYear,in int endDayOfMonths,in int endValueOfMonth,in int endYear):int
++ addCredit(in float credit)
++ showDestinations():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>804</y>
+      <w>396</w>
+      <h>246</h>
+    </coordinates>
+    <panel_attributes>Travel
+--
+-destination:String
+-id:int
+-startTravel:LocalDate
+-endTravel:LocalDate
+_-FIXED_COST=25_:float
+-cost:float
+-paidTravel:boolean
+--
++ Travel(in String destination,in int id,in int startDayOfMonths,in int startValueOfMonth,in int startYear,in int endDayOfMonths,in int endValueOfMonth,in int endYear)
++ Travel(in Travel t)
++ setDestination(in String destination)
++ setId(in int id)
++ setStartTravel(in int dayOfMonths,in int valueOfMonth,in int year)
++ setEndTravel(in int dayOfMonths,in int valueOfMonth,in int year)
++ setPaidTravel()
++ getDestination():String
++ getId():int
++ getStartTravel():LocalDate 
++ getEndTravel():LocalDate 
++ getPaidTravel():String 
++ getCost():float
++ toString():String 
++ calculateTravelCost():float
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>444</x>
-      <y>984</y>
-      <w>126</w>
-      <h>114</h>
-    </coordinates>
-    <panel_attributes>viaggio
---
-destinazione
-id
-inizio
-fine
---
-costruttore
-costruttore di copia
-setter e getter
-to string
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>234</x>
-      <y>1122</y>
-      <w>126</w>
-      <h>114</h>
-    </coordinates>
-    <panel_attributes>amministratore
---
-nome
-cognome
-id
-password
---
-costruttore
-costruttore di copia
-setter e getter
-to string
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>288</x>
-      <y>1302</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>408</x>
-      <y>1260</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>408</x>
-      <y>1326</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>408</x>
-      <y>1386</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>228</x>
-      <y>1596</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>408</x>
-      <y>1626</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>408</x>
-      <y>1554</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>408</x>
-      <y>1686</y>
-      <w>36</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>618</x>
-      <y>1128</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>720</x>
-      <y>1128</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>840</x>
-      <y>1128</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>618</x>
-      <y>1194</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>720</x>
-      <y>1194</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>828</x>
-      <y>1200</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>612</x>
-      <y>1290</y>
-      <w>84</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>720</x>
-      <y>1302</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>834</x>
+      <x>54</x>
       <y>1296</y>
-      <w>84</w>
-      <h>42</h>
+      <w>474</w>
+      <h>204</h>
     </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>606</x>
-      <y>1392</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>726</x>
-      <y>1386</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>822</x>
-      <y>1392</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
+    <panel_attributes>admin
+--
+-name:String
+-surname:string
+-id:int
+-password:String
+-email:String
+--
++ Admin(in String name,in String surname,in String password,in String email,in int id)
++ getName():String
++ setName(in String name)
++ getSurname():String
++ setSurname(in String surname)
++ getPassword():String
++ setPassword(in String password)
++ getEmail():String
++ setEmail(in String email)
++ getId(): int
++ setId(in int id)
++ toString():String
++ viewParticipantsInATravel(in User users[],in int numberUsersPresent,in LocalDate date,in String destination):String
+
+
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>1152</y>
-      <w>204</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;230.0;320.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1140</y>
-      <w>318</w>
-      <h>162</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;250.0;510.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1140</y>
-      <w>426</w>
-      <h>162</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;250.0;690.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1224</y>
+      <x>690</x>
+      <y>948</y>
       <w>252</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;110.0;400.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1212</y>
-      <w>330</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;130.0;530.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1224</y>
-      <w>402</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;110.0;650.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>462</x>
-      <y>1314</y>
-      <w>174</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;60.0;270.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>462</x>
-      <y>1314</y>
-      <w>318</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;60.0;510.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>462</x>
-      <y>1326</y>
-      <w>420</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;40.0;680.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1404</y>
-      <w>192</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;300.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>450</x>
-      <y>1392</y>
-      <w>312</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;30.0;500.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>450</x>
-      <y>1398</y>
-      <w>414</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;670.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>564</x>
-      <y>1548</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>576</x>
-      <y>1632</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>696</x>
-      <y>1632</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>822</x>
-      <y>1632</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>570</x>
-      <y>1704</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>708</x>
-      <y>1710</y>
-      <w>84</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>Note..
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>438</x>
-      <y>1560</y>
-      <w>156</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1632</y>
-      <w>408</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;660.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>450</x>
-      <y>1638</y>
-      <w>312</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;500.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>444</x>
-      <y>1638</y>
-      <w>162</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;250.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>450</x>
-      <y>1704</y>
-      <w>318</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;510.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>450</x>
-      <y>1710</y>
-      <w>168</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;260.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>312</x>
-      <y>1272</y>
-      <w>120</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;80.0;180.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>312</x>
-      <y>1314</y>
-      <w>102</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>312</x>
-      <y>1314</y>
-      <w>108</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;160.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>258</x>
-      <y>1572</y>
-      <w>162</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;70.0;250.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>258</x>
-      <y>1608</y>
-      <w>156</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;240.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>258</x>
-      <y>1608</y>
-      <w>156</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;240.0;180.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+-usersTravel[]:Travel
+m1=1
+m2=0..N_MAX_TRAVELS</panel_attributes>
+    <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
