@@ -17,6 +17,8 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,28 +38,42 @@ public class Main {
         boolean c2=false;/*when user selected a case 2(generete an account and log into it) is true*/
         String nsmeFileTxt="file-exported-to-users-CSV.txt";
         String nsmeFileBinary="binary-file-for-users.bin";
-        String[] s=new String[5];
         User[] users=new User[N_MAX_USERS];
-        s[0]="exit the program";
-        s[1]="log into an existing account";
-        s[2]="create an account and log into it";
-        s[3]="exports users to CSV files";
-        s[4]="save to binary file";
-        String[] l = new String[8];
-        l[0]="come back";
-        l[1]="Travel planning";
-        l[2]="cancel a travel";
-        l[3]="show Travels Sorted By Entry";
-        l[4]="show Travels Sorted By Departure";
-        l[5]="show destinations";
-        l[6]="postpone Travel";
-        l[7]="delete the account";
-        String[] k = new String[2];
-        k[0]="come back";
-        k[1]="View the list of participants in a particular trip in alphabetical order by entering the date and destination";
-        Menu mLogin=new Menu(s);
-        Menu mUser=new Menu(l);
-        Menu mAdmin=new Menu(k);
+        String[] login=new String[5];
+        login[0]="exit the program";
+        login[1]="log into an existing account";
+        login[2]="create an account and log into it";
+        login[3]="exports users to CSV files";
+        login[4]="save to binary file";
+        String[] user = new String[8];
+        user[0]="come back";
+        user[1]="Travel planning";
+        user[2]="cancel a travel";
+        user[3]="show Travels Sorted By Entry";
+        user[4]="show Travels Sorted By Departure";
+        user[5]="show destinations";
+        user[6]="postpone Travel";
+        user[7]="delete the account";
+        String[] admi = new String[2];
+        admi[0]="come back";
+        admi[1]="View the list of participants in a particular trip in alphabetical order by entering the date and destination";
+        String[] travel=new String[3];
+        travel[0]="come back";
+        travel[1]="autonomous travel planning";
+        travel[2]="guided travel planning";
+        String[] destinescion=new String[7];
+        destinescion[0]="come back";
+        destinescion[1]="show destinations of Europe";
+        destinescion[2]="show destinations of Asia";
+        destinescion[3]="shows destinations of America";
+        destinescion[4]="shows destinations of Australia";
+        destinescion[5]="shows destinations of Africa";
+        destinescion[6]="shows destinations of Antarctica";
+        Menu mLogin=new Menu(login);
+        Menu mUser=new Menu(user);
+        Menu mAdmin=new Menu(admi);
+        Menu mTravel=new Menu(travel);
+        Menu mDestinescion=new Menu(destinescion);
         Admin admin=new Admin("admin", "admin", "Coniglio", "admin.Agency@Yahoo.com", 101);
         try{ 
             FileInputStream f1=new FileInputStream(nsmeFileBinary);
@@ -177,42 +193,83 @@ public class Main {
                                                                     System.out.println("maximum number of trips reached");
                                                                     break;
                                                                 }
-                                                                int id = idTravel;
-                                                                System.out.println("destination: ");
-                                                                String destination = keyboard.nextLine();
-                                                                do {
-                                                                    startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
-                                                                    startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
-                                                                    startYear = InputControlls.inputAnalyzerInt("startYear", 1);
-                                                                    dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
-                                                                    if (dateCorrect) {
-                                                                        break;
-                                                                    } else {
-                                                                        System.out.println("ERROR: invalid date");
-                                                                    }
-                                                                } while (!dateCorrect);
-                                                                do {
-                                                                    endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
-                                                                    endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
-                                                                    endYear = InputControlls.inputAnalyzerInt("endYear", 1);
-                                                                    dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
-                                                                    if (dateCorrect) {
-                                                                        break;
-                                                                    } else {
-                                                                        System.out.println("ERROR: invalid date");
-                                                                    }
-                                                                } while (!dateCorrect);
+                                                                int choiceMenu010= -1;
                                                                 try {
-                                                                    users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                                    System.out.println("the travel ID is: " + id);
-                                                                    System.out.println("Successful operation, press any key to continue");
-                                                                    keyboard.nextLine();
-                                                                    idTravel++;
-                                                                } catch (MaximumReached ex) {
-                                                                    System.out.println(ex.toString());
-                                                                } catch (DateTimeException ex) {
-                                                                    System.out.println("Error: the date is invalid");
-                                                                    keyboard.nextLine();
+                                                                    choiceMenu010 = mTravel.sceltaMenu(0);
+                                                                    switch(choiceMenu010){
+                                                                        case 0:{/*come back*/
+                                                                            break;
+                                                                        }
+                                                                        case 1:{/*autonomous Travel planning*/
+                                                                            int id = idTravel;
+                                                                            System.out.println("destination: ");
+                                                                            String destination = keyboard.nextLine();
+                                                                            do {
+                                                                                startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                if (dateCorrect) {
+                                                                                    break;
+                                                                                } else {
+                                                                                    System.out.println("ERROR: invalid date");
+                                                                                }
+                                                                            } while (!dateCorrect);
+                                                                            do {
+                                                                                endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                if (dateCorrect) {
+                                                                                    break;
+                                                                                } else {
+                                                                                    System.out.println("ERROR: invalid date");
+                                                                                }
+                                                                            } while (!dateCorrect);
+                                                                            try {
+                                                                                users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                System.out.println("the travel ID is: " + id);
+                                                                                System.out.println("Successful operation, press any key to continue");
+                                                                                keyboard.nextLine();
+                                                                                idTravel++;
+                                                                            } catch (MaximumReached ex) {
+                                                                                System.out.println(ex.toString());
+                                                                            } catch (DateTimeException ex) {
+                                                                                System.out.println("Error: the date is invalid");
+                                                                                keyboard.nextLine();
+                                                                            }
+                                                                            break;
+                                                                        }
+                                                                        case 2:{/*guided Travel planning*/
+                                                                            int choiceMenu011 =-1;     
+                                                                            choiceMenu011 = mDestinescion.sceltaMenu(0);
+                                                                            switch(choiceMenu011){
+                                                                                case 0: {
+                                                                                    
+                                                                                }
+                                                                                case 1: {
+                                                                                    
+                                                                                }
+                                                                                case 2: {
+                                                                                    
+                                                                                }
+                                                                                case 3: {
+                                                                                    
+                                                                                }
+                                                                                case 4: {
+                                                                                    
+                                                                                }
+                                                                                case 5: {
+                                                                                    
+                                                                                }
+                                                                                case 6: {
+                                                                                    
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                } catch (ItemNotFound ex) {
+                                                                    System.out.println(ex.toString() + " press any key to continue");
                                                                 }
                                                                 break;
                                                             }
