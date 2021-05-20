@@ -6,6 +6,7 @@
 package com.mycompany.agenziadiviaggi;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -43,5 +44,19 @@ public class InputControlls {
             }
         }while(!execution);
         return n;
+    }
+    public static String inputAnalyzerStringNominative(String item,int length){
+        String s;
+        boolean execution;
+        do{
+            s=inputAnalyzerString(item, length);
+            if(s.matches("[a-zA-Z]+")==true){
+                execution=true; 
+            } else{
+                System.out.println("ERROR:invalid input insert because "+item+" contains number or special characters");
+                execution=false;
+            }
+        }while(!execution);
+        return s;
     }
 }

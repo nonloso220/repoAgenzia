@@ -146,6 +146,7 @@ public class Main {
                             break;
                         }
                         else if(numberUsersPresent!=0){
+                            boolean counterNotFound=true;
                             for (i = 0; i < numberUsersPresent; i++) {
                                 if (c2) {
                                     i = numberUsersPresent - 1;
@@ -153,243 +154,250 @@ public class Main {
                                     password = users[i].getPassword();
                                 }
                                 c2 = false;
-                                if (users[i].getEmail().equalsIgnoreCase(email)) {
-                                    if (users[i].getPassword().equalsIgnoreCase(password)) {
-                                        int choiceMenu01 = -1;
-                                        do {
-                                            try {
-                                                choiceMenu01 = mUser.sceltaMenu(0);
-                                            } catch (ItemNotFound ex) {
-                                                System.out.println(ex.toString() + " press any key to continue");
-                                            }
-                                            try {
-                                                switch (choiceMenu01) {
-                                                    case 0: {/*come back*/
-                                                        break;
+                                if(users[i]!=null){
+                                    if (users[i].getEmail().equalsIgnoreCase(email)) {
+                                        int passwordCounter=0;
+                                        counterNotFound=false;
+                                        while(passwordCounter<4){
+                                            if (users[i].getPassword().equalsIgnoreCase(password)) {
+                                                int choiceMenu01 = -1;
+                                                do {
+                                                    try {
+                                                        choiceMenu01 = mUser.sceltaMenu(0);
+                                                    } catch (ItemNotFound ex) {
+                                                        System.out.println(ex.toString() + " press any key to continue");
                                                     }
-                                                    case 1: {/*Travel planning*/
-                                                        if (users[i].getN_MAX_TRAVELS() == users[i].getNumTravelPresent()) {
-                                                            System.out.println("maximum number of trips reached");
-                                                            break;
-                                                        }
-                                                        int id = idTravel;
-                                                        System.out.println("destination: ");
-                                                        String destination = keyboard.nextLine();
-                                                        do {
-                                                            startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
-                                                            startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
-                                                            startYear = InputControlls.inputAnalyzerInt("startYear", 1);
-                                                            dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
-                                                            if (dateCorrect) {
+                                                    try {
+                                                        switch (choiceMenu01) {
+                                                            case 0: {/*come back*/
                                                                 break;
-                                                            } else {
-                                                                System.out.println("ERROR: invalid date");
                                                             }
-                                                        } while (!dateCorrect);
-                                                        do {
-                                                            endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
-                                                            endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
-                                                            endYear = InputControlls.inputAnalyzerInt("endYear", 1);
-                                                            dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
-                                                            if (dateCorrect) {
-                                                                break;
-                                                            } else {
-                                                                System.out.println("ERROR: invalid date");
-                                                            }
-                                                        } while (!dateCorrect);
-                                                        try {
-                                                            users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                            System.out.println("the travel ID is: " + id);
-                                                            System.out.println("Successful operation, press any key to continue");
-                                                            keyboard.nextLine();
-                                                            idTravel++;
-                                                        } catch (MaximumReached ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (DateTimeException ex) {
-                                                            System.out.println("Error: the date is invalid");
-                                                            keyboard.nextLine();
-                                                        }
-                                                        break;
-                                                    }
-                                                    case 2: {/*cancel a travel*/
-                                                        if (users[i].getNumTravelPresent() == 0) {
-                                                            System.out.println("unable to perform this method, enter a trip first");
-                                                            break;
-                                                        }
-                                                        try {
-                                                            System.out.println(users[i].showTravelsSortedByEntry());
-                                                        } catch (NullPointer ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (travelsNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        }
-                                                        int id = InputControlls.inputAnalyzerInt("enter the ID of the trip you want to delete", 1);
-                                                        try {
-                                                            users[i].cancelATravel(id);
-                                                            System.out.println("Successful operation, press any key to continue");
-                                                            keyboard.nextLine();
-                                                        } catch (ItemNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (travelsNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        }
-                                                        break;
-                                                    }
-                                                    case 3: {/*show Travels Sorted By Entry*/
-                                                        if (users[i].getNumTravelPresent() == 0) {
-                                                            System.out.println("unable to perform this method, enter a trip first");
-                                                            break;
-                                                        }
-                                                        try {
-                                                            System.out.println(users[i].showTravelsSortedByEntry());
-                                                            System.out.println("\nSuccessful operation, press any key to continue");
-                                                            keyboard.nextLine();
-                                                        } catch (NullPointer ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (travelsNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        }
-                                                        break;
-                                                    }
-                                                    case 4: {/*show Travels Sorted By Departure*/
-                                                        if (users[i].getNumTravelPresent() == 0) {
-                                                            System.out.println("unable to perform this method, enter a trip first");
-                                                            break;
-                                                        }
-                                                        try {
-                                                            System.out.println(users[i].showTravelsSortedByDeparture());
-                                                            System.out.println("\nSuccessful operation, press any key to continue");
-                                                            keyboard.nextLine();
-                                                        } catch (NullPointer ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (travelsNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        }
-                                                        break;
-                                                    }
-                                                    case 5: {/*show destination*/
-                                                        if (users[i].getNumTravelPresent() == 0) {
-                                                            System.out.println("unable to perform this method, enter a trip first");
-                                                            break;
-                                                        }
-                                                        System.out.println(users[i].showDestinations());
-                                                        break;
-                                                    }
-                                                    case 6: {/*postpone Travel*/
-                                                        if (users[i].getNumTravelPresent() == 0) {
-                                                            System.out.println("unable to perform this method, enter a trip first");
-                                                            break;
-                                                        }
-                                                        int id = InputControlls.inputAnalyzerInt("enter the ID of the trip you want to postpone", 1);
-                                                        do {
-                                                            startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
-                                                            startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
-                                                            startYear = InputControlls.inputAnalyzerInt("startYear", 1);
-                                                            dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
-                                                            if (dateCorrect) {
-                                                                break;
-                                                            } else {
-                                                                System.out.println("ERROR: invalid date");
-                                                            }
-                                                        } while (!dateCorrect);
-                                                        do {
-                                                            endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths: ", 1);
-                                                            endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth: ", 1);
-                                                            endYear = InputControlls.inputAnalyzerInt("endYear: ", 1);
-                                                            dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
-                                                            if (dateCorrect) {
-                                                                break;
-                                                            } else {
-                                                                System.out.println("ERROR: invalid date");
-                                                            }
-                                                        } while (!dateCorrect);
-                                                        try {
-                                                            users[i].postponeTravel(id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                            System.out.println("\nSuccessful operation, press any key to continue");
-                                                            keyboard.nextLine();
-                                                        } catch (ItemNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (travelsNotFound ex) {
-                                                            System.out.println(ex.toString());
-                                                        } catch (DateTimeException ex) {
-                                                            System.out.println("Error: the date is invalid");
-                                                            keyboard.nextLine();
-                                                        }
-                                                        break;
-                                                    }
-                                                    case 7: {/*delete the account*/
-                                                        System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
-                                                        String safety = keyboard.nextLine();
-                                                        if (safety.compareToIgnoreCase("n") == 0) {
-                                                            System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
-                                                            keyboard.nextLine();
-                                                            break;
-                                                        }
-                                                        System.out.println("enter the password to confirm: ");
-                                                        String passwordConfirm;
-                                                        int ci = 0;
-                                                        do {
-                                                            passwordConfirm = keyboard.nextLine();
-                                                            do {
-                                                                if (passwordConfirm.length() < 3) {
-                                                                    System.out.println("ERROR: the password cannot be less than 3 characters re-enter the password: ");
+                                                            case 1: {/*Travel planning*/
+                                                                if (users[i].getN_MAX_TRAVELS() == users[i].getNumTravelPresent()) {
+                                                                    System.out.println("maximum number of trips reached");
+                                                                    break;
                                                                 }
-                                                            } while (passwordConfirm.length() < 3);
-                                                            if (passwordConfirm.compareTo(users[i].getPassword()) != 0) {
-                                                                ci++;
-                                                                System.out.println("you made a mistake the password does not match, try to re-enter the password.");
-                                                                keyboard.nextLine();
-                                                                if (ci == 3) {
-                                                                    System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
-                                                                    safety = keyboard.nextLine();
-                                                                    ci = 0;
-                                                                    if (safety.compareToIgnoreCase("n") == 0) {
-                                                                        System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
-                                                                        keyboard.nextLine();
+                                                                int id = idTravel;
+                                                                System.out.println("destination: ");
+                                                                String destination = keyboard.nextLine();
+                                                                do {
+                                                                    startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                    startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                    startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                    dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                    if (dateCorrect) {
                                                                         break;
+                                                                    } else {
+                                                                        System.out.println("ERROR: invalid date");
                                                                     }
+                                                                } while (!dateCorrect);
+                                                                do {
+                                                                    endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                    endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                    endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                    dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                    if (dateCorrect) {
+                                                                        break;
+                                                                    } else {
+                                                                        System.out.println("ERROR: invalid date");
+                                                                    }
+                                                                } while (!dateCorrect);
+                                                                try {
+                                                                    users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                    System.out.println("the travel ID is: " + id);
+                                                                    System.out.println("Successful operation, press any key to continue");
+                                                                    keyboard.nextLine();
+                                                                    idTravel++;
+                                                                } catch (MaximumReached ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (DateTimeException ex) {
+                                                                    System.out.println("Error: the date is invalid");
+                                                                    keyboard.nextLine();
                                                                 }
-                                                                if (safety.compareToIgnoreCase("y") == 0) {
-                                                                    System.out.println("you still have " + (3 - ci) + "attempts, enter the password to confirm: ");
-                                                                }
+                                                                break;
                                                             }
-                                                        } while (passwordConfirm.compareTo(users[i].getPassword()) != 0);
-                                                        for (int j = i; j < numberUsersPresent - 1; j++) {
-                                                            users[j] = users[j + 1];
+                                                            case 2: {/*cancel a travel*/
+                                                                if (users[i].getNumTravelPresent() == 0) {
+                                                                    System.out.println("unable to perform this method, enter a trip first");
+                                                                    break;
+                                                                }
+                                                                try {
+                                                                    System.out.println(users[i].showTravelsSortedByEntry());
+                                                                } catch (NullPointer ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (travelsNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                }
+                                                                int id = InputControlls.inputAnalyzerInt("enter the ID of the trip you want to delete", 1);
+                                                                try {
+                                                                    users[i].cancelATravel(id);
+                                                                    System.out.println("Successful operation, press any key to continue");
+                                                                    keyboard.nextLine();
+                                                                } catch (ItemNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (travelsNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                }
+                                                                break;
+                                                            }
+                                                            case 3: {/*show Travels Sorted By Entry*/
+                                                                if (users[i].getNumTravelPresent() == 0) {
+                                                                    System.out.println("unable to perform this method, enter a trip first");
+                                                                    break;
+                                                                }
+                                                                try {
+                                                                    System.out.println(users[i].showTravelsSortedByEntry());
+                                                                    System.out.println("\nSuccessful operation, press any key to continue");
+                                                                    keyboard.nextLine();
+                                                                } catch (NullPointer ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (travelsNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                }
+                                                                break;
+                                                            }
+                                                            case 4: {/*show Travels Sorted By Departure*/
+                                                                if (users[i].getNumTravelPresent() == 0) {
+                                                                    System.out.println("unable to perform this method, enter a trip first");
+                                                                    break;
+                                                                }
+                                                                try {
+                                                                    System.out.println(users[i].showTravelsSortedByDeparture());
+                                                                    System.out.println("\nSuccessful operation, press any key to continue");
+                                                                    keyboard.nextLine();
+                                                                } catch (NullPointer ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (travelsNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                }
+                                                                break;
+                                                            }
+                                                            case 5: {/*show destination*/
+                                                                if (users[i].getNumTravelPresent() == 0) {
+                                                                    System.out.println("unable to perform this method, enter a trip first");
+                                                                    break;
+                                                                }
+                                                                System.out.println(users[i].showDestinations());
+                                                                break;
+                                                            }
+                                                            case 6: {/*postpone Travel*/
+                                                                if (users[i].getNumTravelPresent() == 0) {
+                                                                    System.out.println("unable to perform this method, enter a trip first");
+                                                                    break;
+                                                                }
+                                                                int id = InputControlls.inputAnalyzerInt("enter the ID of the trip you want to postpone", 1);
+                                                                do {
+                                                                    startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                    startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                    startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                    dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                    if (dateCorrect) {
+                                                                        break;
+                                                                    } else {
+                                                                        System.out.println("ERROR: invalid date");
+                                                                    }
+                                                                } while (!dateCorrect);
+                                                                do {
+                                                                    endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths: ", 1);
+                                                                    endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth: ", 1);
+                                                                    endYear = InputControlls.inputAnalyzerInt("endYear: ", 1);
+                                                                    dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                    if (dateCorrect) {
+                                                                        break;
+                                                                    } else {
+                                                                        System.out.println("ERROR: invalid date");
+                                                                    }
+                                                                } while (!dateCorrect);
+                                                                try {
+                                                                    users[i].postponeTravel(id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                    System.out.println("\nSuccessful operation, press any key to continue");
+                                                                    keyboard.nextLine();
+                                                                } catch (ItemNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (travelsNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                } catch (DateTimeException ex) {
+                                                                    System.out.println("Error: the date is invalid");
+                                                                    keyboard.nextLine();
+                                                                }
+                                                                break;
+                                                            }
+                                                            case 7: {/*delete the account*/
+                                                                System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
+                                                                String safety = keyboard.nextLine();
+                                                                if (safety.compareToIgnoreCase("n") == 0) {
+                                                                    System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
+                                                                    keyboard.nextLine();
+                                                                    break;
+                                                                }
+                                                                System.out.println("enter the password to confirm: ");
+                                                                String passwordConfirm;
+                                                                int ci = 0;
+                                                                do {
+                                                                    passwordConfirm = keyboard.nextLine();
+                                                                    do {
+                                                                        if (passwordConfirm.length() < 3) {
+                                                                            System.out.println("ERROR: the password cannot be less than 3 characters re-enter the password: ");
+                                                                        }
+                                                                    } while (passwordConfirm.length() < 3);
+                                                                    if (passwordConfirm.compareTo(users[i].getPassword()) != 0) {
+                                                                        ci++;
+                                                                        System.out.println("you made a mistake the password does not match, try to re-enter the password.");
+                                                                        keyboard.nextLine();
+                                                                        if (ci == 3) {
+                                                                            System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
+                                                                            safety = keyboard.nextLine();
+                                                                            ci = 0;
+                                                                            if (safety.compareToIgnoreCase("n") == 0) {
+                                                                                System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
+                                                                                keyboard.nextLine();
+                                                                                break;
+                                                                            }
+                                                                        }
+                                                                        if (safety.compareToIgnoreCase("y") == 0) {
+                                                                            System.out.println("you still have " + (3 - ci) + "attempts, enter the password to confirm: ");
+                                                                        }
+                                                                    }
+                                                                } while (passwordConfirm.compareTo(users[i].getPassword()) != 0);
+                                                                for (int j = i; j < numberUsersPresent - 1; j++) {
+                                                                    users[j] = users[j + 1];
+                                                                }
+                                                                users[numberUsersPresent - 1] = null;
+                                                                numberUsersPresent--;
+                                                                choiceMenu01 = 0;
+                                                                System.out.println("\nSuccessful operation, press any key to continue");
+                                                                keyboard.nextLine();
+                                                                break;
+                                                            }
                                                         }
-                                                        users[numberUsersPresent - 1] = null;
-                                                        numberUsersPresent--;
-                                                        choiceMenu01 = 0;
-                                                        System.out.println("\nSuccessful operation, press any key to continue");
+                                                    } catch (InputMismatchException | NumberFormatException e1) {
+                                                        System.out.println("incorrect input, press any key to continue");
                                                         keyboard.nextLine();
-                                                        break;
                                                     }
-                                                }
-                                            } catch (InputMismatchException | NumberFormatException e1) {
-                                                System.out.println("incorrect input, press any key to continue");
-                                                keyboard.nextLine();
+                                                } while (choiceMenu01 != 0);
+                                                break;
+                                            } else {
+                                                passwordCounter++;
+                                                System.out.println("Error: check password may be incorrect, you still have "+(3-passwordCounter)+" attempts , try re-entering the password:" );
+                                                password=keyboard.nextLine();
                                             }
-                                        } while (choiceMenu01 != 0);
-                                    } else {
-                                        System.out.println("Error: check password may be incorrect");
-                                        keyboard.nextLine();
-                                        break;
+                                        }
                                     }
                                 }
-                                else{
-                                    System.out.println("no accounts found");
-                                    keyboard.nextLine();
-                                    break;
-                                }
                             }
+                            if(counterNotFound){
+                                System.out.println("account not found,press any key to continue");
+                                keyboard.nextLine();
+                            }
+                            break;    
                         } 
                         break;
                     }
                     case 2: {
-                        String name = InputControlls.inputAnalyzerString("name", 3);
-                        String surname = InputControlls.inputAnalyzerString("surname", 1);
+                        String name = InputControlls.inputAnalyzerStringNominative("name", 3);
+                        String surname = InputControlls.inputAnalyzerStringNominative("surname", 1);
                         String email = InputControlls.inputAnalyzerString("email", 2);
-                        email = controlEmail(numberUsersPresent, users, email);
+                        email = controlEmail(N_MAX_USERS, users, email);
                         String password = InputControlls.inputAnalyzerString("password", 8);
                         int id = idUsers;
                         users[numberUsersPresent] = new User(name, surname, password, id, email);
@@ -467,13 +475,15 @@ public class Main {
             throw new exception.FileException("no user present, press any key to continue");
         }
     }
-    private static String controlEmail(int numberUsersPresent, User users[], String email) {
-        for (int i=0;i<numberUsersPresent;i++) {
-            if(email.compareToIgnoreCase(users[i].getEmail())==0) {
-                System.out.println("Error: invalid email, re-enter");
-                email=InputControlls.inputAnalyzerString("email", 2);
-                email=controlEmail(numberUsersPresent, users, email);
-                return email;
+    private static String controlEmail(int N_MAX_USERS, User users[], String email) {
+        for (int i=0;i<N_MAX_USERS;i++) {
+            if(users[i]!=null){
+                if(email.compareToIgnoreCase(users[i].getEmail())==0) {
+                    System.out.println("Error: invalid email, re-enter");
+                    email=InputControlls.inputAnalyzerString("email", 2);
+                    email=controlEmail(N_MAX_USERS, users, email);
+                    return email;
+                }
             }
         }
         return email;
