@@ -23,7 +23,7 @@ public class User implements Serializable{
     private Travel[] travelUser;
     private final int N_MAX_TRAVELS=20;
     /**
-     * is the constructor receives as input a name, surname, password, id.
+     * is the constructor receives as input a name, surname, password, id, email.
      * @param name:(String)the user's name.
      * @param surname:(String)the user's surname.
      * @param password:(String) the password to access the user's account.
