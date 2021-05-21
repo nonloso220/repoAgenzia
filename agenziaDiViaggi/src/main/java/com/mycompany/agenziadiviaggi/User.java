@@ -9,12 +9,8 @@ import exception.*;
 import java.io.Serializable;
 
 /**
- *
  * @author luca gabossi
- * 
- * 
- * 
- * 
+ * this class is a representation of a user and can create an object of type User.
  */
 public class User implements Serializable{
     private String name;
@@ -150,7 +146,7 @@ public class User implements Serializable{
         return wallet;
     }
     /**
-     * @return String) to string
+     * @return (String) to string
      */
     @Override
     public String toString(){
@@ -212,10 +208,9 @@ public class User implements Serializable{
         throw new exception.ItemNotFound("idTravel");
     }
     /**
-     * 
-     * @return
-     * @throws NullPointer
-     * @throws travelsNotFound 
+     * @return (String) this method shows all the user's journeys sorted by entry, and returns them as a string.
+     * @throws NullPointer : this exception occurs if you try to invoke a toString on the null trip.
+     * @throws travelsNotFound : this exception occurs if the user has no travel.
      */
     public String showTravelsSortedByEntry() throws NullPointer, travelsNotFound{
         if(this.numTravelPresent==0)
@@ -235,10 +230,9 @@ public class User implements Serializable{
         }
     }
     /**
-     * 
-     * @return
-     * @throws NullPointer
-     * @throws travelsNotFound 
+     * @return (String) this method shows all the user's trips sorted by departure and returns them as a string.
+     * @throws NullPointer : this exception occurs if you try to invoke a toString on the null trip.
+     * @throws travelsNotFound : this exception occurs if the user has no travel.
      */
     public String showTravelsSortedByDeparture() throws NullPointer, travelsNotFound{
         if(this.numTravelPresent==0)
@@ -260,17 +254,19 @@ public class User implements Serializable{
         }
     }
     /**
-     * 
-     * @param idTravel
-     * @param startDayOfMonths
-     * @param startValueOfMonth
-     * @param startYear
-     * @param endDayOfMonths
-     * @param endValueOfMonth
-     * @param endYear
-     * @return
-     * @throws ItemNotFound
-     * @throws travelsNotFound 
+     * this method simply allows you to change the departure and end date of a trip, 
+     * passing it as inpuit the id of the trip, and the day, month, year of start and end, 
+     * ATTENTION: this method will not do any kind of check on the data input so it is preferable to check before using it.
+     * @param idTravel: is the identification code of the trip whose date you want to change.
+     * @param startDayOfMonths: it is the day of departure of the trip.
+     * @param startValueOfMonth:is the month of departure of the trip.
+     * @param startYear:is the year of departure of the trip.
+     * @param endDayOfMonths: it is the day of the end of the journey.
+     * @param endValueOfMonth: is the month of the end of the trip
+     * @param endYear: it is the year of the end of the journey.
+     * @return (int) it can be neglected, because it only serves to make the method terminate quickly without too many problems, however it always returns a 0 if it is okay otherwise it raises the ItemNotFound exception.
+     * @throws ItemNotFound : this exception occurs when you try to search for an item and it is not found.
+     * @throws travelsNotFound : this exception occurs if the user has no travel.
      */
     public int postponeTravel(int idTravel, int startDayOfMonths, int startValueOfMonth,int startYear,  int endDayOfMonths, int endValueOfMonth,int endYear) throws ItemNotFound, travelsNotFound{
         if(this.numTravelPresent==0)

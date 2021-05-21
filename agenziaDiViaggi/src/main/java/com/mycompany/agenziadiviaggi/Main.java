@@ -241,31 +241,34 @@ public class Main {
                                                                             break;
                                                                         }
                                                                         case 2:{/*guided Travel planning*/
-                                                                            int choiceMenu011 =-1;     
-                                                                            choiceMenu011 = mDestinescion.sceltaMenu(0);
-                                                                            switch(choiceMenu011){
-                                                                                case 0: {
-                                                                                    
+                                                                            int choiceMenu011 =-1;    
+                                                                            do{
+                                                                                choiceMenu011 = mDestinescion.sceltaMenu(0);
+                                                                                switch(choiceMenu011){
+                                                                                    case 0: {/*come back*/
+                                                                                        break;
+                                                                                    }
+                                                                                    case 1: {
+
+                                                                                    }
+                                                                                    case 2: {
+
+                                                                                    }
+                                                                                    case 3: {
+
+                                                                                    }
+                                                                                    case 4: {
+
+                                                                                    }
+                                                                                    case 5: {
+
+                                                                                    }
+                                                                                    case 6: {
+
+                                                                                    }
                                                                                 }
-                                                                                case 1: {
-                                                                                    
-                                                                                }
-                                                                                case 2: {
-                                                                                    
-                                                                                }
-                                                                                case 3: {
-                                                                                    
-                                                                                }
-                                                                                case 4: {
-                                                                                    
-                                                                                }
-                                                                                case 5: {
-                                                                                    
-                                                                                }
-                                                                                case 6: {
-                                                                                    
-                                                                                }
-                                                                            }
+                                                                            }while(choiceMenu011!=0);
+                                                                            break;
                                                                         }
                                                                     }
                                                                 } catch (ItemNotFound ex) {
