@@ -289,10 +289,12 @@ public class Main {
                                                                         case 2:{/*guided Travel planning*/
                                                                             int choiceMenu011 =-1;
                                                                             int choiceMenu0111=-1;
+                                                                            boolean travelCompleted=false;
                                                                             do{
                                                                                 choiceMenu011 = mDestinescion.sceltaMenu(0);
                                                                                 switch(choiceMenu011){
                                                                                     case 0: {/*come back*/
+                                                                                        travelCompleted=true;
                                                                                         break;
                                                                                     }
                                                                                     case 1: {
@@ -305,237 +307,312 @@ public class Main {
                                                                                                     break;
                                                                                                 }
                                                                                                 case 1:{
-                                                                                                    System.out.println("Londra, Regno Unito: 20.715.900 visitatori\nLa capitale dell'Inghilterra si presenta come un'immensa metropoli ed offre davvero tanto al visitatore, per questo è al primo posto di questa classifica. Il British Museum, ad ingresso gratuito, è un luogo affascinante dove sono conservati numerosi reperti archeologici, fra cui la famosa Stele di Rosetta. Westminster Abbey è la storica cattedrale londinese, ma chi ama le passeggiate nel verde apprezzerà senza dubbio Hyde Park .\n" +
-"Immancabile è una visita a Buckingham Palace, magari durante il cambio della guardia. A Piccadilly Circus potrete dedicarvi allo shopping, così come presso i grandi magazzini Harrods e a Camden Town.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("London, United Kingdom: 20,715,900 visitors\n" +
+                                                                                                    "The capital of England looks like an immense metropolis and offers a lot to the visitor,\n" +
+                                                                                                    "for this reason it is in first place in this ranking. The British Museum, with free admission,\n" +
+                                                                                                    "it is a fascinating place where numerous archaeological finds are preserved,\n" +
+                                                                                                    "including the famous Rosetta Stone. Westminster Abbey is the historic London cathedral,\n" +
+                                                                                                    "but those who love green walks will undoubtedly appreciate Hyde Park.\n" +
+                                                                                                    "A visit to Buckingham Palace is a must,\n" +
+                                                                                                    "maybe during the changing of the guard. In Piccadilly Circus you can go shopping,\n" +
+                                                                                                    "as well as at Harrods and Camden Town.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("\n[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="London";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 2:{
-                                                                                                    System.out.println("Parigi, Francia: 16.863.500 visitatori\nQuante proposte di matrimonio o dichiarazioni d'amore saranno state declamate alla luce della Tour Eiffel?\n" +
-"Il meglio della storia e della cultura europee si condensa in questa città, chi la visita può godere di luoghi di interesse incredibili come il Museo del Louvre ma anche decidere di perdersi lungo quartieri affascinanti come Montmartre o il Marais. Il massimo del romanticismo la città lo offre lungo la Senna, con alcuni scorci davvero pittoreschi, i suoi giardini curati e i tantissimi bistrot all'aperto.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Paris, France: 16,863,500 visitors\n" +
+                                                                                                    "How many marriage proposals or declarations of love have been declaimed in the light of the Eiffel Tower?\n" +
+                                                                                                    "The best of European history and culture is condensed in this city,\n" +
+                                                                                                    "those who visit it can enjoy incredible places of interest such as the Louvre Museum\n" +
+                                                                                                    "but also decide to get lost in fascinating neighborhoods such as Montmartre or the Marais.\n" +
+                                                                                                    "  The city offers the ultimate in romanticism along the Seine,\n" +
+                                                                                                    "with some truly picturesque views,\n" +
+                                                                                                    "  its manicured gardens and the many outdoor bistros.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("\n[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Paris";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 3:{
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 4:{
-                                                                                                    
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 5:{
-                                                                                                    System.out.println("Roma, Italia: 9.703.200 visitatori\nChe dire di Roma, che non è ancora stato detto? Un museo a cielo aperto, l'hanno definita, e come smentire questa affermazione? Quella che è universalmente considerata una delle città più belle del mondo - se non addirittura la più bella - è la città eterna, Caput Mundi, la città de \"La dolce vita\"… I turisti vengono per il Colosseo, Piazza Navona, il Pantheon, la Fontana di Trevi, i Musei Vaticani, la scalinata di Piazza di Spagna, la Cappella Sistina… e se ne vanno con il suo cielo azzurro ed i tramonti lungo il Tevere nel cuore.");
-                                                                                                    
-                                                                                                   destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Rome, Italy: 9,703,200 visitors\n" +
+                                                                                                    "What about Rome, which has not yet been said?\n" +
+                                                                                                    "An open-air museum, they defined it, and how can this claim be denied?\n" +
+                                                                                                    "What is universally considered one of the most beautiful cities in the world - if not the most beautiful -\n" +
+                                                                                                    "is the eternal city, Caput Mundi, the city of \\ \"La dolce vita \\\" ... Tourists come for the Colosseum,\n" +
+                                                                                                    "Piazza Navona,\n" +
+                                                                                                    "the Pantheon,\n" +
+                                                                                                    "the Trevi Fountain,\n" +
+                                                                                                    "the Vatican Museums, l\n" +
+                                                                                                    "at the Spanish Steps,\n" +
+                                                                                                    "the Sistine Chapel ... and they go away with its blue sky and sunsets along the Tiber in the heart.");
+                                                                                                   destinationChoice=InputControlls.inputAnalyzerStringNominative("\n[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Rome";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 6:{
-                                                                                                    System.out.println("Praga, Repubblica Ceca: 9.038.900 visitatori\nIl Municipio della Città Vecchia con il famoso orologio astronomico di Praga, le stradine tortuose del quartiere ebraico, già conosciute da chi ha letto i romanzi di Franz Kafka, immersi nella leggenda del Golem, i caffè che solo a guardarli invitano ad entrare e sedersi, le boutique, le crociere sulla Moldava… Queste sono solo alcune delle attrattive che rendono praga una delle città più visitate al mondo.\n" +
-"Il Ponte Carlo è un maestoso ponte gotico e la chiesa di San Nicola a Mala Strana è la più bella chiesa barocca di Praga.\n" +
-"La città si presenta come mutevole, romantica e di successo, antica e moderna, ma soprattutto cosmopolita in tutto e per tutto.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Prague, Czech Republic: 9,038,900 visitors\n" +
+                                                                                                    "The Old Town Hall with the famous Prague Astronomical Clock, the winding streets of the Jewish Quarter,\n" +
+                                                                                                    "already known by those who have read the novels of Franz Kafka,\n" +
+                                                                                                    "immersed in the legend of the Golem, the cafes that just look at them invite you to enter and sit down, the boutiques,\n" +
+                                                                                                    "cruises on the Vltava ... These are just some of the attractions that make Prague one of the most visited cities in the world.\n" +
+                                                                                                    "The Charles Bridge is a majestic Gothic bridge and the St. Nicholas Church in Mala Strana is the most beautiful Baroque church in Prague.\n" +
+                                                                                                    "The city presents itself as changeable, romantic and successful, ancient and modern, but above all cosmopolitan in all respects.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Prague";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 7:{
-                                                                                                     System.out.println("Amsterdam, Paesi Bassi: 8.476.600 visitatori\nCon i suoi canali ed i musei di fama mondiale, Amsterdam accoglie milioni di visitatori in ogni stagione. Il centro storico la rende una delle città più romantiche e belle d'Europa: le crociere lungo i suoi canali sono un modo alternativo, ammaliante e diverso per visitare la città. Amsterdam è anche una città di tolleranza di diversità, oltre a godere di tutti i vantaggi di una grande centro: cultura ricca, vivace vita notturna, ristoranti internazionali, trasporti pubblici efficienti.\n" +
-"Oltre a questo, è anche relativamente tranquilla e, in gran parte grazie ai suoi ampi canali, ha pochissimo traffico stradale. In compenso, provate l'emozione di percorrerla in bicicletta, unendovi al flusso delle centinaia di cittadini che la utilizzano ogni giorno!");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                     System.out.println("Amsterdam, the Netherlands: 8,476,600 visitors\n" +
+                                                                                                    "With its world-famous canals and museums, Amsterdam welcomes millions of visitors every season.\n" +
+                                                                                                    "The historic center makes it one of the most romantic and beautiful cities in Europe: cruises along its canals are an alternative, captivating and different way to visit the city.\n" +
+                                                                                                    "Amsterdam is also a city of diversity tolerance, as well as enjoying all the benefits of a great center: rich culture, vibrant nightlife, international restaurants, efficient public transport.\n" +
+                                                                                                    "On top of that, it is also relatively quiet and, largely thanks to its wide canals, has very little road traffic.\n" +
+                                                                                                    "On the other hand, experience the thrill of cycling along it, joining the flow of hundreds of citizens who use it every day!");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Amsterdam";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 8:{
-                                                                                                    System.out.println("Barcellona, Spagna: 6.726.000 visitatori\nBarcellona possiede una ricca eredità, sia culturalmente che a livello storico. Barcellona ha così tante attrazioni che scegliere quali citare è una impresa non semplice. Il Barrio Gótico (il quartiere gotico) e le Ramblas sono i luoghi ideali per passeggiare e godersi le bancarelle e gli artisti di strada. La Cattedrale della Sagrada Familia, visibile da praticamente ogni punto della città, è uno dei più rappresentativi monumenti di Barcellona.\n" +
-"Nessuna visita a Barcellona può essere considerata completa se non si provano i piatti locali in qualche ristorantino del centro o presso il grande mercato.");
-                                                                                                    System.out.println("");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Barcelona, Spain: 6,726,000 visitors\n" +
+                                                                                                    "Barcelona has a rich heritage, both culturally and historically. Barcelona has so many attractions that choosing which ones to mention is no easy feat.\n" +
+                                                                                                    "The Barrio Gótico (the Gothic Quarter) and the Ramblas are great places to stroll and enjoy the stalls and street performers.\n" +
+                                                                                                    "The Sagrada Familia Cathedral, visible from practically every point of the city, is one of the most representative monuments of Barcelona.\n" +
+                                                                                                    "No visit to Barcelona can be considered complete if you don't try the local dishes in a small restaurant in the center or at the large market.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Barcelona";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 9:{
-                                                                                                    System.out.println("Milano, Italia: 6.513.000 visitatori\nSede della Borsa in Italia, potenza industriale ed arbitro accettato a livello internazionale della moda e del design, Milano è una metropoli ribollente.\n" +
-"La grande cattedrale gotica, il Duomo, si trova al centro di questa che un tempo fu una capitale imperiale romana, ed esprime l'amore per la bellezza e la forza che guida ancora la città al giorno d'oggi. I suoi punti di forza sono le collezioni d'arte antica e moderna, la possibilità di shopping senza pari, uno dei più grandi complessi fieristici d'Europa, una frizzante vita notturna, il prestigio del Teatro alla Scala, il segno del genio di Leonardo da Vinci, una dipendenza quasi religiosa dal calcio e infinite possibilità di mangiare il meglio della cucina italiana e lombarda.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Milan, Italy: 6,513,000 visitors\n" +
+                                                                                                    "Headquarters of the Italian stock exchange, industrial power and internationally accepted arbiter of fashion and design, Milan is a seething metropolis.\n" +
+                                                                                                    "The great Gothic cathedral, the Duomo, sits at the center of what was once a Roman imperial capital, and expresses the love for beauty and strength that still drives the city today.\n" +
+                                                                                                    "Its strengths are the ancient and modern art collections,\n" +
+                                                                                                    "unparalleled shopping opportunities, one of the largest trade fair complexes in Europe, a vibrant nightlife,\n" +
+                                                                                                    "the prestige of the Teatro alla Scala, the sign of the genius of Leonardo da Vinci,\n" +
+                                                                                                    "an almost religious addiction to football and endless possibilities to eat the best of Italian and Lombard cuisine.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Milan";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 10:{
-                                                                                                    System.out.println("Vienna, Austria: 6.303.800 visitatori\nÈ una delle grandi capitali europee, ed è stata per secoli la terra dei governanti asburgici dell'Impero austro-ungarico. Ad oggi i ricordi di quel periodo sono conservati con cura dagli amanti della tradizione viennese. Le passate glorie artistiche rivivono grazie al patrimonio culturale che hanno lasciato personalità geniali come Mozart, Beethoven, Schubert, Strauss e Gustav Klimt. I visitatori di oggi scoprono una città con una grazia speciale e un carattere architettonico molto uniforme, che la distingue dalle altre capitali.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Vienna, Austria: 6,303,800 visitors\n" +
+                                                                                                    "It is one of the great European capitals, and has been the land of the Habsburg rulers of the Austro-Hungarian Empire for centuries.\n" +
+                                                                                                    "Today the memories of that period are carefully preserved by lovers of the Viennese tradition.\n" +
+                                                                                                    "Past artistic glories revive thanks to the cultural heritage left by brilliant personalities such as Mozart, Beethoven, Schubert, Strauss and Gustav Klimt.\n" +
+                                                                                                    "Today's visitors discover a city with a special grace and a very uniform architectural character, which distinguishes it from other capitals.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Vienna";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 11:{
-                                                                                                    System.out.println("Berlino, Germania: 5.770.900 visitatori\nBerlino è una destinazione giovane, imprevedibile, stravagante. È una città moderna, ricca di locali e divertimenti, dove poter apprezzare il vario street food, la moda, l'arte, il design e la musica. Tutto ciò rende Berlino una vera e propria capitale culturale. Il simbolo della città è la Porta di Brandemburgo, che rappresenta la vecchia divisione delle due Germanie e la successiva riunione.\n" +
-"Nonostante rimanga ben poco di originale, sono presenti numerosi riferimenti alla Seconda Guerra Mondiale e alla successiva divisione. Emblematici sono i resti del famoso Muro, il Reichstad, il Checkpoint Charlie e il Memoriale dell'Olocausto.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Berlin, Germany: 5,770,900 visitors\n" +
+                                                                                                    "Berlin is a young, unpredictable, extravagant destination.\n" +
+                                                                                                    "It is a modern city, full of clubs and entertainment, where you can appreciate the various street food, fashion, art, design and music.\n" +
+                                                                                                    "All this makes Berlin a real cultural capital.\n" +
+                                                                                                    "The symbol of the city is the Brandenburg Gate, which represents the old division of the two Germanys and the subsequent reunion.\n" +
+                                                                                                    "Although little of the original remains, there are numerous references to the Second World War and the subsequent division.\n" +
+                                                                                                    "Emblematic are the remains of the famous Wall, the Reichstad, Checkpoint Charlie and the Holocaust Memorial.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Berlin";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 12:{
-                                                                                                    System.out.println("Madrid, Spagna: 5.512.600 visitatori\nMadrid è una città ricca di passione, quella che trasmetteranno ai visitatori i suoi cittadini. È una metropoli moderna e cosmopolita ma, nel contempo, è presente un grande patrimonio culturale e artistico.\n" +
-"La cultura e l'arte, infatti, svolgono un primario ruolo in questa città, presso la quale sono presenti ben 73 musei, tra cui il Museo del Prado, una delle più importanti pinacoteche del mondo, e il Centro Nacional de Arte Reina Sofía che vanta anche importanti opere di Picasso, Joan Miró e Salvador Dalí.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Madrid, Spain: 5,512,600 visitors\n" +
+                                                                                                    "Madrid is a city full of passion, the one that its citizens will pass on to visitors. It is a modern and cosmopolitan metropolis but, at the same time, there is a great cultural and artistic heritage.\n" +
+                                                                                                    "Culture and art, in fact, play a primary role in this city,\n" +
+                                                                                                    "where there are 73 museums,\n" +
+                                                                                                    "including the Prado Museum, one of the most important art galleries in the world, and the Centro Nacional de Arte Reina Sofía which also boasts important works by Picasso, Joan Miró and Salvador Dalí.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Madrid";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 13:{
-                                                                                                    System.out.println("Venezia, Italia: 5.406.800 visitatori\nVenezia è una delle città italiane presenti in questa Top 25 che viene letteralmente invasa dai turisti in ogni stagione. D'altra parte è una città unica nel suo genere! La sua particolare conformazione, dove le strade non sono costituite da asfalto ma da canali d'acqua, resta impressa nella memoria e nel cuore di ogni visitatore.\n" +
-"La bellezza della moltitudine di monumenti ed opere d'arte rapisce il turista, così come Piazza San Marco con la sua celebre Basilica, cuore pulsante della città.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Venice, Italy: 5,406,800 visitors\n" +
+                                                                                                    "Venice is one of the Italian cities present in this Top 25 that is literally invaded by tourists in every season.\n" +
+                                                                                                    "On the other hand it is a unique city of its kind! Its particular conformation, where the roads are not made of asphalt but of water channels, remains etched in the memory and in the heart of every visitor.\n" +
+                                                                                                    "The beauty of the multitude of monuments and works of art captivates the tourist, as well as Piazza San Marco with its famous Basilica, the beating heart of the city.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Venice";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 14:{
-                                                                                                    System.out.println("Mosca, Russia: 5.404.500 visitatori\nSi pensa che le origini di questa città risalgano a più di otto secoli e mezzo fa, i primi riferimenti a Mosca sono infatti del 1147. Fu fondata dal principe di Suzdal Yuri Dolgorukiy sulla curva ampia del fiume Moscova. Dalle sue umili origini (era inizialmente un villaggio di cacciatori) è cresciuta costantemente fino a diventare una città fortezza, per poi diventare il centro nevralgico di tutta la grande nazione russa.\n" +
-"La sua bella architettura vanta veri e propri simboli come il Cremlino, la Piazza Rossa e la Cattedrale di San Basilio. Mosca è una delle più grandi città del mondo, è cresciuta rapidamente negli ultimi decenni e, di conseguenza, comprende quartieri ricchi che circondano un centro storico relativamente compatto farcito dall'innegabile fascino dell'architettura antica.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Moscow, Russia: 5,404,500 visitors\n" +
+                                                                                                    "It is thought that the origins of this city date back to more than eight and a half centuries ago, the first references to Moscow date back to 1147.\n" +
+                                                                                                    "It was founded by the prince of Suzdal Yuri Dolgorukiy on the sweeping bend of the Moskva River.\n" +
+                                                                                                    "From its humble beginnings (it was initially a hunting village) it has grown steadily to become a fortress city, to then become the nerve center of the entire great Russian nation.\n" +
+                                                                                                    "Its beautiful architecture boasts real symbols such as the Kremlin, Red Square and St. Basil's Cathedral.\n" +
+                                                                                                    "Moscow is one of the largest cities in the world, has grown rapidly in recent decades and, as a result, includes affluent neighborhoods surrounding a relatively compact historical center stuffed with the undeniable charm of ancient architecture.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Moscow";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 15:{
-                                                                                                    System.out.println("Dublino, Irlanda: 5.185.000 visitatori\nDublino è una città a misura d'uomo, che accoglie numerosi visitatori - specialmente giovani - ogni anno. È una città abbastanza piccola ed è adatta anche ad un weekend oppure un soggiorno di pochi giorni. Si trova alla foce del fiume Liffey ed è ricordata anche per aver dato i natali a geni letterari come Oscar Wilde, Jonathan Swift, James Joyce e Samuel Beckett. Fondata da alcune popolazioni vichinghe più di dieci secoli fa, è una città ricca di storia e cultura, ma anche divertimenti!\n" +
-"È sicuramente nota per l'altissima concentrazione di pub e club, fatto che rende praticamente impossibile uscire senza sapere cosa fare, specialmente la sera!");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Dublin, Ireland: 5,185,000 visitors\n" +
+                                                                                                    "Dublin is a city on a human scale, which welcomes many visitors - especially young people - every year.\n" +
+                                                                                                    "It is a fairly small city and is also suitable for a weekend or a few days stay.\n" +
+                                                                                                    "It is located at the mouth of the River Liffey and is also remembered for being the birthplace of literary geniuses such as Oscar Wilde, Jonathan Swift, James Joyce and Samuel Beckett. Founded by some Viking populations more than ten centuries ago, it is a city rich in history and culture, but also entertainment!\n" +
+                                                                                                    "\"It is certainly known for its very high concentration of pubs and clubs, which makes it practically impossible to go out without knowing what to do, especially in the evening!");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Dublin";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 16:{
                                                                                                     System.out.println("");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 17:{
-                                                                                                    System.out.println("Firenze, Italia: 5.015.400 visitatori\nEcco la prima delle città italiane in questa Top 25. Che dire di Firenze? Anche visitandola più volte non si riuscirebbe mai a vedere proprio tutto. La \"culla del Rinascimento\" è una delle principali attrattive per i turisti stranieri che intendono visitare il nostro Bel Paese.\n" +
-"Firenze è magnetica, romantica e indaffarata. Il centro, percorribile a piedi, conquista i propri ospiti con i suoi palazzi, con i caffè e i ristoranti dove gustare il miglior cibo italiano. La città è inoltre una meta perfetta per lo shopping di lusso.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Florence, Italy: 5,015,400 visitors\n" +
+                                                                                                    "Here is the first of the Italian cities in this Top 25. What about Florence? Even visiting it several times you would never be able to see everything. The \\ \"cradle of the Renaissance \\\" is one of the main attractions for foreign tourists who intend to visit our beautiful country.\n" +
+                                                                                                    "Florence is magnetic, romantic and busy. The center, which can be explored on foot, conquers its guests with its buildings, cafes and restaurants where you can enjoy the best Italian food.\n" +
+                                                                                                    "The city is also a perfect destination for luxury shopping.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Florence";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 18:{
-                                                                                                    System.out.println("Monaco di Baviera, Germania: 4.036.700 visitatori\nMonaco di baviera ha mille volti, da quello dei ricchi benestanti a quello dei caffè all'aperto in stile mediterraneo, fino a quello della birra che scorre a fiumi e trabocca da enormi boccali. Un viaggio presso questa città è molto popolare, le statistiche dimostrano, infatti, che sempre più visitatori la scelgono come meta, soprattutto durante il periodo della famosa Oktoberfest.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Munich, Germany: 4,036,700 visitors\n" +
+                                                                                                    "Munich has a thousand faces, from that of the affluent to that of Mediterranean-style outdoor cafes, to that of beer flowing in rivers and overflowing with huge mugs.\n" +
+                                                                                                    "A trip to this city is very popular, statistics show, in fact, that more and more visitors choose it as a destination, especially during the period of the famous Oktoberfest.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Munich";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 19:{
-                                                                                                    System.out.println("Budapest, Ungheria: 4.004.400 visitatori\nSpesso indicata come la \"piccola Parigi\", Budapest è famosa per i monumenti che raccontano la sua storia millenaria. La capitale dell'Ungheria si divide in due zone - Buda e Pest - che si estendono lungo le due rive del Danubio e rappresentano due differenti aspetti della città.\n" +
-"Buda e il suo storico Castello sono composti da strade medievali e case, musei, grotte e rovine romane. La parte più dinamica, Pest, vanta il più grande edificio del Parlamento in Europa, ottime vie dove effettuare passeggiate lungo il fiume, mercati delle pulci, librerie, negozi di antiquariato e deliziosi caffè.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Budapest, Hungary: 4,004,400 visitors\n" +
+                                                                                                    "Often referred to as the \\ \"little Paris \\\", Budapest is famous for monuments that tell its thousand-year history.\n" +
+                                                                                                    "The capital of Hungary is divided into two areas - Buda and Pest - which extend along the two banks of the Danube and represent two different aspects of the city.\n" +
+                                                                                                    "Buda and its historic Castle are made up of medieval streets and houses, museums, caves and Roman ruins. The most dynamic part, Pest, boasts the largest Parliament building in Europe, great streets for riverside walks, flea markets, bookstores, antique shops and delicious cafes.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Budapest";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 20:{
-                                                                                                    System.out.println("San Pietroburgo, Russia: 3.996.000 visitatori\nDai tesori inestimabili del famoso Museo dell'Ermitage ai palazzi ed alle opere d'arte del Museo Russo, in questa città c'è davvero l'imbarazzo della scelta.\n" +
-"Poi c'è l'angolo storico: Caterina la Grande, Pietro il Grande e gli ultimi zar russi hanno lasciato il loro segno su questa grande città, così come i grandi scrittori russi come Dostoevskij e Puskin. Infine, la vita notturna di San Pietroburgo è leggendaria e la gente del posto è famosa per essere molto più rilassata rispetto ai cittadini della capitale Mosca.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("St. Petersburg, Russia: 3,996,000 visitors\n" +
+                                                                                                    "From the priceless treasures of the famous Hermitage Museum to the palaces and works of art of the Russian Museum, this city is truly spoiled for choice.\n" +
+                                                                                                    "Then there is the historical corner: Catherine the Great, Peter the Great and the last Russian tsars left their mark on this great city, as did the great Russian writers like Dostoevsky and Pushkin.\n" +
+                                                                                                    "Finally, the nightlife of St. Petersburg is legendary and the locals are famous for being much more relaxed than the citizens of the capital Moscow.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="St. Petersburg";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 21:{
-                                                                                                    System.out.println("Lisbona, Portogallo: 3.790.500 visitatori\nLisbona è una città affascinante, ricca di storia, dove il sole splende 290 giorni all'anno e dove la temperatura scende raramente sotto 15 gradi. Qui il turista può sentirsi sicuro vagando per i vicoli del centro sia di giorno che di notte.\n" +
-"Lasciatevi ammaliare dalla ottima cucina tradizionale presso i numerosi ristoranti per tutti i gusti, budget ed esigenze. Lisbona è una città autentica, dove le tradizioni e la storia antica si mescolano con una vivace attività di intrattenimento culturale ed innovazione hi-tech.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Lisbon, Portugal: 3,790,500 visitors\n" +
+                                                                                                    "Lisbon is a fascinating city, full of history, where the sun shines 290 days a year and where the temperature rarely drops below 15 degrees. Here the tourist can feel safe wandering through the alleys of the center both day and night.\n" +
+                                                                                                    "Let yourself be enchanted by the excellent traditional cuisine at the numerous restaurants for all tastes, budgets and needs.\n" +
+                                                                                                    "Lisbon is an authentic city, where traditions and ancient history mix with a lively activity of cultural entertainment and hi-tech innovation.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Lisbon";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 22:{
                                                                                                     System.out.println("");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 23:{
-                                                                                                    System.out.println("Bruxelles, Belgio: 3.074.100 visitatori\nL'affascinante capitale del Belgio è una città storica e alla moda, burocratica ma nello stesso tempo bizzarra, estremamente multiculturale.\n" +
-"A sfondo di tutto questo vi è un paesaggio urbano che oscilla dal maestoso all'eccentrico. Si possono notare facciate di palazzi in Art Nouveau e regali palazzi del XIX secolo, che contrastano con il nucleo medievale di Bruxelles dove c'è la Grand Place, una delle più belle piazze del mondo.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Brussels, Belgium: 3,074,100 visitors\n" +
+                                                                                                    "The charming capital of Belgium is a historic and fashionable city, bureaucratic but at the same time bizarre, extremely multicultural.\n" +
+                                                                                                    "Behind all of this is an urban landscape that swings from majestic to eccentric.\n" +
+                                                                                                    "You can see the facades of buildings in Art Nouveau and royal buildings of the nineteenth century, which contrast with the medieval core of Brussels where there is the Grand Place, one of the most beautiful squares in the world.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Brussels";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 24:{
                                                                                                     System.out.println("");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 25:{
-                                                                                                    System.out.println("Cracovia, Polonia: 2.937.200 visitatori\nSe credete alle leggende, Cracovia è nata dalla sconfitta di un drago. Nonostante la leggenda, è vero che nelle strade della città regna un'atmosfera mitologica.\n" +
-"Il Castello del Wawel è un importante attrattiva, mentre presso il centro storico sono presenti chiese svettanti, imponenti musei e la vasta Rynek Glowny, la più grande piazza del mercato di tutta Europa.\n" +
-"Nel primo quartiere ebraico, Kazimierz, le sinagoghe ancora in piedi riflettono la tragedia della Seconda Guerra Mondiale, proprio come le sue piazze e vicoli animati simboleggiano il rinnovamento XXI secolo.");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    System.out.println("Krakow, Poland: 2,937,200 visitors\n" +
+                                                                                                    "If you believe the legends, Krakow was born from the defeat of a dragon. Despite the legend, it is true that a mythological atmosphere reigns in the streets of the city.\n" +
+                                                                                                    "Wawel Castle is a major attraction, while towering churches, impressive museums and the vast Rynek Glowny, the largest market square in Europe, are in the historic center.\n" +
+                                                                                                    "In the first Jewish quarter, Kazimierz, the still standing synagogues reflect the tragedy of the Second World War, just as its lively squares and alleys symbolize 21st century renewal.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Krakow";
                                                                                                     break;
                                                                                                 }
                                                                                             }
-                                                                                            if(destinationChoice.compareToIgnoreCase("y") == 0){
-                                                                                                int id = idTravel;
-                                                                                                do {
-                                                                                                    startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
-                                                                                                    startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
-                                                                                                    startYear = InputControlls.inputAnalyzerInt("startYear", 1);
-                                                                                                    dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
-                                                                                                    if (dateCorrect) {
-                                                                                                        break;
-                                                                                                    } else {
-                                                                                                        System.out.println("ERROR: invalid date");
+                                                                                            if(destinationChoice!=null){
+                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
+                                                                                                    int id = idTravel;
+                                                                                                    do {
+                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    do {
+                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    try {
+                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        System.out.println("the travel ID is: " + id);
+                                                                                                        System.out.println("Successful operation, press any key to continue");
+                                                                                                        keyboard.nextLine();
+                                                                                                        idTravel++;
+                                                                                                    } catch (MaximumReached ex) {
+                                                                                                        System.out.println(ex.toString());
+                                                                                                    } catch (DateTimeException ex) {
+                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        keyboard.nextLine();
                                                                                                     }
-                                                                                                } while (!dateCorrect);
-                                                                                                do {
-                                                                                                    endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
-                                                                                                    endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
-                                                                                                    endYear = InputControlls.inputAnalyzerInt("endYear", 1);
-                                                                                                    dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
-                                                                                                    if (dateCorrect) {
-                                                                                                        break;
-                                                                                                    } else {
-                                                                                                        System.out.println("ERROR: invalid date");
-                                                                                                    }
-                                                                                                } while (!dateCorrect);
-                                                                                                try {
-                                                                                                    users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                                                                    System.out.println("the travel ID is: " + id);
-                                                                                                    System.out.println("Successful operation, press any key to continue");
-                                                                                                    keyboard.nextLine();
-                                                                                                    idTravel++;
-                                                                                                } catch (MaximumReached ex) {
-                                                                                                    System.out.println(ex.toString());
-                                                                                                } catch (DateTimeException ex) {
-                                                                                                    System.out.println("Error: the date is invalid");
-                                                                                                    keyboard.nextLine();
-                                                                                                }
+                                                                                                    choiceMenu0111=0;
+                                                                                                    choiceMenu011=0;
+                                                                                                    travelCompleted=true;
+                                                                                                }  
                                                                                             }
                                                                                         }while(choiceMenu0111!=0);
                                                                                         break;
@@ -596,7 +673,7 @@ public class Main {
                                                                                         break;
                                                                                     }
                                                                                 }
-                                                                            }while(choiceMenu011!=0);
+                                                                            }while(choiceMenu011!=0 || !travelCompleted);
                                                                             break;
                                                                         }
                                                                     }
