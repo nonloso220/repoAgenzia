@@ -49,10 +49,6 @@ class Travel implements Serializable{
         setEndTravel(t.getEndTravel().getDayOfMonth(), t.getEndTravel().getMonthValue(),t.getEndTravel().getYear());
         calculateTravelCost();
     }
-
-    Travel(Travel[] travelUser) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     /**
      * is a setter and is used to set the destination.
      * @param destination: (String)is the travel destination.
