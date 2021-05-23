@@ -34,8 +34,8 @@ public class Main {
         int startDayOfMonths = 0, startValueOfMonth = 0, startYear = 0, endDayOfMonths = 0, endValueOfMonth = 0, endYear = 0;
         boolean dateCorrect = false;
         boolean c2=false;/*when user selected a case 2(generete an account and log into it) is true*/
-        String nsmeFileTxt="fileExportedToUsersCSV.txt";
-        String nsmeFileBinary="binaryFileForUsers.bin";
+        String nsmeFileTxt="file-exported-to-users-CSV.txt";
+        String nsmeFileBinary="binary-file-for-users.bin";
         User[] users=new User[N_MAX_USERS];
         String[] login=new String[5];
         login[0]="exit the program";
