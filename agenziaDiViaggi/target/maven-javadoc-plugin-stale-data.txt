@@ -1,0 +1,24 @@
+cmd.exe
+/X
+/C
+""C:\Program Files\Java\jdk-16\bin\javadoc.exe" @options @packages"
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\allclasses-index.html = 1621804243697
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\allpackages-index.html = 1621804243700
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\element-list = 1621804243514
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\help-doc.html = 1621804243742
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\index-all.html = 1621804243736
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\index.html = 1621804243676
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\jquery-ui.overrides.css = 1621804243789
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\member-search-index.js = 1621804243704
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\module-search-index.js = 1621804243701
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\options = 1621804242005
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\overview-summary.html = 1621804243738
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\overview-tree.html = 1621804243671
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\package-search-index.js = 1621804243701
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\packages = 1621804242007
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\script.js = 1621804243748
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\search.js = 1621804243759
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\serialized-form.html = 1621804243567
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\stylesheet.css = 1621804243746
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\tag-search-index.js = 1621804243705
+E:\Desktop\repoAgenzia\agenziaDiViaggi\target\site\apidocs\type-search-index.js = 1621804243703
