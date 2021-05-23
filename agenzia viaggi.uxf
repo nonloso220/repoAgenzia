@@ -4,7 +4,7 @@
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>342</x>
+      <x>306</x>
       <y>432</y>
       <w>36</w>
       <h>66</h>
@@ -15,7 +15,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>468</x>
+      <x>432</x>
       <y>48</y>
       <w>72</w>
       <h>24</h>
@@ -26,7 +26,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>468</x>
+      <x>432</x>
       <y>72</y>
       <w>72</w>
       <h>24</h>
@@ -37,7 +37,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>438</x>
+      <x>402</x>
       <y>96</y>
       <w>144</w>
       <h>48</h>
@@ -48,7 +48,7 @@
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>438</x>
+      <x>402</x>
       <y>144</y>
       <w>138</w>
       <h>66</h>
@@ -62,20 +62,21 @@ inserendo data e destinazione</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>456</x>
+      <x>420</x>
       <y>210</y>
       <w>102</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>Visualizzare l’elenco 
 delle destinazioni 
-disponibili </panel_attributes>
+disponibili
+senza doppioni</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>462</x>
+      <x>426</x>
       <y>270</y>
       <w>90</w>
       <h>30</h>
@@ -86,7 +87,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>462</x>
+      <x>426</x>
       <y>0</y>
       <w>84</w>
       <h>48</h>
@@ -97,7 +98,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>474</x>
+      <x>438</x>
       <y>300</y>
       <w>72</w>
       <h>24</h>
@@ -108,7 +109,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>18</y>
       <w>108</w>
       <h>144</h>
@@ -119,7 +120,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>108</y>
       <w>84</w>
       <h>54</h>
@@ -130,7 +131,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>54</y>
       <w>114</w>
       <h>108</h>
@@ -141,7 +142,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>78</y>
       <w>114</w>
       <h>84</h>
@@ -152,7 +153,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>144</y>
       <w>102</w>
       <h>102</h>
@@ -163,7 +164,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>144</y>
       <w>108</w>
       <h>150</h>
@@ -174,7 +175,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>144</y>
       <w>120</w>
       <h>180</h>
@@ -185,7 +186,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>144</y>
       <w>84</w>
       <h>36</h>
@@ -196,7 +197,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>324</x>
+      <x>288</x>
       <y>126</y>
       <w>72</w>
       <h>66</h>
@@ -207,7 +208,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>468</x>
+      <x>432</x>
       <y>384</y>
       <w>84</w>
       <h>48</h>
@@ -218,7 +219,7 @@ disponibili </panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>474</x>
+      <x>438</x>
       <y>438</y>
       <w>72</w>
       <h>24</h>
@@ -229,7 +230,7 @@ disponibili </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>396</y>
       <w>114</w>
       <h>72</h>
@@ -238,20 +239,9 @@ disponibili </panel_attributes>
     <additional_attributes>170.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>366</x>
-      <y>438</y>
-      <w>120</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;30.0;180.0;20.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>450</x>
+      <x>414</x>
       <y>468</y>
       <w>114</w>
       <h>66</h>
@@ -264,21 +254,21 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>468</x>
+      <x>432</x>
       <y>534</y>
       <w>72</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>visualizza 
 viaggi prenotati
-(ordinati per data)</panel_attributes>
+(ordinati per data di partenza)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>456</x>
-      <y>654</y>
+      <x>420</x>
+      <y>606</y>
       <w>102</w>
       <h>48</h>
     </coordinates>
@@ -288,7 +278,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>462</x>
+      <x>426</x>
       <y>702</y>
       <w>102</w>
       <h>24</h>
@@ -299,7 +289,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>450</y>
       <w>108</w>
       <h>276</h>
@@ -310,7 +300,7 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>450</y>
       <w>114</w>
       <h>126</h>
@@ -321,40 +311,18 @@ viaggi prenotati
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>366</x>
+      <x>330</x>
       <y>450</y>
       <w>102</w>
-      <h>234</h>
+      <h>186</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;370.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>546</x>
-      <y>270</y>
-      <w>96</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;150.0;290.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>642</x>
-      <y>228</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>torna indietro</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>642</x>
+      <x>606</x>
       <y>264</y>
       <w>72</w>
       <h>24</h>
@@ -365,7 +333,7 @@ viaggi prenotati
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>642</x>
+      <x>606</x>
       <y>306</y>
       <w>72</w>
       <h>24</h>
@@ -374,31 +342,9 @@ viaggi prenotati
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>708</x>
-      <y>258</y>
-      <w>114</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>170.0;20.0;10.0;30.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>834</x>
-      <y>186</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>torna indietro</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>822</x>
+      <x>786</x>
       <y>216</y>
       <w>108</w>
       <h>96</h>
@@ -413,7 +359,7 @@ dell'utente)</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>828</x>
+      <x>792</x>
       <y>318</y>
       <w>102</w>
       <h>36</h>
@@ -423,20 +369,9 @@ destinazioni disponibili</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>924</x>
-      <y>294</y>
-      <w>108</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>160.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>822</x>
+      <x>786</x>
       <y>372</y>
       <w>108</w>
       <h>36</h>
@@ -445,42 +380,9 @@ destinazioni disponibili</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>924</x>
-      <y>384</y>
-      <w>60</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>80.0;180.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1032</x>
-      <y>228</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>torna indietro</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>1008</x>
-      <y>426</y>
-      <w>72</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>torna indietro</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>1026</x>
+      <x>990</x>
       <y>258</y>
       <w>102</w>
       <h>72</h>
@@ -494,8 +396,8 @@ es. destinazione 1)</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>984</x>
-      <y>450</y>
+      <x>960</x>
+      <y>360</y>
       <w>120</w>
       <h>108</h>
     </coordinates>
@@ -509,8 +411,8 @@ es. programma pre-fatto 1)</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>978</x>
-      <y>558</y>
+      <x>1176</x>
+      <y>354</y>
       <w>132</w>
       <h>126</h>
     </coordinates>
@@ -521,20 +423,9 @@ del programma selezionato)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>552</x>
-      <y>282</y>
-      <w>96</w>
-      <h>408</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>140.0;10.0;10.0;660.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>36</x>
+      <x>0</x>
       <y>792</y>
       <w>660</w>
       <h>342</h>
@@ -578,7 +469,7 @@ del programma selezionato)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
+      <x>894</x>
       <y>804</y>
       <w>396</w>
       <h>246</h>
@@ -614,8 +505,8 @@ _-FIXED_COST=25_:float
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>54</x>
-      <y>1296</y>
+      <x>0</x>
+      <y>1176</y>
       <w>474</w>
       <h>204</h>
     </coordinates>
@@ -648,7 +539,7 @@ _-FIXED_COST=25_:float
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
+      <x>654</x>
       <y>948</y>
       <w>252</w>
       <h>30</h>
@@ -658,5 +549,313 @@ _-FIXED_COST=25_:float
 m1=1
 m2=0..N_MAX_TRAVELS</panel_attributes>
     <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>276</y>
+      <w>108</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>160.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>264</y>
+      <w>108</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>258</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>270</y>
+      <w>132</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>200.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>270</y>
+      <w>126</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1200</x>
+      <y>258</y>
+      <w>114</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>scegliere se vuoi andare 
+o no in quella destinazione</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1086</x>
+      <y>276</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;30.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>384</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1074</x>
+      <y>396</y>
+      <w>114</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>630</x>
+      <y>498</y>
+      <w>108</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>inserire viaggio
+(viene creato un viaggio 
+autonomo cioè con 
+le scelte autonome 
+dell'utente)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>636</x>
+      <y>600</y>
+      <w>102</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>mostra 
+destinazioni disponibili</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>630</x>
+      <y>654</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>programmi pre-fatti</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>834</x>
+      <y>540</y>
+      <w>102</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>visualizza 
+dettagli(inserendo 
+la destinazione 
+es. destinazione 1)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>804</x>
+      <y>642</y>
+      <w>120</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>mostra dettagli 
+di un programma 
+pre-fatto(inserendo 
+il programma pre-fatto 
+es. programma pre-fatto 1)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1020</x>
+      <y>636</y>
+      <w>132</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>seleziona un 
+programma pre-fatto 
+(e chiedi la conferma 
+del programma selezionato)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>540</y>
+      <w>144</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>552</y>
+      <w>150</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>230.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>552</y>
+      <w>144</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>220.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1044</x>
+      <y>540</y>
+      <w>114</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>scegliere se vuoi andare 
+o no in quella destinazione</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>576</y>
+      <w>114</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>558</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;30.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>666</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>678</y>
+      <w>114</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>288</y>
+      <w>114</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>438</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>180.0;20.0;10.0;30.0</additional_attributes>
   </element>
 </diagram>
