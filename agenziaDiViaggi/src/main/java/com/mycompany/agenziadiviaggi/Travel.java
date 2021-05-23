@@ -146,4 +146,13 @@ class Travel implements Serializable{
         this.cost=FIXED_COST*daysBetween;
         return cost;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Travel t=(Travel)obj;
+        if((this.getDestination().compareTo(t.getDestination())==0) && (this.getStartTravel().compareTo(t.getStartTravel())==0) && (this.getEndTravel().compareTo(t.getEndTravel())==0) && this.getCost()==t.getCost())
+            return true;
+        return false;
+    }
+    
 }
