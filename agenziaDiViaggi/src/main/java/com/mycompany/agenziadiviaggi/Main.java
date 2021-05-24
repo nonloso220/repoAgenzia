@@ -94,9 +94,33 @@ public class Main {
         europe[23]="Bruxelles";
         europe[24]="Copenaghen";
         europe[25]="Cracovia";	
-        String[] asia=new String[1];
+        String[] asia=new String[26];
         asia[0]="come back";
-        
+        asia[1]="Bali";
+        asia[2]="Jeju Island";
+        asia[3]="Phuket";
+        asia[4]="Kyoto";
+        asia[5]="Sa Pa";
+        asia[6]="Tokyo";
+        asia[7]="Hanoi";
+        asia[8]="Hong Kong";
+        asia[9]="Bangkok";
+        asia[10]="Osaka";
+        asia[11]="Angkor Wat e Siem Reap";
+        asia[12]="Singapore";
+        asia[13]="Nagarkot";
+        asia[14]="Seul";
+        asia[15]="Luang Prabang";
+        asia[16]="Okinawa";
+        asia[17]="Maldives";
+        asia[18]="Koh Rong Island";
+        asia[19]="Boracay";
+        asia[20]="Chiang Rai";
+        asia[21]="Cebu e Bohol";
+        asia[22]="Penang";
+        asia[23]="Varanasi";
+        asia[24]="Kuala Lumpur";
+        asia[25]="Kerala";	
         String[] america=new String[1];
         america[0]="come back";
         
@@ -620,10 +644,237 @@ public class Main {
                                                                                     case 2: {
                                                                                         do{
                                                                                             choiceMenu0111=mAsia.sceltaMenu(0);
+                                                                                            String destination = null;
+                                                                                            String destinationChoice = null;
                                                                                             switch(choiceMenu0111){
                                                                                                 case 0:{
                                                                                                     break;
                                                                                                 }
+                                                                                                case 1:{
+                                                                                                    System.out.println("Bali, Indonesia\nBali is perhaps the closest place to paradise. It really lacks nothing: beaches, surfing, diving, yoga, temples in the hills, picturesque rice fields, traditional villages and mouth-watering gastronomy. It is truly a place to recharge your batteries.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Venture outside the tourist areas, stay in a village with the locals and let yourself be carried away by spirituality.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="bali";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 2:{
+                                                                                                    System.out.println("Jeju Island, South Korea\nDo you think it is impossible to find a tropical island of breathtaking natural beauty in South Korea? Well, Jeju Island is just that.\n There are paradisiacal beaches, rapeseed fields,\nnumerous waterfalls and an entire park overflowing with statues representing the male reproductive organ.\n No, it is not a joke.\n Don't forget to taste the typical hallabong, a very sweet and seedless type of mandarin.\n");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="jeju island";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 3:{
+                                                                                                    System.out.println("Phuket, Thailandia\nGolden beaches and a myriad of islands await you in this corner of paradise.\n Phuket is a very popular destination and there are almost all the tourist stereotypes, but it is still a magnificent place.\n With landscapes such as those of the Phi Phi Islands and the Hong Islands, white sand beaches as far as the eye can see,\n protected areas and national parks, you will certainly not be bored.\n If you are looking for a luxury hotel, you will be spoiled for choice in Phuket.\n");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="phuket";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 4:{
+                                                                                                    System.out.println("Kyoto, Japan\nIf you want a taste of Japan of yesteryear, visit Kyoto. Here you will see splendid temples such as that of Kinkaku-ji, a veritable triumph of gold leaf, but also magnificent Zen gardens, welcoming tea rooms and numerous torii portals to mark the entrance to the temples.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Kyoto is also the beating heart of traditional craftsmanship and, in the historic district of Gion, you will find specialized shops where you can buy handmade paper, traditional Japanese ceramics and lacquered objects, copper teapots, kimonos, green tea, paper fans, prints on wooden blocks… Alternatively, pop into the Kyoto Handicraft Center and you are sure to find a unique souvenir to take home.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="kyoto";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 5:{
+                                                                                                    System.out.println("Sa Pa, Vietnam\nIn the northern part of Vietnam is Sa Pa, a magnificent valley dotted with villages and lush rice fields. Most travelers come here for trekking. It is in fact possible to book guided tours according to the level of difficulty. Combine trekking with a family stay to have the opportunity to share a meal with the locals and visit their homes.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="sa pa";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 6:{
+                                                                                                    System.out.println("Tokyo, Japan\nFew places on our planet are as fascinating as Tokyo. Probably, the largest city in the world is not exactly what you imagine. Of course, there are some chaotic areas where you need to keep your eyes open, but there are also many places that are much calmer and full of new things to try. Robot bars and restaurants, Shinto shrines, narrow alleys, mega malls, lantern-lit noodle bars, small craft shops, arcades, anime comic shops, Michelin-starred restaurants on every corner… all in the same city.\n" +
+                                                                                                    "\n" +
+                                                                                                    "If you can only visit one destination in Asia, make it Tokyo.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="tokyo";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 7:{
+                                                                                                    System.out.println("Hanoi, Vietnam\nVietnam's capital is a flurry of scooters, street vendors and locals zigzagging through busy streets carrying freshly picked fruit. The historic center is a riot of distinctly French colonial architecture. Get away from the hustle and bustle of the city by visiting the many temples and watching life flow around you from the shores of Hoan Kiem Lake.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="hanoi";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 8:{
+                                                                                                    System.out.println("Hong Kong\nHong Kong is one of the most important financial centers in East Asia, as well as a port of transition from China to the rest of the world, a global identity clearly visible in its gastronomy. Expect delicious dishes that combine Cantonese, Japanese, French and Sichuan culinary traditions. Whatever you feel like, you will surely find it in Hong Kong.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Hop on the double-decker trams, stop at every market and taste everything from wonton noodles to \"stinky tofu\".");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="hong kong";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 9:{
+                                                                                                    System.out.println("Bangkok, Thailandia\nYou've probably heard of Bangkok's street food - it's all true. The flavors can be quite intense, in an explosion of sensations for the taste buds: spicy, sour, sweet and salty are never lacking. All the regional Thai dishes are represented on the streets of Bangkok and, with a bit of courage, you can try some of the spiciest curries you have ever tasted. Spend your evenings enjoying the view from the many rooftop bars that overlook Bangkok, visit ancient temples or simply let yourself be captivated by the atmosphere of a historic city transformed into a metropolis that never sleeps.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="bangkok";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 10:{
+                                                                                                    System.out.println("Osaka, Japan\nOsaka residents are said to spend most of their money on food: there is even a Japanese proverb that says “Dress to ruin in Kyoto, eat to ruin in Osaka”. Osaka takes food very seriously and the vibrant Dōtonbori area is the perfect example of this. Here, street food reaches stratospheric levels. People queue late into the night to enjoy takoyaki (small balls of soft batter filled with octopus chunks), okonomiyaki (cabbage pancakes made with wheat flour, eggs and sweet potatoes and served with various toppings) and kushikatsu (skewers breaded and fried).");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="osaka";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 11:{
+                                                                                                    System.out.println("Angkor Wat e Siem Reap, Cambodia\nAngkor Wat is a must-see for most travelers visiting Cambodia, and you certainly can't blame them. Its mammoth size leaves you speechless: it is four times larger than the Vatican. During your visit, make a stop in Siem Reap, popular with backpackers and overflowing with hostels to party in, as well as high-end gastronomy, spas, local tours suitable for all types of travelers, a lively life nightlife and great shopping.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Angkor Wat e Siem Reap";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 12:{
+                                                                                                    System.out.println("Singapore\nMost people stop here in between flights, but Singapore definitely deserves more recognition as a destination in its own right. With an area of just two-thirds that of Hong Kong, the island and city-state of Singapore still manages to find the right balance between the concrete jungle and the green that gives it oxygen. Look up and admire the lush gardens that sit at the top or sides of the skyscrapers. Just outside the city, you will find Singapore's largest green lung: the Singapore Botanic Gardens, a UNESCO-protected heritage.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="singapore";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 13:{
+                                                                                                    System.out.println("Nagarkot, Nepal\nWhen one thinks of Nepal, almost everyone thinks of the peaks of the Himalayas. This majestic mountain range includes some of the highest peaks in the world, and great rivers such as the Ganges and the Indus originate from the Himalayas. Nagarkot is one of the best spots to admire the Himalayas directly from the terrace of your hotel. Located just 32 km from Kathmandu, this village is teeming with hotels lined up along a ridge that allows you to enjoy endless views of eight mountain ranges, including Everest.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="nagarkot";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 14:{
+                                                                                                    System.out.println("Seoul, South Korea\nKingdom of K-pop, chic boutiques and the latest tech trends, Seoul will keep you busy with a never-ending stream of new impressions. Over the past decade, the city has tried to leave its industrial past behind and create more innovative recreation areas, such as the flashy Dongdaemun Design Plaza & Park, the new city hall and the landscaped parks along the Cheong-gye stream and river. Han. Although the city has a decidedly modern atmosphere, you can still find traditional palaces and temples, such as the Bongeunsa temple and the Gyeongbokgung palace.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="seoul";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 15:{
+                                                                                                    System.out.println("Luang Prabang, Laos\nLaos is one of the few countries to still preserve the ancient traditions. With its golden wats, orange-clad monks and traditional wooden mansions set against a backdrop of towering mountains, Luang Prabang is the ideal place to spend some time away from the rest of the world. The practice of Buddhism is still widespread in this area and is considered a real way of life, not just a religion. If you are interested, you can participate in a Tak bat morning ceremony, during which the monks collect alms.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Luang Prabang";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 16:{
+                                                                                                    System.out.println("Okinawa, Japan\nOkinawa is the Japanese version of Hawaii. Even Pikachu is wearing a Hawaiian shirt in the Pokemon shop. Okinawa is a tropical island with beautiful beaches, palm trees, turquoise waters and magnificent coral reefs: the perfect setting for surfing and diving. Another gem is the salt rich in minerals which, according to some, would be the secret of the longevity of the local population. Get your daily dose of this prodigious salt, perhaps in the form of salt ice cream, an Okinawan specialty.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Okinawa";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 17:{
+                                                                                                    System.out.println("Maldive\nHoneymooners have been choosing the Maldives for decades now, and it's certainly not a random choice. The water and the beaches are divine. Difficult to find an equally dreamy place. If you love luxury resorts, the Maldives will not disappoint you. Flawless white sand beaches, turquoise waters and colorful fish… whichever island you choose, you will be able to admire all three of these natural wonders. Each resort is a private island and there are more than 100 to choose from. The hard part will be… choosing!");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Maldive";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 18:{
+                                                                                                    System.out.println("Island of KIsolaoh Rong, Cambodia\nFor a holiday full of sand and sea, try the island of Koh Rong. Seeing the pristine beaches and crystal clear water, you might think you are in the Maldives. The only difference is the lack of bungalows suspended over the water. And much cheaper prices.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Island of KIsolaoh Rong";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 19:{
+                                                                                                    System.out.println("Boracay, Philippines\nDespite its small size, the small island of Boracay has 13 beaches. That of White Sand is undoubtedly the most popular; if you are looking for perfect sand and beach parties that last until the first light of dawn, this is the right place for you.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Boracay";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 20:{
+                                                                                                    System.out.println("Chiang Rai, Thailandia\nDo you want to touch the authentic old Thailand before the arrival of tourism? In the north of the country it is still possible, at least in part. Although Chiang Rai is one of the favorite destinations for tourists, it still exudes an authentic atmosphere. The night market, for example, is also popular with locals, not just tourists. Prices are much lower than in the south of the country: you can enjoy a delicious meal for two for around € 2.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Chiang Rai";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 21:{
+                                                                                                    System.out.println("Cebu e Bohol, Philippines\nIf you are looking for a place to dive, kayak and paddleboard, or if you want to relax on the beach on and off the traditional tourist circuits, Cebu and Bohol are your ideal destinations in the Philippines. Not to mention the opportunity to see one of the most adorable animals on earth: the tarsier, an all eyes and tail animal!");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Cebu e Bohol";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 22:{
+                                                                                                    System.out.println("Penang, Malaysia\nPenang, an undisputed paradise for lovers of good food, is one of the main melting pots of oriental cultures in Asia. Its beating heart is George Town, a UNESCO-protected site overflowing with Chinese shop houses, churches, Indian shrines, Buddhist temples, mosques and impressive British-style colonial architecture. Hire a chauffeur-driven trisciò and discover a slice of this multicultural society.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Penang";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 23:{
+                                                                                                    System.out.println("Varanasi, India\nVaranasi is one of the holiest places for Hindus and the Ganges is a favorite destination for pilgrims who come here to wash away their sins and cremate their loved ones. Visiting Varanasi is a spectacular and intense experience at the same time: the rituals in which life and death intertwine take place in public spaces, so get ready to experience strong emotions and let yourself be overwhelmed with all your senses. If it all sounds too intense, remember that Varanasi is also home to a wonderful community of yoga and veganism practitioners: if you want to nourish your mind, body and spirit, you will fall in love with Varanasi.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Varanasi";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 24:{
+                                                                                                    System.out.println("Kuala Lumpur, Malaysia\nRooftop pools and bars with stunning city views… what more do you want from life? Kuala Lumpur is an ideal destination for a stopover between flights. Spend a couple of days shopping for designer bargains in the many mega-malls and indulge in freshly cooked dishes in traditional kopitiam (coffee shops). In the evening, relax by the pool and enjoy the experience.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Kuala Lumpur";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 25:{
+                                                                                                    System.out.println("Kerala, India\nUnsurprisingly, Kerala has been called \"God's country\". By boat, you can cross enchanted landscapes: lagoons alongside palm groves, protected wildlife oases complete with elephants, exotic birds and even tigers, as well as the magnificent rituals of kathakali temples in which music, dance and extravagant costumes are combined are just a few attractions that give this place something otherworldly. Add the flavors of cardamom, cinnamon, black pepper and ginger and your holiday is complete.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Kerala";
+                                                                                                    break;
+                                                                                                }
+                                                                                            }
+                                                                                            if(destinationChoice!=null){
+                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
+                                                                                                    int id = idTravel;
+                                                                                                    do {
+                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    do {
+                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    try {
+                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        System.out.println("the travel ID is: " + id);
+                                                                                                        System.out.println("Successful operation, press any key to continue");
+                                                                                                        keyboard.nextLine();
+                                                                                                        idTravel++;
+                                                                                                    } catch (MaximumReached ex) {
+                                                                                                        System.out.println(ex.toString());
+                                                                                                    } catch (DateTimeException ex) {
+                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        keyboard.nextLine();
+                                                                                                    }
+                                                                                                    choiceMenu0111=0;
+                                                                                                    choiceMenu011=0;
+                                                                                                    travelCompleted=true;
+                                                                                                }  
                                                                                             }
                                                                                         }while(choiceMenu0111!=0);
                                                                                         break;
@@ -631,10 +882,79 @@ public class Main {
                                                                                     case 3: {
                                                                                         do{
                                                                                             choiceMenu0111=mAmerica.sceltaMenu(0);
+                                                                                            String destination = null;
+                                                                                            String destinationChoice = null;
                                                                                             switch(choiceMenu0111){
                                                                                                 case 0:{
                                                                                                     break;
                                                                                                 }
+                                                                                                case 1:{
+                                                                                                    System.out.println("");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 2:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 3:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 4:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                            }
+                                                                                            if(destinationChoice!=null){
+                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
+                                                                                                    int id = idTravel;
+                                                                                                    do {
+                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    do {
+                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    try {
+                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        System.out.println("the travel ID is: " + id);
+                                                                                                        System.out.println("Successful operation, press any key to continue");
+                                                                                                        keyboard.nextLine();
+                                                                                                        idTravel++;
+                                                                                                    } catch (MaximumReached ex) {
+                                                                                                        System.out.println(ex.toString());
+                                                                                                    } catch (DateTimeException ex) {
+                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        keyboard.nextLine();
+                                                                                                    }
+                                                                                                    choiceMenu0111=0;
+                                                                                                    choiceMenu011=0;
+                                                                                                    travelCompleted=true;
+                                                                                                }  
                                                                                             }
                                                                                         }while(choiceMenu0111!=0);
                                                                                         break;
@@ -642,10 +962,79 @@ public class Main {
                                                                                     case 4: {
                                                                                         do{
                                                                                             choiceMenu0111=mAustralia.sceltaMenu(0);
+                                                                                            String destination = null;
+                                                                                            String destinationChoice = null;
                                                                                             switch(choiceMenu0111){
                                                                                                 case 0:{
                                                                                                     break;
                                                                                                 }
+                                                                                                case 1:{
+                                                                                                    System.out.println("");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 2:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 3:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 4:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                            }
+                                                                                            if(destinationChoice!=null){
+                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
+                                                                                                    int id = idTravel;
+                                                                                                    do {
+                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    do {
+                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    try {
+                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        System.out.println("the travel ID is: " + id);
+                                                                                                        System.out.println("Successful operation, press any key to continue");
+                                                                                                        keyboard.nextLine();
+                                                                                                        idTravel++;
+                                                                                                    } catch (MaximumReached ex) {
+                                                                                                        System.out.println(ex.toString());
+                                                                                                    } catch (DateTimeException ex) {
+                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        keyboard.nextLine();
+                                                                                                    }
+                                                                                                    choiceMenu0111=0;
+                                                                                                    choiceMenu011=0;
+                                                                                                    travelCompleted=true;
+                                                                                                }  
                                                                                             }
                                                                                         }while(choiceMenu0111!=0);
                                                                                         break;
@@ -653,10 +1042,79 @@ public class Main {
                                                                                     case 5: {
                                                                                         do{
                                                                                             choiceMenu0111=mAfrica.sceltaMenu(0);
+                                                                                            String destination = null;
+                                                                                            String destinationChoice = null;
                                                                                             switch(choiceMenu0111){
                                                                                                 case 0:{
                                                                                                     break;
                                                                                                 }
+                                                                                                case 1:{
+                                                                                                    System.out.println("");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 2:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 3:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 4:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                            }
+                                                                                            if(destinationChoice!=null){
+                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
+                                                                                                    int id = idTravel;
+                                                                                                    do {
+                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    do {
+                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    try {
+                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        System.out.println("the travel ID is: " + id);
+                                                                                                        System.out.println("Successful operation, press any key to continue");
+                                                                                                        keyboard.nextLine();
+                                                                                                        idTravel++;
+                                                                                                    } catch (MaximumReached ex) {
+                                                                                                        System.out.println(ex.toString());
+                                                                                                    } catch (DateTimeException ex) {
+                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        keyboard.nextLine();
+                                                                                                    }
+                                                                                                    choiceMenu0111=0;
+                                                                                                    choiceMenu011=0;
+                                                                                                    travelCompleted=true;
+                                                                                                }  
                                                                                             }
                                                                                         }while(choiceMenu0111!=0);
                                                                                         break;
@@ -664,10 +1122,79 @@ public class Main {
                                                                                     case 6: {
                                                                                         do{
                                                                                             choiceMenu0111=mAntarctica.sceltaMenu(0);
+                                                                                            String destination = null;
+                                                                                            String destinationChoice = null;
                                                                                             switch(choiceMenu0111){
                                                                                                 case 0:{
                                                                                                     break;
                                                                                                 }
+                                                                                                case 1:{
+                                                                                                    System.out.println("");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 2:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 3:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 4:{
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                            }
+                                                                                            if(destinationChoice!=null){
+                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
+                                                                                                    int id = idTravel;
+                                                                                                    do {
+                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
+                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
+                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
+                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    do {
+                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
+                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        if (dateCorrect) {
+                                                                                                            break;
+                                                                                                        } else {
+                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                        }
+                                                                                                    } while (!dateCorrect);
+                                                                                                    try {
+                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
+                                                                                                        System.out.println("the travel ID is: " + id);
+                                                                                                        System.out.println("Successful operation, press any key to continue");
+                                                                                                        keyboard.nextLine();
+                                                                                                        idTravel++;
+                                                                                                    } catch (MaximumReached ex) {
+                                                                                                        System.out.println(ex.toString());
+                                                                                                    } catch (DateTimeException ex) {
+                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        keyboard.nextLine();
+                                                                                                    }
+                                                                                                    choiceMenu0111=0;
+                                                                                                    choiceMenu011=0;
+                                                                                                    travelCompleted=true;
+                                                                                                }  
                                                                                             }
                                                                                         }while(choiceMenu0111!=0);
                                                                                         break;
