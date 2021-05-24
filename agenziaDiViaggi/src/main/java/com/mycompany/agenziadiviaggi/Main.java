@@ -121,12 +121,30 @@ public class Main {
         asia[23]="Varanasi";
         asia[24]="Kuala Lumpur";
         asia[25]="Kerala";	
-        String[] america=new String[1];
+        String[] america=new String[11];
         america[0]="come back";
-        
-        String[] australia=new String[1];
+        america[1]="New York";
+        america[2]="Washington";
+        america[3]="Philadelphia";
+        america[4]="Miami";
+        america[5]="The Angels";
+        america[6]="San Francisco";
+        america[7]="Boston";
+        america[8]="Las Vegas";
+        america[9]="Chicago";
+        america[10]="New Orleans";
+        String[] australia=new String[11];
         australia[0]="come back";
-        
+        australia[1]="Sydney";
+        australia[2]="Perth";
+        australia[3]="Adelaide";
+        australia[4]="Melbourne";
+        australia[5]="Brisbane";
+        australia[6]="Darwin";
+        australia[7]="Canberra";
+        australia[8]="Hobart";
+        australia[9]="Gold Coast";
+        australia[10]="Alice Springs";
         String[] africa=new String[1];
         africa[0]="come back";
         
@@ -889,28 +907,127 @@ public class Main {
                                                                                                     break;
                                                                                                 }
                                                                                                 case 1:{
-                                                                                                    System.out.println("");
+                                                                                                    System.out.println("New York, the \"Big Apple\", is certainly the most famous American city, the one that is generally seen by all those who go to the United States for the first time. The city that never sleeps has so many attractions that a week is not enough to visit it and, if you decide to stay here more than 3 days, you will certainly not be bored. \n" +
+                                                                                                    "\n" +
+                                                                                                    "The main attractions of New York\n" +
+                                                                                                    " \n" +
+                                                                                                    "\n" +
+                                                                                                    "Here are some of the most important attractions of the city:\n" +
+                                                                                                    "\n" +
+                                                                                                    "Statue of Liberty\n" +
+                                                                                                    "Central Park\n" +
+                                                                                                    "Empire State Building\n" +
+                                                                                                    "Times Square\n" +
+                                                                                                    "WITH\n" +
+                                                                                                    "Brooklyn Bridge\n" +
+                                                                                                    "MoMA\n" +
+                                                                                                    "Grand Central\n" +
+                                                                                                    "One World Trade Center");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="New York";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 2:{
+                                                                                                    System.out.println("Washington is the capital of the United States, the ideal city to visit for all lovers of art and culture, especially the American one. In addition to visiting the White House, the National Mall and the US Capitol, you can also visit the Smithsonian Institution, a complex that includes 19 major museums, including the National Air and Space Museum and the National Museum of American History.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Washington";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 3:{
+                                                                                                    System.out.println("Philadelphia, compared to the other cities that we will see in this city, may seem small and less important, but it is not. In fact, the city is home to one of the most important symbols of American culture: \"The liberty Bell\". Philadelphia played a central role during the War of Independence from England and, even today, features important buildings and places to visit.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Another important attraction of the city, certainly more modern and less high-sounding, is the statue of Rocky Balboa, the character played by Sylvester Stallone who, in modern times, has allowed Philadelphia to be known all over the world.\n" +
+                                                                                                    "\n" +
+                                                                                                    "The city is located in Pennsylvania, halfway between New York and Washington, you can visit the main attractions in a single day and is definitely worth a stop on your tour.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Philadelphia";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 4:{
+                                                                                                    System.out.println("Miami is one of the most evocative American cities, full of life and traditions. Here, in fact, in addition to American culture, Latin culture is also very strong, especially Cuban, as a consequence of the migratory flows that began more than fifty years ago.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Miami is a city recommended for younger people and for those who want to have fun by taking advantage of the many clubs in the Cuban district, probably the most important attraction in the city. However, families will also be able to appreciate the beauties of the city, which in addition to nightlife, also offers museums, shops, interesting beaches and luxury hotels.\nDon't forget that Miami is also a great starting point for a short stay in the Caribbean.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Miami";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 5:{
+                                                                                                    System.out.println("Los Angeles is undoubtedly one of the most famous American cities, thanks also to the presence of Hollywood, which has chosen it as the location of many films and TV series. The attractions are truly countless, from the Studios to the beaches, as well as the clubs and neighborhoods to visit.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Los Angeles";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 6:{
+                                                                                                    System.out.println("San Francisco is a simply enchanting city, with an almost unique style that makes it very different from other American cities. This city has also been made famous by many films and TV series, but only by visiting it will you be able to really get to know it.\n" +
+                                                                                                    "\n" +
+                                                                                                    " \n" +
+                                                                                                    "\n" +
+                                                                                                    "The main attractions of San Francisco\n" +
+                                                                                                    "Here are some of the most important San Francisco attractions:\n" +
+                                                                                                    "\n" +
+                                                                                                    "Golden Gate Bridge\n" +
+                                                                                                    "Alcatraz\n" +
+                                                                                                    "Pier 39\n" +
+                                                                                                    "Fisherman's Wharf\n" +
+                                                                                                    "Union Square\n" +
+                                                                                                    "Golden Gate Park");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="San Francisco";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 7:{
+                                                                                                    System.out.println("Boston is a very famous and particular American city, thanks above all to the “British” style of its streets and buildings. Here where the American Revolution practically began, just think of the \"Boston Tea Party\", today there are some of the most famous universities in the world: MIT and Harvard.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Boston is a pleasant university city where every night you will find open pubs where you can have a beer and watch a game of the Celtics (basketball) or the Red Sox (baseball).\n" +
+                                                                                                    "\n" +
+                                                                                                    "Art, history, culture, sports and clubs: Boston really has a lot to offer to tourists, so you cannot absolutely exclude it from your tour of the country.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Boston";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 8:{
+                                                                                                    System.out.println("Las Vegas is a city like few others in the world, best known for its luxury hotels and casinos. Contrary to what one might think, it is not a city that only the richest can visit: everyone can afford a night or two in a hotel, although to find a good deal it is better to book in advance.\n" +
+                                                                                                    "\n" +
+                                                                                                    "The main attractions of the city are the casinos which, in addition to gambling, offer first-rate entertainment, with performances by internationally renowned artists.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Las Vegas";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 9:{
+                                                                                                    System.out.println("Chicago, the city of the wind, is one of the most important American cities that, although it does not have as many attractions as New York, is certainly worth a visit. The city that saw Al Capone's power grow, has been able to proudly recover from scandals, and today continues its development by creating valuable urban areas for both residents and tourists.\n" +
+                                                                                                    "\n" +
+                                                                                                    "Once in Chicago you cannot fail to try his famous pizza to compare it with the Italian one, but we advise you to avoid the winter months, in these parts it can be really very cold.The main attractions of Chicago\n" +
+                                                                                                    "Willis Tower\n" +
+                                                                                                    "Millenium Park\n" +
+                                                                                                    "Cloud Gate\n" +
+                                                                                                    "Navy Pier\n" +
+                                                                                                    "Art Institute of Chicago\n" +
+                                                                                                    "Shedd Aquarium\n" +
+                                                                                                    "Magnificent mile\n" +
+                                                                                                    "Grant Park\n" +
+                                                                                                    "Field Museum");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Chicago";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 10:{
+                                                                                                    System.out.println("New Orleans, with its unmistakable French style, is a very special city or, better said, “Magical”. Here, where one of the most beautiful Carnival in the world is celebrated, there is certainly no lack of myths and legends related to the voodoo religion, a very mysterious esoteric practice.Despite the scary stories that hover around the city, for many voodoo is nothing more than a publicity stunt to attract many tourists who are passionate about the occult.\n" +
+                                                                                                    "\n" +
+                                                                                                    "The city obviously does not end here, there are many attractions it offers starting from its mythical French quarter, an area that now seems to have stopped in time.\n" +
+                                                                                                    "\n" +
+                                                                                                    "The best time to visit New Orleans is certainly during Carnival or during the Jazz & Heritage Festival, the most important events in the city, but if you can't in these days, don't worry, you will always find a lot to see.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="New Orleans";
                                                                                                     break;
                                                                                                 }
                                                                                             }
@@ -969,25 +1086,70 @@ public class Main {
                                                                                                     break;
                                                                                                 }
                                                                                                 case 1:{
-                                                                                                    System.out.println("");
+                                                                                                    System.out.println("Sydney\nFor many travelers Sydney is Australia: a multicultural metropolis with nearly five million inhabitants , the largest city in Oceania and one of the world's major artistic centers, Sydney can only be at the top of your wishlist of the most beautiful Australian cities. And if you are not interested in culture (with the Science Museum) or music (with the imposing Opera House , symbol of the city), focus on sport and sunbathing: Bondi Beach is one of the most loved and famous beaches in the whole of Italy. 'Australia, and beyond. Or again, on the incredible scene of clubs and restaurants, and on the nightlife. Sydney - like few other cities in the world, like London or Paris - is truly worthy of a trip on its own,cultural capital of Australia and all of Oceania .");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 2:{
+                                                                                                    System.out.println("Perth\nAbout the same latitude as Sydney, but on the opposite west coast (to be clear: between the two cities there are 3700 kilometers, practically the width of Europe) is the city of Perth . Perth enters the list of the 10 most beautiful cities in Australia as the only large city on the Australian West Coast , the wildest and least inhabited. Perth, while boasting a vibrant cultural and street art scene, is a paradise for nature lovers: from Kings Park , one of the largest city parks in the world, to beaches and animals ... on Rottnest Island, a fabulous island a few kilometers from Perth, in fact, in addition to swimming and surfing on the coral reef, you can meet one of the strangest animals in Australia: the smiling quokka .");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 3:{
+                                                                                                    System.out.println("Adelaide\nIf you ever decide to travel the 3,700 kilometers between Perth and Sydney, roughly halfway along the south coast of Australia, you will come across another beautiful city worth a visit: Adelaide , the capital of South Australia . Adelaide takes its charming name from Adelaide of Saxe-Meiningen, who was the wife of King William IV of England, and has earned the nickname \"city of churches\" , due to the many religions that have passed through here and have built places of worship (although a popular adage recalls how, in Adelaide, there is at least one bar for each church…). Between a lively nightlife, shopping and bars, nature and animals (do not miss the Adelaide Zoo and the Botanical Garden), this beautiful Australian city pleases everyone.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 4:{
+                                                                                                    System.out.println("Melbourne\nOnly one city in Australia can compete with Sydney for the role of Australia's cultural capital - beautiful Melbourne , the nation's second largest city. Melbourne is located in the south of the country, facing Tasmania, and is considered the capital of sports (the Formula One Grand Prix is ​​held here) and clubs, with excellent restaurants and bars ... from which to explore the wineries of the area! Start from the center, with the Queen Victoria Market , and then move to the beach of St Kilda , inhabited by the little blue penguins . And if you have a few more days, rent a car and explore the Mornington Peninsula, between excursions in its natural park, beaches and surfing.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 5:{
+                                                                                                    System.out.println("Brisbane\nThird largest city in Australia and capital of the state of Queensland , beautiful Brisbane seduces especially culture lovers with the Queensland Gallery of Modern Art (GOMA) , the largest art gallery on the continent, and the Queensland Performing Arts Center (QPAC ) , with its concert halls and theaters. One of the symbols of the city is the Story Bridge , the gigantic bridge that dominates it: you can climb up to the tip of the arch, from which you can admire the whole of Brisbane and the coast. The more courageous, then, can abseil ... Also, a short distance from this beautiful Australian city are a couple of unique islands: Moreton Island, 70 minutes from Brisbane, is the third largest sandy island in the world, and is practically uninhabited: a paradise for nature and diving lovers. North Stradbroke Island , 40 minutes away, is perfect for hiking, biking and whale watching.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 6:{
+                                                                                                    System.out.println("Darwin\nCapital of the Northern Territory, Darwin is a rather isolated and very charming city, not to be missed on your tour of the Australian cities. Many travelers depart from here to travel the Stuart Highway , the road that crosses Australia from north to south, passing through Alice Springs and arriving as far as Adelaide. Or the Ghan railway , the Great Southern Rail , which follows a similar route and will take you from one end of the continent to the other in three days - one of the most spectacular rail journeys in the world ! Whether you arrive or leave, Darwin still has enough natural beauty to fill a few days of travel.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 7:{
+                                                                                                    System.out.println("Canberra\nThe main Australian city not on the coast is also the capital of the country: it is Canberra , about 300 kilometers from Sydney and 650 from Melbourne. Like other capitals of the world (the most famous is Brasilia), Canberra was explicitly designed as a capital , in a previously uninhabited area, in 1908: the creator of the city plan was the Chicago architect Walter Burley Griffin , who filled his creature of gardens and parks. As the capital, Canberra is also home to major national museums: the Australian War Memorial  , the  National Gallery of Australia , the National Portrait Gallery, the National Library of Australia (aka the National Library), and theNational Museum of Australia , as well as the National Botanical Gardens and a museum dedicated to dinosaurs.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 8:{
+                                                                                                    System.out.println("Hobart\nHobart is a beautiful Australian city, especially interesting as the capital of Tasmania , the large island south of the continent: far from the continent and the big cities, Hobart has developed its own unique culture , easily recognizable in the  MONA , the bizarre Museum of Old and New Art of the city. In addition to unique clubs and restaurants, Hobart is the starting point for exploring Tasmania, its nature and its fauna - including several species of birds found only on the island, and the famous \"Tasmanian devil\" , a marsupial that lives only here, at risk of extinction.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 9:{
+                                                                                                    System.out.println("Gold Coast\nWhat the name promises, this beautiful Australian city maintains: Gold Coast , not far from Brisbane, is Australia's main tourist center for sunbathing and surfing , among skyscrapers and dream beaches. The most famous beach? Surfers Paradise , of course, and even here the name says it all.");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 10:{
+                                                                                                    System.out.println("Alice Springs\nAlice Springs is a beautiful city in Australia especially for what is around it: a red sand desert that stretches for hundreds of kilometers in all directions, and which guarantees this city a true air of the last frontier . Ideal for discovering the art and culture of Australia's aborigines, the city of Alice Springs is also perfect for those who love nature hikes and trekking, including the spectacular Kings Canyon, the West MacDonnell Ranges, the Simpson Desert and - of course - the most iconic image of mainland Australia, the majestic Uluru , aka Ayers Rock, the gigantic red massif that stands out in the middle of the Australian outback.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
@@ -1056,18 +1218,21 @@ public class Main {
                                                                                                     break;
                                                                                                 }
                                                                                                 case 2:{
+                                                                                                    System.out.println("");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 3:{
+                                                                                                    System.out.println("");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 4:{
+                                                                                                    System.out.println("");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
                                                                                                         destination="";
