@@ -45,6 +45,22 @@ public class InputControlls {
         }while(!execution);
         return n;
     }
+    public static float inputAnalyzerFloat(String item,int length){
+        String s;
+        float n=0;
+        boolean execution;
+        do{
+            s=inputAnalyzerString(item, length);
+            try{
+                n=Float.parseFloat(s);
+                execution=true;
+            }catch(NumberFormatException e){
+                System.out.println("ERROR:invalid input insert because "+item+" contains letters");
+                execution=false;
+            }
+        }while(!execution);
+        return n;
+    }
     public static String inputAnalyzerStringNominative(String item,int length){
         String s;
         boolean execution;

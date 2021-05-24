@@ -17,6 +17,8 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -43,7 +45,7 @@ public class Main {
         login[2]="create an account and log into it";
         login[3]="exports users to CSV files";
         login[4]="save to binary file";
-        String[] user = new String[8];
+        String[] user = new String[10];
         user[0]="come back";
         user[1]="Travel planning";
         user[2]="cancel a travel";
@@ -51,7 +53,9 @@ public class Main {
         user[4]="show Travels Sorted By Departure";
         user[5]="show destinations";
         user[6]="postpone Travel";
-        user[7]="delete the account";
+        user[7]="add credit";
+        user[8]="paid travel";
+        user[9]="delete the account";
         String[] admi = new String[2];
         admi[0]="come back";
         admi[1]="View the list of participants in a particular trip in alphabetical order by entering the date and destination";
@@ -59,14 +63,13 @@ public class Main {
         travel[0]="come back";
         travel[1]="autonomous travel planning";
         travel[2]="guided travel planning";
-        String[] destinescion=new String[7];
+        String[] destinescion=new String[6];
         destinescion[0]="come back";
         destinescion[1]="show destinations of Europe";
         destinescion[2]="show destinations of Asia";
         destinescion[3]="shows destinations of America";
         destinescion[4]="shows destinations of Australia";
         destinescion[5]="shows destinations of Africa";
-        destinescion[6]="shows destinations of Antarctica";
         String[] europe=new String[26];
         europe[0]="come back";
         europe[1]="Londra";
@@ -145,11 +148,13 @@ public class Main {
         australia[8]="Hobart";
         australia[9]="Gold Coast";
         australia[10]="Alice Springs";
-        String[] africa=new String[1];
+        String[] africa=new String[6];
         africa[0]="come back";
-        
-        String[] antarctica=new String[1];
-        antarctica[0]="come back";
+        africa[1]="Mount Kilimanjaro";
+        africa[2]="Red Sea";
+        africa[3]="Deadvlei";
+        africa[4]="Nungwi Beach";
+        africa[5]="Jemaa el-Fna square";
         
         Menu mLogin=new Menu(login);
         Menu mUser=new Menu(user);
@@ -161,28 +166,24 @@ public class Main {
         Menu mAmerica=new Menu(america);
         Menu mAustralia=new Menu(australia);
         Menu mAfrica=new Menu(africa);
-        Menu mAntarctica=new Menu(antarctica);
         Admin admin=new Admin("admin", "admin", "Coniglio", "admin.Agency@Yahoo.com", 101);
         try{ 
             FileInputStream f1=new FileInputStream(nsmeFileBinary);
             ObjectInputStream reader=new ObjectInputStream(f1); 
             try{
-                idTravel=(int)reader.readInt();//chiedi al prof
-                idUsers=(int)reader.readInt();//chiedi al prof
-                numberUsersPresent=(int)reader.readInt();//chiedi al prof
+                idTravel=(int)reader.readInt();
+                idUsers=(int)reader.readInt();
+                numberUsersPresent=(int)reader.readInt();
                 users=(User[])reader.readObject();
                 reader.close();
             }catch (ClassNotFoundException ex){
                 reader.close();
-                System.out.println("Error: unable to read file, press any key to continue");
-                keyboard.nextLine();
+                System.out.println("[ERROR]: unable to read file");
             }
         } catch (FileNotFoundException ex) {
-            System.out.println("Error: cannot find the file, press any key to continue");
-            keyboard.nextLine();
+            System.out.println("[ERROR]: cannot find the file");
         } catch (IOException ex) {
-            System.out.println("Error: unable to open file, press any key to continue");
-            keyboard.nextLine();
+            System.out.println("[ERROR]: unable to open file");
         }
         try {
             do {
@@ -237,7 +238,7 @@ public class Main {
                                             if (dateCorrect) {
                                                 break;
                                             } else {
-                                                System.out.println("ERROR: invalid date, press any key to continue");
+                                                System.out.println("[ERROR]: invalid date, press any key to continue");
                                                 keyboard.nextLine();
                                             }
                                         } while (!dateCorrect);
@@ -300,7 +301,7 @@ public class Main {
                                                                                 if (dateCorrect) {
                                                                                     break;
                                                                                 } else {
-                                                                                    System.out.println("ERROR: invalid date");
+                                                                                    System.out.println("[ERROR]: invalid date");
                                                                                 }
                                                                             } while (!dateCorrect);
                                                                             do {
@@ -311,7 +312,7 @@ public class Main {
                                                                                 if (dateCorrect) {
                                                                                     break;
                                                                                 } else {
-                                                                                    System.out.println("ERROR: invalid date");
+                                                                                    System.out.println("[ERROR]: invalid date");
                                                                                 }
                                                                             } while (!dateCorrect);
                                                                             try {
@@ -323,7 +324,7 @@ public class Main {
                                                                             } catch (MaximumReached ex) {
                                                                                 System.out.println(ex.toString());
                                                                             } catch (DateTimeException ex) {
-                                                                                System.out.println("Error: the date is invalid");
+                                                                                System.out.println("[ERROR]: the date is invalid");
                                                                                 keyboard.nextLine();
                                                                             }
                                                                             break;
@@ -625,7 +626,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     do {
@@ -636,7 +637,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     try {
@@ -648,7 +649,7 @@ public class Main {
                                                                                                     } catch (MaximumReached ex) {
                                                                                                         System.out.println(ex.toString());
                                                                                                     } catch (DateTimeException ex) {
-                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        System.out.println("[ERROR]: the date is invalid");
                                                                                                         keyboard.nextLine();
                                                                                                     }
                                                                                                     choiceMenu0111=0;
@@ -863,7 +864,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     do {
@@ -874,7 +875,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     try {
@@ -886,7 +887,7 @@ public class Main {
                                                                                                     } catch (MaximumReached ex) {
                                                                                                         System.out.println(ex.toString());
                                                                                                     } catch (DateTimeException ex) {
-                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        System.out.println("[ERROR]: the date is invalid");
                                                                                                         keyboard.nextLine();
                                                                                                     }
                                                                                                     choiceMenu0111=0;
@@ -1042,7 +1043,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     do {
@@ -1053,7 +1054,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     try {
@@ -1065,7 +1066,7 @@ public class Main {
                                                                                                     } catch (MaximumReached ex) {
                                                                                                         System.out.println(ex.toString());
                                                                                                     } catch (DateTimeException ex) {
-                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        System.out.println("[ERROR]: the date is invalid");
                                                                                                         keyboard.nextLine();
                                                                                                     }
                                                                                                     choiceMenu0111=0;
@@ -1089,70 +1090,70 @@ public class Main {
                                                                                                     System.out.println("Sydney\nFor many travelers Sydney is Australia: a multicultural metropolis with nearly five million inhabitants , the largest city in Oceania and one of the world's major artistic centers, Sydney can only be at the top of your wishlist of the most beautiful Australian cities. And if you are not interested in culture (with the Science Museum) or music (with the imposing Opera House , symbol of the city), focus on sport and sunbathing: Bondi Beach is one of the most loved and famous beaches in the whole of Italy. 'Australia, and beyond. Or again, on the incredible scene of clubs and restaurants, and on the nightlife. Sydney - like few other cities in the world, like London or Paris - is truly worthy of a trip on its own,cultural capital of Australia and all of Oceania .");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Sydney";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 2:{
                                                                                                     System.out.println("Perth\nAbout the same latitude as Sydney, but on the opposite west coast (to be clear: between the two cities there are 3700 kilometers, practically the width of Europe) is the city of Perth . Perth enters the list of the 10 most beautiful cities in Australia as the only large city on the Australian West Coast , the wildest and least inhabited. Perth, while boasting a vibrant cultural and street art scene, is a paradise for nature lovers: from Kings Park , one of the largest city parks in the world, to beaches and animals ... on Rottnest Island, a fabulous island a few kilometers from Perth, in fact, in addition to swimming and surfing on the coral reef, you can meet one of the strangest animals in Australia: the smiling quokka .");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Perth";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 3:{
                                                                                                     System.out.println("Adelaide\nIf you ever decide to travel the 3,700 kilometers between Perth and Sydney, roughly halfway along the south coast of Australia, you will come across another beautiful city worth a visit: Adelaide , the capital of South Australia . Adelaide takes its charming name from Adelaide of Saxe-Meiningen, who was the wife of King William IV of England, and has earned the nickname \"city of churches\" , due to the many religions that have passed through here and have built places of worship (although a popular adage recalls how, in Adelaide, there is at least one bar for each church…). Between a lively nightlife, shopping and bars, nature and animals (do not miss the Adelaide Zoo and the Botanical Garden), this beautiful Australian city pleases everyone.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Adelaide";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 4:{
                                                                                                     System.out.println("Melbourne\nOnly one city in Australia can compete with Sydney for the role of Australia's cultural capital - beautiful Melbourne , the nation's second largest city. Melbourne is located in the south of the country, facing Tasmania, and is considered the capital of sports (the Formula One Grand Prix is ​​held here) and clubs, with excellent restaurants and bars ... from which to explore the wineries of the area! Start from the center, with the Queen Victoria Market , and then move to the beach of St Kilda , inhabited by the little blue penguins . And if you have a few more days, rent a car and explore the Mornington Peninsula, between excursions in its natural park, beaches and surfing.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Melbourne";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 5:{
                                                                                                     System.out.println("Brisbane\nThird largest city in Australia and capital of the state of Queensland , beautiful Brisbane seduces especially culture lovers with the Queensland Gallery of Modern Art (GOMA) , the largest art gallery on the continent, and the Queensland Performing Arts Center (QPAC ) , with its concert halls and theaters. One of the symbols of the city is the Story Bridge , the gigantic bridge that dominates it: you can climb up to the tip of the arch, from which you can admire the whole of Brisbane and the coast. The more courageous, then, can abseil ... Also, a short distance from this beautiful Australian city are a couple of unique islands: Moreton Island, 70 minutes from Brisbane, is the third largest sandy island in the world, and is practically uninhabited: a paradise for nature and diving lovers. North Stradbroke Island , 40 minutes away, is perfect for hiking, biking and whale watching.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Brisbane";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 6:{
                                                                                                     System.out.println("Darwin\nCapital of the Northern Territory, Darwin is a rather isolated and very charming city, not to be missed on your tour of the Australian cities. Many travelers depart from here to travel the Stuart Highway , the road that crosses Australia from north to south, passing through Alice Springs and arriving as far as Adelaide. Or the Ghan railway , the Great Southern Rail , which follows a similar route and will take you from one end of the continent to the other in three days - one of the most spectacular rail journeys in the world ! Whether you arrive or leave, Darwin still has enough natural beauty to fill a few days of travel.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Darwin";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 7:{
                                                                                                     System.out.println("Canberra\nThe main Australian city not on the coast is also the capital of the country: it is Canberra , about 300 kilometers from Sydney and 650 from Melbourne. Like other capitals of the world (the most famous is Brasilia), Canberra was explicitly designed as a capital , in a previously uninhabited area, in 1908: the creator of the city plan was the Chicago architect Walter Burley Griffin , who filled his creature of gardens and parks. As the capital, Canberra is also home to major national museums: the Australian War Memorial  , the  National Gallery of Australia , the National Portrait Gallery, the National Library of Australia (aka the National Library), and theNational Museum of Australia , as well as the National Botanical Gardens and a museum dedicated to dinosaurs.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Canberra";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 8:{
                                                                                                     System.out.println("Hobart\nHobart is a beautiful Australian city, especially interesting as the capital of Tasmania , the large island south of the continent: far from the continent and the big cities, Hobart has developed its own unique culture , easily recognizable in the  MONA , the bizarre Museum of Old and New Art of the city. In addition to unique clubs and restaurants, Hobart is the starting point for exploring Tasmania, its nature and its fauna - including several species of birds found only on the island, and the famous \"Tasmanian devil\" , a marsupial that lives only here, at risk of extinction.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Hobart";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 9:{
                                                                                                     System.out.println("Gold Coast\nWhat the name promises, this beautiful Australian city maintains: Gold Coast , not far from Brisbane, is Australia's main tourist center for sunbathing and surfing , among skyscrapers and dream beaches. The most famous beach? Surfers Paradise , of course, and even here the name says it all.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Gold Coast";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 10:{
                                                                                                     System.out.println("Alice Springs\nAlice Springs is a beautiful city in Australia especially for what is around it: a red sand desert that stretches for hundreds of kilometers in all directions, and which guarantees this city a true air of the last frontier . Ideal for discovering the art and culture of Australia's aborigines, the city of Alice Springs is also perfect for those who love nature hikes and trekking, including the spectacular Kings Canyon, the West MacDonnell Ranges, the Simpson Desert and - of course - the most iconic image of mainland Australia, the majestic Uluru , aka Ayers Rock, the gigantic red massif that stands out in the middle of the Australian outback.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Alice Springs";
                                                                                                     break;
                                                                                                 }
                                                                                             }
@@ -1167,7 +1168,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     do {
@@ -1178,7 +1179,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     try {
@@ -1190,7 +1191,7 @@ public class Main {
                                                                                                     } catch (MaximumReached ex) {
                                                                                                         System.out.println(ex.toString());
                                                                                                     } catch (DateTimeException ex) {
-                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        System.out.println("[ERROR]: the date is invalid");
                                                                                                         keyboard.nextLine();
                                                                                                     }
                                                                                                     choiceMenu0111=0;
@@ -1211,31 +1212,38 @@ public class Main {
                                                                                                     break;
                                                                                                 }
                                                                                                 case 1:{
-                                                                                                    System.out.println("");
+                                                                                                    System.out.println("Mount Kilimanjaro, Tanzania\nOne of the Seven Peaks of the planet and the endless savannah at its feet… The magnificent Mount Kilimanjaro cannot be excluded among the most beautiful places in Africa. With its 5,895 meters high, this mountain made up of three volcanic cones ( Kibo, Mawenzi and Shira ) is the highest in Africa as well as the most unique in the world: just think that it rises with its white peak in Tanzania northeastern, between elephants, buffaloes and leopards. The National Park Kilimanjaro , declared a World Heritage Site in 1987 , it is suitable for safari adventure and trekkingheroic: climbing Kilimanjiaro is the dream of all those travelers with a free spirit and strong legs, ready to camp under a sky full of stars and to join the Masai people");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Mount Kilimanjaro";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 2:{
-                                                                                                    System.out.println("");
+                                                                                                    System.out.println("Red Sea, Egypt\nEven below the surface of the sea, Africa knows how to conquer everyone, with no holds barred, especially in the abysses of that blue strip between the African continent and the Arabian peninsula called the Red Sea . The Egyptian coast of Sinai , where the sun shines 365 days a year, awaits you for the most exciting swim of your life among fish, corals and anemones, in a crystalline sea characterized by a unique marine biodiversity! The coral reef of places like Sharm el-Sheikh or Marsa Alam is the most beautiful in the world and - believe us - it will remain in your heart. Just 20 kilometers south of Sharm then, at the meeting point between the Gulf of Suez and that of Aqaba, there is the wonderful Ras Mohamed Marine Reserve , a paradise of sand dunes, blue lagoons and granite mountains.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Red Sea";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 3:{
-                                                                                                    System.out.println("");
+                                                                                                    System.out.println("Deadvlei, Namibia\nIf there is one place in Africa that will leave you speechless it is the Namib Desert , which with its extreme climatic and geographic conditions has given life to surreal landscapes made of salt lakes, dry trees and giant dunes, which look like the hand of an artist. The highlight of your trip to Namibia , to be seen absolutely, will undoubtedly be Deadvlei , within the Namib Naukluft National Park . This place in the middle of nowhere , literally called Dead Swamp, is a depression characterized by a soil of white sand, set between red dunes up to 400 meters high and dotted with dead and twisted trees. An inanimate picture created by the deviation of the river Tsauchab !");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Deadvlei";
                                                                                                     break;
                                                                                                 }
                                                                                                 case 4:{
-                                                                                                    System.out.println("");
+                                                                                                    System.out.println("Nungwi Beach, Zanzibar\nOff the coast of Tanzania lies an archipelago enchanted by soft white beaches and beautifully turquoise sea: Zanzibar . Here, in the northernmost point of the island of Unguja , there is one of the most beautiful beaches in the world, which is called Nungwi and is the ideal place to take long restorative baths in a crystalline sea with shades of color ranging from 'light blue to deep blue. In addition to the particular color of the water and the almost total absence of the tides, which characterize much of the island, Nungwi enchants for the amazing nature that surrounds it in a green embrace and which offers enchanting plays of light, especially at sunset, when everything turns orange and pink. Dive with sea turtles in one of the most beautiful places in Africa.");
                                                                                                     destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
                                                                                                     if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
+                                                                                                        destination="Nungwi Beach";
+                                                                                                    break;
+                                                                                                }
+                                                                                                case 5:{
+                                                                                                    System.out.println("Jemaa el-Fna square, Morocco\nIn Marrakech, the show is guaranteed night and day in one of the largest and most beautiful squares in the world, rightfully in our most beautiful places to see in Africa: Place Jemaa el Fna , the beating heart of the medina , the magnet that draws the marrakchi outside from their homes and tourists from all over the planet. This is the city jewel declared an oral and intangible heritage of humanity by UNESCO , an open-air \"circus\" of fortune tellers, storytellers, orange sellers, snake charmers, henna women, musicians ... in short, wonders. A beautiful place in North Africa that changes face: clean and deserted in the morning, chaotic and fascinating in the evening, when at sunset it lights up with magic thanks to the vapors and lights of the street-food stalls that invade the scene ...");
+                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
+                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
+                                                                                                        destination="Jemaa el-Fna square";
                                                                                                     break;
                                                                                                 }
                                                                                             }
@@ -1250,7 +1258,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     do {
@@ -1261,7 +1269,7 @@ public class Main {
                                                                                                         if (dateCorrect) {
                                                                                                             break;
                                                                                                         } else {
-                                                                                                            System.out.println("ERROR: invalid date");
+                                                                                                            System.out.println("[ERROR]: invalid date");
                                                                                                         }
                                                                                                     } while (!dateCorrect);
                                                                                                     try {
@@ -1273,87 +1281,7 @@ public class Main {
                                                                                                     } catch (MaximumReached ex) {
                                                                                                         System.out.println(ex.toString());
                                                                                                     } catch (DateTimeException ex) {
-                                                                                                        System.out.println("Error: the date is invalid");
-                                                                                                        keyboard.nextLine();
-                                                                                                    }
-                                                                                                    choiceMenu0111=0;
-                                                                                                    choiceMenu011=0;
-                                                                                                    travelCompleted=true;
-                                                                                                }  
-                                                                                            }
-                                                                                        }while(choiceMenu0111!=0);
-                                                                                        break;
-                                                                                    }
-                                                                                    case 6: {
-                                                                                        do{
-                                                                                            choiceMenu0111=mAntarctica.sceltaMenu(0);
-                                                                                            String destination = null;
-                                                                                            String destinationChoice = null;
-                                                                                            switch(choiceMenu0111){
-                                                                                                case 0:{
-                                                                                                    break;
-                                                                                                }
-                                                                                                case 1:{
-                                                                                                    System.out.println("");
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
-                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
-                                                                                                    break;
-                                                                                                }
-                                                                                                case 2:{
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
-                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
-                                                                                                    break;
-                                                                                                }
-                                                                                                case 3:{
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
-                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
-                                                                                                    break;
-                                                                                                }
-                                                                                                case 4:{
-                                                                                                    destinationChoice=InputControlls.inputAnalyzerStringNominative("[INFO]do you want to choose this destination for your trip ???, enter Y / N", 0);
-                                                                                                    if(destinationChoice.compareToIgnoreCase("y") == 0)
-                                                                                                        destination="";
-                                                                                                    break;
-                                                                                                }
-                                                                                            }
-                                                                                            if(destinationChoice!=null){
-                                                                                              if(destinationChoice.compareToIgnoreCase("y") == 0){
-                                                                                                    int id = idTravel;
-                                                                                                    do {
-                                                                                                        startDayOfMonths = InputControlls.inputAnalyzerInt("startDayOfMonths", 1);
-                                                                                                        startValueOfMonth = InputControlls.inputAnalyzerInt("startValueOfMonth", 1);
-                                                                                                        startYear = InputControlls.inputAnalyzerInt("startYear", 1);
-                                                                                                        dateCorrect = isDataValida(startDayOfMonths, startValueOfMonth, startYear);
-                                                                                                        if (dateCorrect) {
-                                                                                                            break;
-                                                                                                        } else {
-                                                                                                            System.out.println("ERROR: invalid date");
-                                                                                                        }
-                                                                                                    } while (!dateCorrect);
-                                                                                                    do {
-                                                                                                        endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
-                                                                                                        endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
-                                                                                                        endYear = InputControlls.inputAnalyzerInt("endYear", 1);
-                                                                                                        dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
-                                                                                                        if (dateCorrect) {
-                                                                                                            break;
-                                                                                                        } else {
-                                                                                                            System.out.println("ERROR: invalid date");
-                                                                                                        }
-                                                                                                    } while (!dateCorrect);
-                                                                                                    try {
-                                                                                                        users[i].travelPlanning(destination, id, startDayOfMonths, startValueOfMonth, startYear, endDayOfMonths, endValueOfMonth, endYear);
-                                                                                                        System.out.println("the travel ID is: " + id);
-                                                                                                        System.out.println("Successful operation, press any key to continue");
-                                                                                                        keyboard.nextLine();
-                                                                                                        idTravel++;
-                                                                                                    } catch (MaximumReached ex) {
-                                                                                                        System.out.println(ex.toString());
-                                                                                                    } catch (DateTimeException ex) {
-                                                                                                        System.out.println("Error: the date is invalid");
+                                                                                                        System.out.println("[ERROR]: the date is invalid");
                                                                                                         keyboard.nextLine();
                                                                                                     }
                                                                                                     choiceMenu0111=0;
@@ -1463,7 +1391,7 @@ public class Main {
                                                                     if (dateCorrect) {
                                                                         break;
                                                                     } else {
-                                                                        System.out.println("ERROR: invalid date");
+                                                                        System.out.println("[ERROR]: invalid date");
                                                                     }
                                                                 } while (!dateCorrect);
                                                                 try {
@@ -1475,12 +1403,30 @@ public class Main {
                                                                 } catch (travelsNotFound ex) {
                                                                     System.out.println(ex.toString());
                                                                 } catch (DateTimeException ex) {
-                                                                    System.out.println("Error: the date is invalid");
+                                                                    System.out.println("[ERROR]: the date is invalid");
                                                                     keyboard.nextLine();
                                                                 }
                                                                 break;
                                                             }
-                                                            case 7: {/*delete the account*/
+                                                            case 7:{/*add credit*/
+                                                                float number=InputControlls.inputAnalyzerFloat("credit",1);
+                                                                users[i].addCredit(number);
+                                                                System.out.println("succesfull operation, press any key to continue");
+                                                                keyboard.nextLine();
+                                                                break;
+                                                            }
+                                                            case 8:{/*paid travel*/
+                                                                int id=InputControlls.inputAnalyzerInt("id", 0);
+                                                                try {
+                                                                    int a=users[i].paidTravel(id);
+                                                                } catch (ItemNotFound ex) {
+                                                                    System.out.println(ex.toString());
+                                                                }
+                                                                System.out.println("succesfull operation, press any key to continue");
+                                                                keyboard.nextLine();
+                                                                break;
+                                                            }
+                                                            case 9: {/*delete the account*/
                                                                 System.out.println("you are sure to delete this account once deleted you will not be able to go back, enter Y / N:");
                                                                 String safety = keyboard.nextLine();
                                                                 if (safety.compareToIgnoreCase("n") == 0) {
@@ -1495,7 +1441,7 @@ public class Main {
                                                                     passwordConfirm = keyboard.nextLine();
                                                                     do {
                                                                         if (passwordConfirm.length() < 3) {
-                                                                            System.out.println("ERROR: the password cannot be less than 3 characters re-enter the password: ");
+                                                                            System.out.println("[ERROR]: the password cannot be less than 3 characters re-enter the password: ");
                                                                         }
                                                                     } while (passwordConfirm.length() < 3);
                                                                     if (passwordConfirm.compareTo(users[i].getPassword()) != 0) {
@@ -1637,7 +1583,7 @@ public class Main {
         for (int i=0;i<N_MAX_USERS;i++) {
             if(users[i]!=null){
                 if(email.compareToIgnoreCase(users[i].getEmail())==0) {
-                    System.out.println("Error: invalid email, re-enter");
+                    System.out.println("[ERROR]: invalid email, re-enter");
                     email=InputControlls.inputAnalyzerString("email", 2);
                     email=controlEmail(N_MAX_USERS, users, email);
                     return email;

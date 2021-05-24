@@ -324,4 +324,21 @@ public class User implements Serializable{
         } 
         return s;
     } 
+    public int paidTravel(int idTravel) throws ItemNotFound{
+        for(int i=0;i<this.numTravelPresent;i++){
+            if(idTravel==this.travelUser[i].getId()){
+                System.out.println("cost: "+travelUser[i].getCost());
+                if(this.wallet>=travelUser[i].calculateTravelCost()){
+                    this.wallet-=travelUser[i].getCost();
+                    travelUser[i].setPaidTravel();
+                    return 0;
+                }
+                else{
+                    System.out.println("insufficient credit");
+                    return 0;
+                }
+            }
+        }
+        throw new ItemNotFound("id");
+    }
 }
