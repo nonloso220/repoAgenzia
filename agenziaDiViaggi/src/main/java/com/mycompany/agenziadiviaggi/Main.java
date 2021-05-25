@@ -1382,9 +1382,9 @@ public class Main {
                                                                     }
                                                                 } while (!dateCorrect);
                                                                 do {
-                                                                    endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths: ", 1);
-                                                                    endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth: ", 1);
-                                                                    endYear = InputControlls.inputAnalyzerInt("endYear: ", 1);
+                                                                    endDayOfMonths = InputControlls.inputAnalyzerInt("endDayOfMonths", 1);
+                                                                    endValueOfMonth = InputControlls.inputAnalyzerInt("endValueOfMonth", 1);
+                                                                    endYear = InputControlls.inputAnalyzerInt("endYear", 1);
                                                                     dateCorrect = isDataValida(endDayOfMonths, endValueOfMonth, endYear);
                                                                     if (dateCorrect) {
                                                                         break;
@@ -1435,6 +1435,7 @@ public class Main {
                                                                 System.out.println("enter the password to confirm: ");
                                                                 String passwordConfirm;
                                                                 int ci = 0;
+                                                                int s=0;
                                                                 do {
                                                                     passwordConfirm = keyboard.nextLine();
                                                                     do {
@@ -1453,6 +1454,7 @@ public class Main {
                                                                             if (safety.compareToIgnoreCase("n") == 0) {
                                                                                 System.out.println("no problem, rest assured I have not deleted your account, be careful next time. ;P");
                                                                                 keyboard.nextLine();
+                                                                                s=1;
                                                                                 break;
                                                                             }
                                                                         }
@@ -1461,14 +1463,16 @@ public class Main {
                                                                         }
                                                                     }
                                                                 } while (passwordConfirm.compareTo(users[i].getPassword()) != 0);
-                                                                for (int j = i; j < numberUsersPresent - 1; j++) {
-                                                                    users[j] = users[j + 1];
+                                                                if(s==0){
+                                                                    for (int j = i; j < numberUsersPresent - 1; j++) {
+                                                                        users[j] = users[j + 1];
+                                                                    }
+                                                                    users[numberUsersPresent - 1] = null;
+                                                                    numberUsersPresent--;
+                                                                    choiceMenu01 = 0;
+                                                                    System.out.println("\nSuccessful operation, press any key to continue");
+                                                                    keyboard.nextLine();
                                                                 }
-                                                                users[numberUsersPresent - 1] = null;
-                                                                numberUsersPresent--;
-                                                                choiceMenu01 = 0;
-                                                                System.out.println("\nSuccessful operation, press any key to continue");
-                                                                keyboard.nextLine();
                                                                 break;
                                                             }
                                                         }
