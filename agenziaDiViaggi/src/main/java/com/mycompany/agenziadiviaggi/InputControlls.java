@@ -66,7 +66,7 @@ public class InputControlls {
         boolean execution;
         do{
             s=inputAnalyzerString(item, length);
-            if(s.matches("[a-zA-Z]+")==true){
+            if(s.matches("[a-zA-Z- ]+")==true){
                 execution=true; 
             } else{
                 System.out.println("ERROR:invalid input insert because "+item+" contains number or special characters");
